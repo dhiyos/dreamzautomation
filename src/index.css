@@ -431,6 +431,30 @@
   margin-bottom: 48px;
 }
 
+.solutions-tab:focus {
+  outline: none;
+}
+.solutions-tab:focus-visible {
+  outline: 2px solid hsl(var(--accent-blue));
+  outline-offset: 2px;
+}
+
+.solutions-item:focus {
+  outline: none;
+}
+.solutions-item:focus-visible {
+  outline: 2px solid var(--tab-accent);
+  outline-offset: 2px;
+}
+
+.solutions-case-card:focus {
+  outline: none;
+}
+.solutions-case-card:focus-visible {
+  outline: 2px solid var(--tab-accent);
+  outline-offset: 2px;
+}
+
 .solutions-tab {
   display: inline-flex;
   align-items: baseline;
