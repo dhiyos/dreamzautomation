@@ -12,11 +12,6 @@ const accentVarMap: Record<SolutionPillar['accent'], string> = {
   amber: 'hsl(var(--accent-amber))',
 };
 
-const caseAccentMap: Record<'blue' | 'teal', string> = {
-  blue: 'hsl(var(--accent-blue))',
-  teal: 'hsl(var(--accent-teal))',
-};
-
 export const Solutions = () => {
   const reduce = useReducedMotion();
   const entranceProps = useEntrance();
@@ -35,7 +30,7 @@ export const Solutions = () => {
   );
 
   const currentAccent = accentVarMap[activeTab.accent];
-  const currentCases = itemCaseStudies[activeItem.id] ?? [];
+  const currentCaseStudy = itemCaseStudies[activeItem.id] ?? null;
 
   const handleTabChange = (tabId: string) => {
     const tab = solutions.find((s) => s.id === tabId);
@@ -156,77 +151,82 @@ export const Solutions = () => {
             </motion.ul>
           </AnimatePresence>
 
-          {/* Right — case study panel */}
-          <aside
-            className="solutions-case-panel"
-            style={{ borderLeftColor: currentAccent }}
-          >
-            <div className="solutions-case-eyebrow" style={{ color: currentAccent }}>
-              — CASE STUDIES
-            </div>
-            <h4 id="solutions-case-heading" className="solutions-case-subtitle">
-              {activeItem.name}
-            </h4>
+          {/* Right — featured case study panel */}
+          <AnimatePresence mode="wait">
+            <motion.aside
+              key={activeItem.id}
+              className={`case-panel${currentCaseStudy ? '' : ' case-panel-empty'}`}
+              aria-labelledby="solutions-case-heading"
+              initial={reduce ? false : { opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={reduce ? undefined : { opacity: 0, y: -8 }}
+              transition={{ duration: reduce ? 0 : 0.25, ease: 'easeOut' }}
+            >
+              <span className="case-panel-corner" aria-hidden="true" />
 
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={`${activeTab.id}-${activeItem.id}`}
-                className="solutions-case-content"
-                initial={reduce ? false : { opacity: 0, y: 6 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={reduce ? undefined : { opacity: 0 }}
-                transition={{ duration: reduce ? 0 : 0.2 }}
-              >
-                {currentCases.length === 0 ? (
-                  <div className="solutions-case-empty">
-                    <p className="solutions-case-empty-main">
-                      Case studies coming soon.
-                    </p>
-                    <p className="solutions-case-empty-sub">
-                      Want to be featured?{' '}
-                      <a href="#contact" style={{ color: currentAccent }}>
-                        Request an assessment →
-                      </a>
-                    </p>
+              {currentCaseStudy ? (
+                <>
+                  <div className="case-eyebrow">Featured Case Study</div>
+                  <p className="case-context">
+                    A representative deployment from Dreamz's work in{' '}
+                    {activeItem.name.toLowerCase()}.
+                  </p>
+
+                  <div className="case-metric-hero">
+                    <div className="case-metric-value">
+                      {currentCaseStudy.metricValue}
+                    </div>
+                    <div className="case-metric-label">
+                      {currentCaseStudy.metricLabel}
+                    </div>
                   </div>
-                ) : (
-                  <>
-                    {currentCases.map((cs, idx) => {
-                      const cardAccent = caseAccentMap[cs.accent];
-                      const headingId = `solutions-case-${cs.id}`;
-                      return (
-                        <article
-                          key={cs.id}
-                          className="solutions-case-card"
-                          aria-labelledby={headingId}
-                          style={{ borderLeftColor: cardAccent }}
-                        >
-                          <h5 id={headingId} className="solutions-case-client">
-                            {cs.client}
-                          </h5>
-                          <p className="solutions-case-desc">{cs.description}</p>
-                          <div
-                            className="solutions-case-metric"
-                            style={{ color: cardAccent }}
-                          >
-                            {cs.metric}
-                          </div>
-                        </article>
-                      );
-                    })}
-                    <a
-                      href="#case-studies"
-                      className="solutions-case-viewall"
-                      style={{ color: currentAccent }}
-                    >
-                      View All {currentCases.length} Case{' '}
-                      {currentCases.length === 1 ? 'Study' : 'Studies'} →
+
+                  <div className="case-client-block">
+                    <h4 id="solutions-case-heading" className="case-client-name">
+                      {currentCaseStudy.client}
+                    </h4>
+                    <div className="case-client-sector">
+                      {currentCaseStudy.sector}
+                    </div>
+                  </div>
+
+                  <p className="case-description">{currentCaseStudy.description}</p>
+
+                  <div className="case-footer">
+                    <a href="#case-studies" className="case-cta">
+                      <span>Read the Full Case Study</span>
+                      <span className="case-cta-arrow" aria-hidden="true">
+                        →
+                      </span>
                     </a>
-                  </>
-                )}
-              </motion.div>
-            </AnimatePresence>
-          </aside>
+                    {currentCaseStudy.totalInCategory &&
+                      currentCaseStudy.totalInCategory > 1 && (
+                        <div className="case-count-badge">
+                          {currentCaseStudy.totalInCategory - 1} More ·{' '}
+                          {activeTab.category}
+                        </div>
+                      )}
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="case-eyebrow">Featured Case Study</div>
+                  <h4 id="solutions-case-heading" className="case-client-name">
+                    Coming Soon
+                  </h4>
+                  <p className="case-empty-text">
+                    A case study from this area is being prepared.
+                  </p>
+                  <a href="#contact" className="case-cta">
+                    <span>Request an Assessment</span>
+                    <span className="case-cta-arrow" aria-hidden="true">
+                      →
+                    </span>
+                  </a>
+                </>
+              )}
+            </motion.aside>
+          </AnimatePresence>
         </div>
       </div>
     </SectionShell>
