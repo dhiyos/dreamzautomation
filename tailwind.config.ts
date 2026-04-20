@@ -13,6 +13,19 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['Montserrat', 'system-ui', '-apple-system', 'sans-serif'],
+        montserrat: ['Montserrat', 'system-ui', 'sans-serif'],
+      },
+      letterSpacing: {
+        tightest: '-0.03em',
+        tighter2: '-0.02em',
+        tighter1: '-0.01em',
+        wide02: '0.02em',
+        wide08: '0.08em',
+        wide18: '0.18em',
+        wide20: '0.20em',
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -57,6 +70,21 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Dreamz brand tokens
+        "bg-primary": "hsl(var(--bg-primary))",
+        "bg-secondary": "hsl(var(--bg-secondary))",
+        "bg-tertiary": "hsl(var(--bg-tertiary))",
+        "bg-card-hover": "hsl(var(--bg-card-hover))",
+        "surface-light": "hsl(var(--surface-light))",
+        "accent-blue": "hsl(var(--accent-blue))",
+        "accent-blue-hover": "hsl(var(--accent-blue-hover))",
+        "accent-teal": "hsl(var(--accent-teal))",
+        "accent-amber": "hsl(var(--accent-amber))",
+        "text-primary": "hsl(var(--text-primary))",
+        "text-muted": "hsl(var(--text-muted))",
+        "text-dim": "hsl(var(--text-dim))",
+        "line-default": "hsl(var(--line-default))",
+        "line-strong": "hsl(var(--line-strong))",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -65,20 +93,12 @@ export default {
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
         },
       },
       animation: {
