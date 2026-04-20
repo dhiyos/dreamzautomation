@@ -1,95 +1,111 @@
 
 
-## Plan — Nav + Hero for Dreamz Automation Systems
+## Finalised Architecture — Confirmed & Locked
 
-### Confirmation
-Homepage only. Nav + Hero only. No other sections. Sharp corners everywhere (`--radius: 0`). Montserrat exclusively. Dark navy `#0B1929` base. No mobile hamburger yet. All links/CTAs are placeholders (`href="#"`).
-
-**Stack note:** Lovable runs React + Vite + Tailwind (Next.js is not available here). SEO meta tags will live in `index.html`. The foundation from the previous turn is already in place — I'll verify tokens and extend where needed.
+All adjustments and answers integrated. Ready to build shared primitives first, then sections one prompt at a time.
 
 ---
 
-### File structure
+### Confirmations
 
-```text
-index.html                       (verify meta tags, Montserrat link)
-src/index.css                    (verify tokens, body defaults, sharp corners)
-tailwind.config.ts               (verify colour + font mappings; add letter-spacing if needed)
-src/pages/Index.tsx              (compose <Nav /> + <Hero />)
-src/components/Nav.tsx           (NEW — sticky top nav)
-src/components/Hero.tsx          (NEW — two-column hero)
-src/components/SiemensCard.tsx   (NEW — partnership card, used inside Hero)
-package.json                     (ensure framer-motion is installed)
+I will:
+
+- **Build shared primitives first, in one commit**, before any section work — so every section can import from a stable foundation.
+- **Follow exact component APIs** from the approved plan + your adjustments below.
+- **Respect all design constraints**: sharp corners (`rounded-none` everywhere), Montserrat only, no gradients, no shadows (except focus-visible rings), no `rounded-*` utilities.
+- **Data layer**: typed arrays in `src/data/*.ts`, shared interfaces in `src/types/content.ts`.
+- **Animations**: every section entrance goes through the shared `useEntrance` hook; `useReducedMotion` honoured globally; marquee uses CSS keyframes paused under `prefers-reduced-motion: reduce`.
+- **No speculative plumbing**: no CMS, no routing, no auth — just static composition.
+
+---
+
+### Adjustments locked in
+
+| # | Adjustment | Status |
+|---|---|---|
+| 1 | Footer = Brand / Solutions / Case Studies / Insights / Company (no Industries column) | Locked |
+| 2 | H2: clamp(32px, 4vw, 48px), tracking -0.02em, line-height 1.08, ExtraBold | Locked |
+| 3 | `AccentCard hover='surface'` → `bg-card-hover` (#1A3048) | Locked |
+| 4 | Engineers: Vinod gets `accent-teal` top rule; Piyush + Tapeshwer get `accent-blue` top rules | Locked |
+| 5 | `CtaButton` accepts `icon?: string` prop, default `→`, rendered after label | Locked |
+
+### Open-question answers locked in
+
+- **Case study cards**: whole card = `<a>` wrapping `<article>`, ghost "Read case study →" inside.
+- **Insights**: local `data/insights.ts` + `// TODO: Replace with CMS integration...` comment.
+- **Engineers**: 2-sentence bios, email always visible via `ContactEmail`.
+- **Architecture**: `PlaceholderImage` 16/10, label `SYSTEM ARCHITECTURE DIAGRAM — DMRC METRO LINE 3`.
+- **Certifications**: small 80×80 placeholder area, typography-led card body.
+- **Trust bar**: monochrome `<span>` wordmarks (Montserrat tracking tuned per brand), opacity 0.5 → 1.0 + `text-muted` → `text-primary` on hover. Swap to `<img>` later, no other changes.
+- **CTA strip**: full-bleed `accent-blue` band, inner content in `.page-container`, primary button = white bg / `accent-blue` text (amber stays training-only).
+
+---
+
+### Additions accepted
+
+**Addition A — `ContactEmail` primitive** added to shared primitives commit:
+
+```ts
+interface ContactEmailProps {
+  email: string;
+  className?: string;
+  label?: string;     // optional override; default = email itself
+}
+// Renders <a href="mailto:..."> with text-accent-blue + hover underline.
 ```
 
-Keeping SiemensCard separate makes the hero file readable and lets us reuse the card pattern later if needed.
+**Addition B — Global typography utilities** added to `src/index.css` under `@layer components`:
+
+- `.text-eyebrow` — Semibold 11px uppercase, tracking 0.18em, `text-accent-blue`
+- `.text-tagline-italic` — Medium Italic 22px (clamped where used), line-height 1.4, `text-text-muted`
+- `.text-body-large` — Regular 15px, line-height 1.75, `text-text-muted`, max-width 460px
+- `.text-card-title` — Bold 17px, tracking -0.005em, `text-text-primary`
+- `.text-card-body` — Regular 13px, line-height 1.7, `text-text-muted`
+
+Sections apply these via single class names instead of 5–6 Tailwind utilities.
 
 ---
 
-### Component breakdown
+### Updated shared-primitives file list (Prompt 1 scope)
 
-**`Nav.tsx`**
-- Sticky `<header>`, `top-0 z-50`, background `rgba(11,25,41,0.92)` + `backdrop-blur-md`, 1px bottom border `line-default`
-- Inner flex row inside the 1200px container, vertical padding 18px
-- Left: 28×28 `accent-blue` square with white "A" (Montserrat ExtraBold) + wordmark "DREAMZ AUTOMATION" (Bold 14px, uppercase, tracking 0.02em)
-- Centre: nav links (Solutions, Industries, Products, Case Studies, Insights, About) — Medium 13px, `text-muted` → `text-primary` on hover, colour transition
-- Right: CTA button "Request an Assessment" — `accent-blue` bg, white, Bold 12px uppercase, tracking 0.02em, padding 10×20, hover `accent-blue-hover`
-- All `href="#"`, button non-functional
+```text
+src/components/shared/
+  SectionShell.tsx
+  SectionHeader.tsx
+  Eyebrow.tsx
+  AccentCard.tsx
+  CtaButton.tsx           ← now accepts icon prop
+  PlaceholderImage.tsx
+  SequenceMarker.tsx
+  ContactEmail.tsx        ← NEW (Addition A)
+src/lib/
+  motion.ts               ← fadeUp, stagger, useEntrance
+src/types/
+  content.ts              ← shared interfaces
+src/index.css             ← + .text-eyebrow / .text-tagline-italic / .text-body-large / .text-card-title / .text-card-body (Addition B)
+```
 
-**`Hero.tsx`**
-- Section with 120px top / 100px bottom padding, 1px bottom border `line-default`
-- Container: 1200px max-width, responsive horizontal padding
-- Grid: `grid-cols-[1.2fr_1fr]` gap 80px, items-center (stacks on mobile)
-- **Left column:**
-  - Eyebrow row: 40×1px `accent-blue` line + 12px gap + label text (Semibold 11px, uppercase, tracking 0.18em, `accent-blue`)
-  - Headline H1: ExtraBold 72px, line-height 1, tracking -3%, two lines — "Engineering" / "Your Dreamz." with "Dreamz." (incl. period) in `accent-teal`
-  - Italic tagline: Medium Italic 22px, line-height 1.4, `text-muted`, with explicit line break before "under one roof."
-  - Body paragraph: Regular 15px, line-height 1.75, `text-muted`, max-width 460px
-  - CTA row: Primary (`accent-blue`, "Request an Assessment →") + Ghost (border `line-strong`, "Explore Solutions", border hovers to `accent-blue`)
-  - Framer Motion: each child fades in from `y: 20` over 0.6s, staggered 0.1s via parent `staggerChildren`
-- **Right column:** renders `<SiemensCard />`, fades in from `y: 20` with 0.3s delay
-
-**`SiemensCard.tsx`**
-- `bg-tertiary`, top border 3px `accent-teal`, padding 36px / 32px, sharp corners
-- Eyebrow "— AUTHORIZED PARTNER" (Semibold 10px, tracking 0.2em, `accent-teal`)
-- "SIEMENS" wordmark (ExtraBold 42px, tracking -0.01em, `accent-teal`)
-- Subtitle "AUTHORIZED SYSTEM INTEGRATOR" (Bold 12px uppercase, tracking 0.08em, white)
-- 2×2 stats grid: outer wrapper `bg-line-default` with `gap-px`, each cell `bg-secondary` padding 20×18, number ExtraBold 32px `accent-teal`, label Medium 11px `text-muted`
-  - 20+ / Years of Experience
-  - 50+ / Engineering Professionals
-  - 400+ / Plants Automated
-  - 50+ / Industry Leaders Served
+No section files touched in Prompt 1. `Hero.tsx` will be lightly refactored later (after primitives exist) to consume `Eyebrow` + `CtaButton` — but only as a follow-up cleanup, not in Prompt 1, to avoid scope creep.
 
 ---
 
-### Tailwind config approach
+### Build order (locked)
 
-Already scaffolded in previous turn — I'll verify and extend:
-- Colour tokens (`bg-primary`, `bg-secondary`, `bg-tertiary`, `bg-card-hover`, `surface-light`, `accent-blue`, `accent-blue-hover`, `accent-teal`, `accent-amber`, `text-primary`, `text-muted`, `text-dim`, `line-default`, `line-strong`) mapped from CSS HSL variables
-- `fontFamily.sans = ['Montserrat', ...]` as the only family
-- Add `letterSpacing` extensions for the exact tracking values used (-0.03em, -0.02em, -0.01em, 0.02em, 0.08em, 0.18em, 0.2em) so we use Tailwind classes consistently
-- Confirm `--radius: 0` and that body uses `bg-bg-primary text-text-primary antialiased`
-- Confirm Montserrat `<link>` in `index.html` includes italic 400 + 500
-
----
-
-### Order of implementation
-
-1. Verify/patch foundation: `index.html` font link (italics), `index.css` tokens, `tailwind.config.ts` letter-spacing extensions
-2. Build `Nav.tsx` and wire into `Index.tsx`
-3. Build `SiemensCard.tsx`
-4. Build `Hero.tsx` (compose card on right)
-5. Add Framer Motion entrance animations
-6. Visual QA at desktop + 832px viewport (current preview width)
+1. **Shared primitives** ← awaiting your Prompt 1 spec
+2. Trust Bar
+3. Company Profile
+4. Solutions
+5. Featured Product
+6. Featured Case Studies
+7. Architecture Showcase
+8. Engineers
+9. Certifications
+10. Testimonials
+11. Insights Preview
+12. CTA Strip
+13. Footer
 
 ---
 
-### Questions / concerns
-
-1. **Mobile hero stacking.** You said no hamburger yet, but the hero grid will need to stack on narrow viewports. I'll stack left-then-card below 1024px so it doesn't break the current 832px preview. OK?
-2. **Headline at 832px viewport.** 72px ExtraBold will overflow narrow widths. I'll clamp it (e.g. `clamp(44px, 6vw, 72px)`) so it stays at 72px on desktop but scales down gracefully. OK?
-3. **Container padding vs nav padding.** Spec says nav inner horizontal padding is 56px and page padding is also 56px desktop / 24px mobile — I'll use the same container utility for both so they align perfectly.
-4. **Stats grid gap technique.** I'll use `gap-px` with a `bg-line-default` wrapper so the 1px lines render exactly as specified — confirming this is the look you want (vs explicit borders).
-
-If any of the above shouldn't be assumed, tell me before I build; otherwise I'll proceed with the defaults above on approval.
+Confirmed and ready. Send the **Prompt 1 — Shared Primitives** spec when ready and I'll build the full primitives commit against the APIs above.
 
