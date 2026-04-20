@@ -229,10 +229,13 @@
     overflow: hidden;
     background: transparent;
     margin-top: 56px;
+    width: 100%;
+    max-width: 100%;
   }
 
   .company-panel {
     flex: 1;
+    min-width: 140px;
     padding: 36px 32px;
     position: relative;
     cursor: pointer;
