@@ -42,6 +42,21 @@ export interface ItemCaseStudy {
   totalInCategory?: number;
 }
 
+export interface ProcessBullet {
+  title: string;
+  context: string;
+}
+
+export interface ProcessStage {
+  id: string;
+  number: string;
+  eyebrow: string;
+  title: string;
+  description: string;
+  colour: 'deep-blue' | 'electric-blue' | 'teal' | 'muted-teal';
+  bullets: ProcessBullet[];
+}
+
 export interface Industry {
   id: string;
   name: string;
