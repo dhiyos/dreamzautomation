@@ -398,7 +398,6 @@
       transition-duration: 0ms !important;
     }
   }
-}
 
 @keyframes marquee-scroll {
   0%   { transform: translateX(0); }
