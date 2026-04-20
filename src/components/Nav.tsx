@@ -1,7 +1,6 @@
 const NAV_ITEMS = [
   "Solutions",
   "Industries",
-  "Products",
   "Case Studies",
   "Insights",
   "About",
