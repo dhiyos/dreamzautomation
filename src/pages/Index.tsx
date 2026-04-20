@@ -10,6 +10,7 @@ const Index = () => {
       <main>
         <Hero />
         <TrustBar />
+        <CompanyProfile />
       </main>
     </div>
   );
