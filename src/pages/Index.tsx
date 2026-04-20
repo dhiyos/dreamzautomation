@@ -1,5 +1,6 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
+import TrustBar from "@/components/sections/TrustBar";
 
 const Index = () => {
   return (
@@ -7,6 +8,7 @@ const Index = () => {
       <Nav />
       <main>
         <Hero />
+        <TrustBar />
       </main>
     </div>
   );
