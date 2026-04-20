@@ -497,7 +497,7 @@
 
 .solutions-body {
   display: grid;
-  grid-template-columns: 1.4fr 1fr;
+  grid-template-columns: 1fr 1.1fr;
   gap: 56px;
   min-height: 520px;
 }
@@ -707,6 +707,7 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
+  white-space: nowrap;
   transition: color 150ms ease;
 }
 .case-cta:hover {
