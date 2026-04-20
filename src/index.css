@@ -802,3 +802,107 @@
   }
 }
 
+
+/* Process — From Concept to Commissioning */
+.process-header { text-align: center; margin-bottom: 80px; }
+.process-eyebrow-wrap { display: flex; justify-content: center; margin-bottom: 20px; }
+.process-heading { text-align: center; margin-bottom: 16px; }
+.process-descriptor { text-align: center; max-width: 620px; margin: 0 auto; }
+
+.process-stages-wrapper { position: relative; max-width: 1200px; margin: 0 auto; }
+
+.process-arc-container {
+  position: absolute; top: -42px; left: 0; right: 0; height: 50px; z-index: 1; pointer-events: none;
+}
+.process-arc-svg { width: 100%; height: 100%; }
+
+.process-stages-row {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; position: relative;
+}
+
+.process-stage {
+  position: relative; min-height: 440px; padding: 28px 26px;
+  display: flex; flex-direction: column;
+  clip-path: polygon(0 0, calc(100% - 28px) 0, 100% 50%, calc(100% - 28px) 100%, 0 100%, 28px 50%);
+  transition: transform 300ms ease;
+}
+.process-stage:first-child {
+  clip-path: polygon(0 0, calc(100% - 28px) 0, 100% 50%, calc(100% - 28px) 100%, 0 100%);
+}
+.process-stage:hover { transform: translateY(-4px); }
+
+.process-stage[data-colour="deep-blue"]      { background: var(--process-deep-blue); }
+.process-stage[data-colour="electric-blue"]  { background: var(--process-electric-blue); }
+.process-stage[data-colour="teal"]           { background: var(--process-teal); }
+.process-stage[data-colour="muted-teal"]     { background: var(--process-muted-teal); }
+
+.process-stage-header { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 20px; }
+.process-stage-icon {
+  width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+  flex-shrink: 0; font-size: 18px; font-weight: 700;
+  font-family: 'Montserrat', sans-serif; color: #FFFFFF;
+}
+.process-stage-title-block { flex: 1; padding-top: 3px; }
+.process-stage-eyebrow {
+  font-family: 'Montserrat', sans-serif; font-size: 10px; font-weight: 700;
+  letter-spacing: 0.15em; color: rgba(255, 255, 255, 0.65);
+  text-transform: uppercase; margin-bottom: 4px;
+}
+.process-stage-title {
+  font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 800;
+  color: #FFFFFF; letter-spacing: 0.02em; line-height: 1.15;
+  text-transform: uppercase; white-space: pre-line;
+}
+
+.process-stage-description {
+  font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600;
+  color: #FFFFFF; line-height: 1.4; margin-bottom: 20px; padding-bottom: 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  max-width: calc(100% - 24px);
+}
+
+.process-stage-bullets {
+  list-style: none; padding: 0; margin: 0;
+  display: flex; flex-direction: column; gap: 14px;
+  max-width: calc(100% - 24px);
+}
+.process-stage-bullet {
+  font-family: 'Montserrat', sans-serif; font-size: 12px; line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85); padding-left: 12px; position: relative;
+}
+.process-stage-bullet::before {
+  content: ""; position: absolute; left: 0; top: 7px;
+  width: 4px; height: 4px; background: rgba(255, 255, 255, 0.7);
+}
+.process-stage-bullet strong { color: #FFFFFF; font-weight: 700; display: block; margin-bottom: 2px; }
+.process-stage-bullet em { color: rgba(255, 255, 255, 0.7); font-style: italic; font-weight: 400; display: block; }
+
+.process-cta-row { margin-top: 56px; display: flex; justify-content: center; }
+.process-cta-row .process-cta-button {
+  border-color: hsl(var(--accent-blue)) !important;
+  color: hsl(var(--accent-blue)) !important;
+}
+.process-cta-row .process-cta-button:hover {
+  background: hsl(var(--accent-blue)) !important;
+  color: #FFFFFF !important;
+}
+
+@media (max-width: 1023px) {
+  .process-arc-container { display: none; }
+}
+@media (max-width: 1023px) and (min-width: 768px) {
+  .process-stages-row { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+}
+@media (max-width: 767px) {
+  .process-stages-row { grid-template-columns: 1fr; gap: 16px; }
+  .process-stage,
+  .process-stage:first-child { clip-path: none; padding: 32px 28px; min-height: auto; }
+  .process-stage-description,
+  .process-stage-bullets { max-width: 100%; }
+  .process-header { margin-bottom: 56px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .process-stage { transition: none !important; }
+}
