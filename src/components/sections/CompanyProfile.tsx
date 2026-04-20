@@ -1,12 +1,24 @@
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { motion, useReducedMotion } from 'framer-motion';
 import { SectionShell } from '@/components/shared/SectionShell';
 import { SectionHeader } from '@/components/shared/SectionHeader';
-import { AccentCard } from '@/components/shared/AccentCard';
-import { fadeUp, stagger, useEntrance } from '@/lib/motion';
+import { fadeUp, useEntrance } from '@/lib/motion';
 import { companyProfile } from '@/data/companyProfile';
 
 export const CompanyProfile = () => {
   const entranceProps = useEntrance();
+  const reduce = useReducedMotion();
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
+
+  const isExpanded = (cardId: string, index: number) => {
+    if (hoveredId === null) return index === 0;
+    return hoveredId === cardId;
+  };
+
+  const formatSequence = (id: string, index: number) => {
+    const num = String(index + 1).padStart(2, '0');
+    return `${num} / ${id.replace(/-/g, ' ').toUpperCase()}`;
+  };
 
   return (
     <SectionShell
@@ -32,28 +44,47 @@ export const CompanyProfile = () => {
       </motion.div>
 
       <motion.div
-        className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6"
-        variants={stagger(0.08)}
+        className="company-panels"
+        variants={fadeUp}
         {...entranceProps}
+        onMouseLeave={() => setHoveredId(null)}
       >
-        {companyProfile.map((card) => (
-          <motion.div key={card.id} variants={fadeUp}>
-            <AccentCard
-              accent={card.accent}
-              padding="md"
-              hover="surface"
-              as="article"
+        {companyProfile.map((card, index) => {
+          const expanded = isExpanded(card.id, index);
+          const accentVar = card.accent === 'teal' ? 'var(--accent-teal)' : 'var(--accent-blue)';
+          return (
+            <article
+              key={card.id}
+              className="company-panel"
+              data-expanded={expanded}
+              tabIndex={0}
+              aria-expanded={expanded}
+              onMouseEnter={() => setHoveredId(card.id)}
+              onFocus={() => setHoveredId(card.id)}
+              onBlur={() => setHoveredId(null)}
+              style={
+                {
+                  '--panel-accent': accentVar,
+                  transitionDuration: reduce ? '0ms' : undefined,
+                } as React.CSSProperties
+              }
             >
-              <h3 className="text-card-title mb-[14px]">{card.title}</h3>
-              <span
-                className="mb-[18px] block"
-                style={{ width: '24px', height: '1px', backgroundColor: '#2A4566' }}
-                aria-hidden="true"
-              />
-              <p className="text-card-body">{card.body}</p>
-            </AccentCard>
-          </motion.div>
-        ))}
+              <div>
+                <div className="company-panel-seq">
+                  {formatSequence(card.id, index)}
+                </div>
+                <h3 className="company-panel-title">{card.title}</h3>
+                <span className="company-panel-rule" aria-hidden="true" />
+                <p className="company-panel-body">{card.body}</p>
+              </div>
+
+              <a href="#" className="company-panel-cta" tabIndex={-1}>
+                <span className="company-panel-cta-label">LEARN MORE</span>
+                <span className="company-panel-arrow" aria-hidden="true">→</span>
+              </a>
+            </article>
+          );
+        })}
       </motion.div>
     </SectionShell>
   );
