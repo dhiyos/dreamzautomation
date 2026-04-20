@@ -28,6 +28,12 @@
     --line-default: 213 46% 22%;      /* #1E3350 */
     --line-strong: 213 42% 28%;       /* #2A4566 */
 
+    /* Process section colours */
+    --process-deep-blue: #0B3A52;
+    --process-electric-blue: #0099CC;
+    --process-teal: #00C9A7;
+    --process-muted-teal: #3F8A7E;
+
     /* shadcn token overrides — dark industrial */
     --background: var(--bg-primary);
     --foreground: var(--text-primary);
