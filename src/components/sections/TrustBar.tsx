@@ -19,7 +19,7 @@ export const TrustBar = () => {
       <h2 className="sr-only">Trusted by industry leaders worldwide</h2>
 
       <div className="page-container" style={{ marginBottom: 20 }}>
-        <Eyebrow text="— TRUSTED BY INDUSTRY LEADERS WORLDWIDE" variant="blue" />
+        <Eyebrow text="TRUSTED BY INDUSTRY LEADERS WORLDWIDE" variant="blue" />
       </div>
 
       <div className="marquee-mask w-full overflow-hidden">
@@ -28,7 +28,7 @@ export const TrustBar = () => {
             <div
               key={`${logo.id}-${idx}`}
               className="marquee-item shrink-0 text-text-primary"
-              style={{ height: 40, display: 'flex', alignItems: 'center' }}
+              style={{ height: 40, display: 'flex', alignItems: 'center', justifyContent: 'center' }}
             >
               {logo.displayAs === 'text' ? (
                 <span className={logo.textClass}>{logo.name}</span>

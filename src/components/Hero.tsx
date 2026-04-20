@@ -25,7 +25,7 @@ const Hero = () => {
   return (
     <section
       aria-labelledby="hero-heading"
-      className="w-full border-b border-line-default hero-section"
+      className="w-full hero-section"
     >
       <div className="page-container">
         <div className="grid items-center grid-cols-1 lg:grid-cols-[1.2fr_1fr] hero-grid">
