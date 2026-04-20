@@ -169,7 +169,7 @@ export const Solutions = () => {
                   <div className="case-eyebrow">Featured Case Study</div>
                   <p className="case-context">
                     A representative deployment from Dreamz's work in{' '}
-                    {activeItem.name.toLowerCase()}.
+                    {activeItem.name}.
                   </p>
 
                   <div className="case-metric-hero">
