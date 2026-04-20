@@ -30,13 +30,13 @@ const Hero = () => {
       <div className="page-container">
         <div className="grid items-center grid-cols-1 lg:grid-cols-[1.2fr_1fr] hero-grid">
           {/* Left column */}
-          <motion.div variants={container} initial="hidden" animate="show">
+          <motion.div variants={container} initial="hidden" animate="show" className="self-center">
             {/* Eyebrow */}
-            <motion.div variants={item} className="flex items-center" style={{ marginBottom: 24 }}>
+            <motion.div variants={item} className="flex items-center gap-3" style={{ marginBottom: 24 }}>
               <span
                 aria-hidden="true"
-                className="bg-accent-blue inline-block"
-                style={{ width: 40, height: 1, marginRight: 12 }}
+                className="bg-accent-blue inline-block shrink-0 border-0 rounded-none"
+                style={{ width: 40, height: 1 }}
               />
               <span
                 className="text-accent-blue uppercase"
@@ -116,7 +116,7 @@ const Hero = () => {
           </motion.div>
 
           {/* Right column */}
-          <div>
+          <div className="self-center">
             <SiemensCard />
           </div>
         </div>
