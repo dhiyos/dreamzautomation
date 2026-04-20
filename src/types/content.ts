@@ -17,12 +17,27 @@ export interface CaseStudy {
   featured?: boolean;
 }
 
-export interface Solution {
+export interface SolutionItem {
   id: string;
-  category: 'process' | 'machines' | 'training';
+  name: string;
+}
+
+export interface SolutionPillar {
+  id: string;
+  number: string;
+  category: string;
   title: string;
+  blurb: string;
+  accent: 'blue' | 'teal' | 'amber';
+  items: SolutionItem[];
+}
+
+export interface ItemCaseStudy {
+  id: string;
+  client: string;
   description: string;
-  bullets: string[];
+  metric: string;
+  accent: 'blue' | 'teal';
 }
 
 export interface Industry {
