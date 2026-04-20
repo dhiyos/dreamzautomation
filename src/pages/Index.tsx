@@ -2,6 +2,7 @@ import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import TrustBar from "@/components/sections/TrustBar";
 import CompanyProfile from "@/components/sections/CompanyProfile";
+import Solutions from "@/components/sections/Solutions";
 
 const Index = () => {
   return (
@@ -11,6 +12,7 @@ const Index = () => {
         <Hero />
         <TrustBar />
         <CompanyProfile />
+        <Solutions />
       </main>
     </div>
   );
