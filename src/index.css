@@ -262,7 +262,7 @@
     transition: height 300ms ease;
   }
   .company-panel[data-expanded="true"] {
-    flex: 3.5;
+    flex: 3;
     background: hsl(var(--bg-tertiary));
   }
   .company-panel[data-expanded="true"]::before { height: 3px; }
@@ -276,6 +276,8 @@
     margin-bottom: 24px;
     transition: color 300ms ease;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .company-panel[data-expanded="true"] .company-panel-seq {
     color: var(--panel-accent);
@@ -290,6 +292,8 @@
     margin-bottom: 20px;
     transition: font-size 300ms ease;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .company-panel[data-expanded="true"] .company-panel-title { font-size: 24px; }
 
