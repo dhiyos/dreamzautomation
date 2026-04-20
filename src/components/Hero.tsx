@@ -1,26 +1,34 @@
-import { motion, type Variants } from "framer-motion";
+import { motion, useReducedMotion, type Variants } from "framer-motion";
 import SiemensCard from "./SiemensCard";
 
-const container: Variants = {
-  hidden: {},
-  show: {
-    transition: { staggerChildren: 0.1, delayChildren: 0 },
-  },
-};
-
-const item: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } },
-};
-
 const Hero = () => {
+  const reduce = useReducedMotion();
+
+  const container: Variants = {
+    hidden: {},
+    show: {
+      transition: reduce
+        ? { staggerChildren: 0 }
+        : { staggerChildren: 0.1, delayChildren: 0 },
+    },
+  };
+
+  const item: Variants = {
+    hidden: reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: reduce ? { duration: 0 } : { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
+    },
+  };
+
   return (
     <section
-      className="w-full border-b border-line-default"
-      style={{ paddingTop: 120, paddingBottom: 100 }}
+      aria-labelledby="hero-heading"
+      className="w-full border-b border-line-default hero-section"
     >
       <div className="page-container">
-        <div className="grid items-center gap-10 lg:gap-20 grid-cols-1 lg:grid-cols-[1.2fr_1fr]">
+        <div className="grid items-center grid-cols-1 lg:grid-cols-[1.2fr_1fr] hero-grid">
           {/* Left column */}
           <motion.div variants={container} initial="hidden" animate="show">
             {/* Eyebrow */}
@@ -40,11 +48,12 @@ const Hero = () => {
 
             {/* Headline */}
             <motion.h1
+              id="hero-heading"
               variants={item}
               className="text-text-primary"
               style={{
                 fontWeight: 800,
-                fontSize: "clamp(44px, 7vw, 72px)",
+                fontSize: "clamp(44px, 6vw, 72px)",
                 lineHeight: 1.0,
                 letterSpacing: "-0.03em",
                 marginBottom: 8,
@@ -59,7 +68,12 @@ const Hero = () => {
             <motion.p
               variants={item}
               className="text-text-muted italic"
-              style={{ fontWeight: 500, fontSize: 22, lineHeight: 1.4, marginBottom: 28 }}
+              style={{
+                fontWeight: 500,
+                fontSize: "clamp(18px, 2vw, 22px)",
+                lineHeight: 1.4,
+                marginBottom: 28,
+              }}
             >
               Since 2005 — from concept to commissioning,
               <br />
@@ -81,27 +95,19 @@ const Hero = () => {
             <motion.div variants={item} className="flex flex-wrap items-center" style={{ gap: 12 }}>
               <a
                 href="#"
-                className="bg-accent-blue hover:bg-accent-blue-hover text-text-primary uppercase transition-colors duration-200 inline-block"
+                className="bg-accent-blue hover:bg-accent-blue-hover text-text-primary uppercase transition-colors duration-150 inline-block"
                 style={{ fontWeight: 700, fontSize: 12, letterSpacing: "0.02em", padding: "14px 28px" }}
               >
                 Request an Assessment →
               </a>
               <a
                 href="#"
-                className="text-text-primary uppercase inline-block transition-colors duration-200"
+                className="text-text-primary uppercase inline-block border border-line-strong hover:border-accent-blue bg-transparent transition-colors duration-150"
                 style={{
                   fontWeight: 600,
                   fontSize: 12,
                   letterSpacing: "0.02em",
                   padding: "13px 28px",
-                  border: "1px solid hsl(var(--line-strong))",
-                  backgroundColor: "transparent",
-                }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLAnchorElement).style.borderColor = "hsl(var(--accent-blue))";
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLAnchorElement).style.borderColor = "hsl(var(--line-strong))";
                 }}
               >
                 Explore Solutions

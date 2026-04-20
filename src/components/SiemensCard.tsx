@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useReducedMotion, type Variants } from "framer-motion";
 
 const STATS = [
   { value: "20+", label: "Years of Experience" },
@@ -8,16 +8,26 @@ const STATS = [
 ];
 
 const SiemensCard = () => {
+  const reduce = useReducedMotion();
+
+  const variants: Variants = {
+    hidden: reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: reduce
+        ? { duration: 0 }
+        : { duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] },
+    },
+  };
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-      className="bg-bg-tertiary w-full"
-      style={{
-        borderTop: "3px solid hsl(var(--accent-teal))",
-        padding: "36px 32px",
-      }}
+      initial="hidden"
+      animate="show"
+      variants={variants}
+      className="bg-bg-tertiary w-full border-t-[3px] border-accent-teal"
+      style={{ padding: "36px 32px" }}
     >
       <div
         className="text-accent-teal uppercase"
@@ -28,7 +38,13 @@ const SiemensCard = () => {
 
       <div
         className="text-accent-teal"
-        style={{ fontWeight: 800, fontSize: 42, lineHeight: 1, letterSpacing: "-0.01em", marginBottom: 8 }}
+        style={{
+          fontWeight: 800,
+          fontSize: "clamp(32px, 3.5vw, 42px)",
+          lineHeight: 1,
+          letterSpacing: "-0.01em",
+          marginBottom: 8,
+        }}
       >
         SIEMENS
       </div>
@@ -41,15 +57,18 @@ const SiemensCard = () => {
       </div>
 
       {/* 2x2 stats grid — 1px lines via gap on bg-line-default wrapper */}
-      <div
-        className="grid grid-cols-2 bg-line-default"
-        style={{ gap: 1 }}
-      >
+      <div className="grid grid-cols-2 bg-line-default" style={{ gap: 1 }}>
         {STATS.map((s) => (
           <div key={s.label} className="bg-bg-secondary" style={{ padding: "20px 18px" }}>
             <div
               className="text-accent-teal"
-              style={{ fontWeight: 800, fontSize: 32, lineHeight: 1, letterSpacing: "-0.02em", marginBottom: 6 }}
+              style={{
+                fontWeight: 800,
+                fontSize: "clamp(26px, 2.8vw, 32px)",
+                lineHeight: 1,
+                letterSpacing: "-0.02em",
+                marginBottom: 6,
+              }}
             >
               {s.value}
             </div>

@@ -103,4 +103,21 @@
       padding-bottom: 100px;
     }
   }
+
+  .hero-section {
+    padding-top: 80px;
+    padding-bottom: 64px;
+  }
+  .hero-grid {
+    gap: 48px;
+  }
+  @media (min-width: 1024px) {
+    .hero-section {
+      padding-top: 120px;
+      padding-bottom: 100px;
+    }
+    .hero-grid {
+      gap: 80px;
+    }
+  }
 }
