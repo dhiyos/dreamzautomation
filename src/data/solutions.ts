@@ -64,81 +64,65 @@ export const solutions: SolutionPillar[] = [
   },
 ];
 
-export const itemCaseStudies: Record<string, ItemCaseStudy[]> = {
-  bopp: [
-    {
-      id: 'jindal-bopp',
-      client: 'Jindal Polyfilms',
-      description:
-        'BOPP line automation — 10,000 tpa capacity, Siemens S7-1500 with integrated MES.',
-      metric: '+18% OEE · 12 Months',
-      accent: 'teal',
-    },
-    {
-      id: 'srf-bopet',
-      client: 'SRF Limited',
-      description:
-        'BOPET line modernisation — legacy S5 to S7 migration with zero production loss.',
-      metric: '3-Day Cutover',
-      accent: 'blue',
-    },
-    {
-      id: 'polyplex',
-      client: 'Polyplex Corporation',
-      description:
-        'Plant-wide SCADA with real-time quality monitoring across 3 film lines.',
-      metric: '40% Fewer Reject Rolls',
-      accent: 'teal',
-    },
-  ],
-  tunnel: [
-    {
-      id: 'dmrc-l3',
-      client: 'DMRC Metro Line 3',
-      description:
-        'NP SCADA subsystem for 22 stations across 31.5 km. Completed successfully after prescribed tests.',
-      metric: '22 Stations · 31.5 km',
-      accent: 'blue',
-    },
-  ],
-  petrochem: [
-    {
-      id: 'iocl-mathura',
-      client: 'IOCL Mathura Refinery',
-      description:
-        'SIEMENS PLC S-5 to S-7 upgrade. Delivered on time, completed to customer satisfaction.',
-      metric: 'Zero Production Loss',
-      accent: 'blue',
-    },
-  ],
-  'food-bev': [
-    {
-      id: 'bambino',
-      client: 'Bambino Agro Industries',
-      description:
-        'PLC system conversion S-5 to S-7 for Gurgaon plant — concept to commissioning.',
-      metric: 'On-Time Delivery',
-      accent: 'teal',
-    },
-  ],
-  pneumatic: [
-    {
-      id: 'coperion',
-      client: 'Coperion Ideal / Reliance',
-      description:
-        'Hot-Standby PLC & SCADA for pneumatic conveying system — safety-critical process.',
-      metric: 'Hot-Standby SIL-3',
-      accent: 'blue',
-    },
-  ],
-  'conveyor-paint': [
-    {
-      id: 'motherson-mate',
-      client: 'Motherson MATE Manesar',
-      description:
-        'Traceability system for YSD door trim paint shop. Functioning successfully in production.',
-      metric: 'End-to-End Traceability',
-      accent: 'teal',
-    },
-  ],
+export const itemCaseStudies: Record<string, ItemCaseStudy> = {
+  bopp: {
+    id: 'jindal-bopp',
+    client: 'Jindal Polyfilms',
+    sector: 'BOPP Line Automation · 10,000 tpa',
+    metricValue: '+18%',
+    metricLabel: 'OEE Improvement · 12 Months',
+    description:
+      "End-to-end automation of a 10,000 tpa BOPP line built around Siemens S7-1500 with integrated MES. Real-time production monitoring, automated reject classification, and shift-level OEE reporting — replacing manual logbook entries that had never been digitised.",
+    totalInCategory: 4,
+  },
+  tunnel: {
+    id: 'dmrc-l3',
+    client: 'DMRC Metro Line 3',
+    sector: 'Tunnel Automation · 31.5 km',
+    metricValue: '22',
+    metricLabel: 'Stations · NP SCADA Subsystem',
+    description:
+      'NP SCADA subsystem delivered for the Delhi Metro Line 3 extension, covering 22 stations across 31.5 kilometres. Completed successfully after prescribed acceptance tests, in partnership with Siemens Ltd.',
+    totalInCategory: 1,
+  },
+  petrochem: {
+    id: 'iocl-mathura',
+    client: 'IOCL Mathura Refinery',
+    sector: 'Petrochemicals · Legacy PLC Upgrade',
+    metricValue: '0',
+    metricLabel: 'Production Loss · S5 to S7 Upgrade',
+    description:
+      'SIEMENS PLC S-5 to S-7 upgrade at IOCL Mathura Refinery, delivered on time and completed to full customer satisfaction. Critical legacy system modernisation executed without halting refinery production.',
+    totalInCategory: 2,
+  },
+  'food-bev': {
+    id: 'bambino',
+    client: 'Bambino Agro Industries',
+    sector: 'Food Processing · Concept to Commissioning',
+    metricValue: 'S-5 → S-7',
+    metricLabel: 'Full PLC System Conversion',
+    description:
+      'PLC system conversion from S-5 to S-7 for the Gurgaon plant, delivered concept to commissioning. Professional competence demonstrated throughout the project lifecycle.',
+    totalInCategory: 2,
+  },
+  pneumatic: {
+    id: 'coperion',
+    client: 'Coperion Ideal / Reliance Industries',
+    sector: 'Pneumatic Conveying · Hot-Standby SIL-3',
+    metricValue: 'SIL-3',
+    metricLabel: 'Safety Integrity Level · Hot-Standby',
+    description:
+      'Hot-Standby PLC and SCADA system for a safety-critical pneumatic conveying application at Reliance Industries. Redundant controllers with SIL-3 certified safety functions ensuring continuous operation.',
+    totalInCategory: 3,
+  },
+  'conveyor-paint': {
+    id: 'motherson-mate',
+    client: 'Motherson MATE Manesar',
+    sector: 'Automotive · Traceability System',
+    metricValue: 'End-to-End',
+    metricLabel: 'Traceability · YSD Door Trim',
+    description:
+      'Traceability system for the YSD door trim paint shop at Motherson MATE Manesar. Functioning successfully in production, tracking parts from raw material through paint application to final dispatch.',
+    totalInCategory: 2,
+  },
 };

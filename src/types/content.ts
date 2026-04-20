@@ -35,9 +35,11 @@ export interface SolutionPillar {
 export interface ItemCaseStudy {
   id: string;
   client: string;
+  sector: string;
+  metricValue: string;
+  metricLabel: string;
   description: string;
-  metric: string;
-  accent: 'blue' | 'teal';
+  totalInCategory?: number;
 }
 
 export interface Industry {
