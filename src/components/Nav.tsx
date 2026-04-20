@@ -10,8 +10,11 @@ const NAV_ITEMS = [
 const Nav = () => {
   return (
     <header
-      className="sticky top-0 z-50 w-full border-b border-line-default backdrop-blur-md"
-      style={{ backgroundColor: "hsl(var(--bg-primary) / 0.92)" }}
+      className="sticky top-0 z-50 w-full backdrop-blur-md shadow-none"
+      style={{
+        backgroundColor: "hsl(var(--bg-primary) / 0.92)",
+        borderBottom: "1px solid hsl(var(--line-default))",
+      }}
     >
       <nav
         aria-label="Primary"

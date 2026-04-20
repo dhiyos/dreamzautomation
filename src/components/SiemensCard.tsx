@@ -57,9 +57,13 @@ const SiemensCard = () => {
       </div>
 
       {/* 2x2 stats grid — 1px lines via gap on bg-line-default wrapper */}
-      <div className="grid grid-cols-2 bg-line-default" style={{ gap: 1 }}>
+      <div className="grid grid-cols-2 bg-line-default rounded-none border-0" style={{ gap: 1 }}>
         {STATS.map((s) => (
-          <div key={s.label} className="bg-bg-secondary" style={{ padding: "20px 18px" }}>
+          <div
+            key={s.label}
+            className="bg-bg-secondary rounded-none border-0"
+            style={{ padding: "20px 18px" }}
+          >
             <div
               className="text-accent-teal"
               style={{
