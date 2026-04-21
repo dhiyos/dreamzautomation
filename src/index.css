@@ -989,8 +989,8 @@ section[aria-labelledby="process-heading"] { padding-top: 80px; padding-bottom: 
   background: hsl(var(--bg-primary));
   border: 1px solid hsl(var(--line-default));
   border-top: 3px solid hsl(var(--accent-teal));
-  padding: 44px 44px 36px;
-  min-height: 400px;
+  padding: 36px 40px 32px;
+  min-height: 360px;
   display: flex;
   flex-direction: column;
   position: relative;
