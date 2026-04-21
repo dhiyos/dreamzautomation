@@ -88,10 +88,11 @@ export interface Engineer {
   id: string;
   name: string;
   title: string;
+  roleTag: string;
+  accent: 'blue' | 'teal';
   bio: string;
-  email: string;
-  featured: boolean;
-  photoPath?: string;
+  initials: string;
+  photoPath: string | null;
 }
 
 export interface Certification {
