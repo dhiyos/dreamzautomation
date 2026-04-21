@@ -4,6 +4,7 @@ import TrustBar from "@/components/sections/TrustBar";
 import CompanyProfile from "@/components/sections/CompanyProfile";
 import Solutions from "@/components/sections/Solutions";
 import Process from "@/components/sections/Process";
+import FeaturedCaseStudies from "@/components/sections/FeaturedCaseStudies";
 
 const Index = () => {
   return (
@@ -15,6 +16,7 @@ const Index = () => {
         <CompanyProfile />
         <Solutions />
         <Process />
+        <FeaturedCaseStudies />
       </main>
     </div>
   );
