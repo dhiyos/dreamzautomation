@@ -804,9 +804,23 @@
 
 
 /* Process — From Concept to Commissioning */
-.process-header { text-align: center; margin-bottom: 80px; }
+section[aria-labelledby="process-heading"] { padding-top: 80px; padding-bottom: 80px; }
+@media (max-width: 767px) {
+  section[aria-labelledby="process-heading"] { padding-top: 56px; padding-bottom: 56px; }
+}
+
+.process-header { text-align: center; margin-bottom: 48px; }
 .process-eyebrow-wrap { display: flex; justify-content: center; margin-bottom: 20px; }
-.process-heading { text-align: center; margin-bottom: 16px; }
+.process-heading { 
+  font-size: clamp(28px, 3vw, 40px); 
+  line-height: 1.1; 
+  text-align: center; 
+  margin-bottom: 16px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  color: hsl(var(--text-primary));
+  letter-spacing: -0.02em;
+}
 .process-descriptor { text-align: center; max-width: 620px; margin: 0 auto; }
 
 .process-stages-wrapper { position: relative; max-width: 1200px; margin: 0 auto; }
@@ -821,7 +835,7 @@
 }
 
 .process-stage {
-  position: relative; min-height: 440px; padding: 28px 26px;
+  position: relative; padding: 28px 26px;
   display: flex; flex-direction: column;
   clip-path: polygon(0 0, calc(100% - 28px) 0, 100% 50%, calc(100% - 28px) 100%, 0 100%, 28px 50%);
   transition: transform 300ms ease;
@@ -857,14 +871,14 @@
 
 .process-stage-description {
   font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600;
-  color: #FFFFFF; line-height: 1.4; margin-bottom: 20px; padding-bottom: 18px;
+  color: #FFFFFF; line-height: 1.4; margin-bottom: 16px; padding-bottom: 14px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   max-width: calc(100% - 24px);
 }
 
 .process-stage-bullets {
   list-style: none; padding: 0; margin: 0;
-  display: flex; flex-direction: column; gap: 14px;
+  display: flex; flex-direction: column; gap: 12px;
   max-width: calc(100% - 24px);
 }
 .process-stage-bullet {
