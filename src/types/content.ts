@@ -114,3 +114,20 @@ export interface FooterColumn {
   title: string;
   links: { label: string; href: string }[];
 }
+
+export interface FeaturedMetric {
+  value: string;
+  label: string;
+}
+
+export interface FeaturedCaseStudy {
+  id: string;
+  slug: string;
+  sectorEyebrow: string;
+  client: string;
+  subtitle: string;
+  description: string;
+  metrics: FeaturedMetric[];
+  queueMetric: string;
+}
+
