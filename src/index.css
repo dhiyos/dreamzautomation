@@ -835,7 +835,7 @@ section[aria-labelledby="process-heading"] { padding-top: 80px; padding-bottom: 
 }
 
 .process-stage {
-  position: relative; min-height: 440px; padding: 28px 26px;
+  position: relative; padding: 28px 26px;
   display: flex; flex-direction: column;
   clip-path: polygon(0 0, calc(100% - 28px) 0, 100% 50%, calc(100% - 28px) 100%, 0 100%, 28px 50%);
   transition: transform 300ms ease;
