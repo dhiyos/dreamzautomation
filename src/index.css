@@ -871,7 +871,7 @@ section[aria-labelledby="process-heading"] { padding-top: 80px; padding-bottom: 
 
 .process-stage-description {
   font-family: 'Montserrat', sans-serif; font-size: 13px; font-weight: 600;
-  color: #FFFFFF; line-height: 1.4; margin-bottom: 20px; padding-bottom: 18px;
+  color: #FFFFFF; line-height: 1.4; margin-bottom: 16px; padding-bottom: 14px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   max-width: calc(100% - 24px);
 }
