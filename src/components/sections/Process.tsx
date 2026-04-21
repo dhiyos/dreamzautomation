@@ -27,7 +27,7 @@ export const Process = () => {
         <div className="process-eyebrow-wrap">
           <Eyebrow text="OUR PROCESS" variant="blue" />
         </div>
-        <h2 id="process-heading" className="heading-h2 process-heading">
+        <h2 id="process-heading" className="process-heading">
           From Concept to <br />
           Commissioning.
         </h2>
