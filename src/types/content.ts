@@ -1,9 +1,14 @@
 export interface Testimonial {
   id: string;
-  quote: string;
   clientName: string;
-  projectDescription: string;
-  accent?: 'blue' | 'teal';
+  authorName: string;
+  authorRole: string;
+  date: string;
+  projectContext: string;
+  quote: string;
+  logoPath: string | null;
+  logoTextClass?: string;
+  accent: 'blue' | 'teal';
 }
 
 export interface CaseStudy {
@@ -84,6 +89,23 @@ export interface Article {
   category: 'technical' | 'market' | 'founder';
 }
 
+export interface InsightSlot {
+  id: string;
+  pillar: 'technical' | 'market' | 'founder';
+  pillarLabel: string;
+  accent: 'blue' | 'teal';
+  authorName: string;
+  authorRole: string;
+  authorInitials: string;
+  authorPhotoPath: string | null;
+  status: 'coming-soon' | 'published';
+  title?: string;
+  excerpt?: string;
+  date?: string;
+  readTime?: string;
+  slug?: string;
+}
+
 export interface Engineer {
   id: string;
   name: string;
@@ -95,12 +117,20 @@ export interface Engineer {
   photoPath: string | null;
 }
 
+export interface CertificationDetail {
+  label: string;
+  value: string;
+}
+
 export interface Certification {
   id: string;
+  categoryTag: string;
+  accent: 'blue' | 'teal';
   title: string;
-  subtitle: string;
-  validUntil: string;
-  logoPath?: string;
+  statement: string;
+  details: CertificationDetail[];
+  logoPath?: string | null;
+  markInitials?: string;
 }
 
 export interface ClientLogo {

@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Internal / sensitive assets — kept local only
+DREAMZ_HANDOFF.md
+testimonials/

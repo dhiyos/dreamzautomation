@@ -6,6 +6,11 @@ import Solutions from "@/components/sections/Solutions";
 import Process from "@/components/sections/Process";
 import FeaturedCaseStudies from "@/components/sections/FeaturedCaseStudies";
 import Engineers from "@/components/sections/Engineers";
+import Certifications from "@/components/sections/Certifications";
+import Testimonials from "@/components/sections/Testimonials";
+import InsightsPreview from "@/components/sections/InsightsPreview";
+import CtaStrip from "@/components/sections/CtaStrip";
+import Footer from "@/components/sections/Footer";
 
 const Index = () => {
   return (
@@ -19,7 +24,12 @@ const Index = () => {
         <Process />
         <FeaturedCaseStudies />
         <Engineers />
+        <Certifications />
+        <Testimonials />
+        <InsightsPreview />
+        <CtaStrip />
       </main>
+      <Footer />
     </div>
   );
 };
