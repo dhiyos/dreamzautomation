@@ -1,5 +1,6 @@
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 import SiemensCard from "./SiemensCard";
+import heroBg from "@/assets/hero-it-ot-convergence.jpg";
 
 const Hero = () => {
   const reduce = useReducedMotion();
@@ -25,9 +26,28 @@ const Hero = () => {
   return (
     <section
       aria-labelledby="hero-heading"
-      className="w-full hero-section"
+      className="w-full hero-section relative overflow-hidden"
     >
-      <div className="page-container">
+      {/* Background: IT–OT convergence */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: `url(${heroBg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center right",
+        }}
+      />
+      {/* Legibility overlay — strong on left where copy lives, soft on right */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 z-0"
+        style={{
+          background:
+            "linear-gradient(90deg, hsl(var(--bg-primary) / 0.92) 0%, hsl(var(--bg-primary) / 0.78) 35%, hsl(var(--bg-primary) / 0.55) 65%, hsl(var(--bg-primary) / 0.45) 100%)",
+        }}
+      />
+      <div className="page-container relative z-10">
         <div className="grid items-center grid-cols-1 lg:grid-cols-[1.2fr_1fr] hero-grid">
           {/* Left column */}
           <motion.div variants={container} initial="hidden" animate="show" className="self-center">
