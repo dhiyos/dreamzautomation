@@ -1,4 +1,5 @@
 import { InsightSlot } from '@/types/content';
+import vinodPandey from '@/assets/engineers/vinod-pandey.jpg';
 
 export const insights: InsightSlot[] = [
   {
@@ -20,7 +21,7 @@ export const insights: InsightSlot[] = [
     authorName: 'Vinod Pandey',
     authorRole: 'Director & CEO · Strategy & Commercial',
     authorInitials: 'VP',
-    authorPhotoPath: null,
+    authorPhotoPath: vinodPandey,
     status: 'coming-soon',
   },
   {
@@ -31,7 +32,7 @@ export const insights: InsightSlot[] = [
     authorName: 'Vinod Pandey',
     authorRole: 'Director & CEO',
     authorInitials: 'VP',
-    authorPhotoPath: null,
+    authorPhotoPath: vinodPandey,
     status: 'coming-soon',
   },
 ];
