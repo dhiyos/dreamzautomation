@@ -1,5 +1,6 @@
 import { InsightSlot } from '@/types/content';
 import vinodPandey from '@/assets/engineers/vinod-pandey.jpg';
+import piyushPathak from '@/assets/engineers/piyush-pathak.jpg';
 
 export const insights: InsightSlot[] = [
   {
@@ -10,7 +11,7 @@ export const insights: InsightSlot[] = [
     authorName: 'Piyush Pathak',
     authorRole: 'Director Technical · Automation & Digitalization',
     authorInitials: 'PP',
-    authorPhotoPath: null,
+    authorPhotoPath: piyushPathak,
     status: 'coming-soon',
   },
   {
