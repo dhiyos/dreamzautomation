@@ -6,7 +6,7 @@ const Footer = () => {
   const entrance = useEntrance();
 
   return (
-    <footer className="footer-section" aria-labelledby="footer-heading">
+    <footer className="footer-section surface-inverted" aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">
         Site footer
       </h2>
@@ -18,13 +18,23 @@ const Footer = () => {
       >
         <div className="footer-grid">
           <div className="footer-brand">
-            <div className="footer-logo-wordmark">
-              <span className="footer-logo-mark" aria-hidden="true">
-                DA
-              </span>
-              <span className="footer-logo-text">Dreamz Automation</span>
-            </div>
-            <p className="footer-tagline">Engineering Your Dreamz</p>
+            <a
+              href="#"
+              aria-label="Dreamz Automation home"
+              className="footer-logo-link"
+            >
+              <img
+                src="/logos/Company/Icon.png"
+                alt=""
+                aria-hidden="true"
+                className="footer-logo-icon"
+              />
+              <img
+                src="/logos/Company/Logo.png"
+                alt="Dreamz Automation Systems Pvt. Ltd."
+                className="footer-logo-image"
+              />
+            </a>
             <address className="footer-address">
               Ajanta Compound, 3/19, Industrial Area Site II,
               <br />

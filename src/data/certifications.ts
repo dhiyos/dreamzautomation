@@ -13,7 +13,7 @@ export const certifications: Certification[] = [
       { label: 'Coverage', value: 'Delhi NCR · Since 2007' },
       { label: 'Status', value: 'Active' },
     ],
-    logoPath: null,
+    logoPath: '/logos/Company/siemens-system-house.png',
     markInitials: 'SI',
   },
   {

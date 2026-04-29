@@ -36,18 +36,16 @@ const SiemensCard = () => {
         — AUTHORIZED PARTNER
       </div>
 
-      <div
-        className="text-accent-teal"
+      <img
+        src="/logos/Company/siemens-system-house.png"
+        alt="Siemens System House"
         style={{
-          fontWeight: 800,
-          fontSize: "clamp(32px, 3.5vw, 42px)",
-          lineHeight: 1,
-          letterSpacing: "-0.01em",
-          marginBottom: 8,
+          height: 56,
+          width: "auto",
+          display: "block",
+          marginBottom: 16,
         }}
-      >
-        SIEMENS
-      </div>
+      />
 
       <div
         className="text-text-primary uppercase"

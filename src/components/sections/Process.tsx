@@ -1,13 +1,14 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import { SectionShell } from '@/components/shared/SectionShell';
-import { Eyebrow } from '@/components/shared/Eyebrow';
+import { SectionHeader } from '@/components/shared/SectionHeader';
 import { CtaButton } from '@/components/shared/CtaButton';
+import { useEntrance } from '@/lib/motion';
 import { processStages } from '@/data/process';
 
 export const Process = () => {
   const reduce = useReducedMotion();
+  const entranceProps = useEntrance();
 
-  const headerInitial = reduce ? false : { opacity: 0, y: 16 };
   const stageInitial = reduce ? false : { opacity: 0, y: 20 };
   const arcInitial = reduce ? false : { opacity: 0 };
 
@@ -16,26 +17,16 @@ export const Process = () => {
 
   return (
     <SectionShell headingId="process-heading" background="primary" ariaLabel="Our Process">
-      {/* Centred header */}
-      <motion.div
-        initial={headerInitial}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: reduce ? 0 : 0.5, ease: 'easeOut' }}
-        className="process-header"
-      >
-        <div className="process-eyebrow-wrap">
-          <Eyebrow text="OUR PROCESS" variant="blue" />
-        </div>
-        <h2 id="process-heading" className="process-heading">
-          From Concept to <br />
-          Commissioning.
-        </h2>
-        <p className="text-body-default process-descriptor">
-          Twenty years of disciplined engineering practice, distilled into a predictable
-          four-stage process. One accountable team — from the first discovery workshop to
-          long-term partnership.
-        </p>
+      <motion.div {...entranceProps}>
+        <SectionHeader
+          eyebrow="OUR PROCESS"
+          eyebrowVariant="blue"
+          heading={<>From Concept to Commissioning.</>}
+          headingId="process-heading"
+          descriptor="Twenty years of disciplined engineering practice, distilled into a predictable four-stage process. One accountable team — from the first discovery workshop to long-term partnership."
+          layout="split"
+          className="mb-[56px]"
+        />
       </motion.div>
 
       {/* Stages row */}

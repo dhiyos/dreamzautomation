@@ -86,6 +86,22 @@
 }
 
 @layer components {
+  /* Light-surface modifier: scopes design tokens to light values within its
+     subtree, so descendants using --bg, --text, and --line variables adapt
+     automatically. Used on Nav and Footer for the dark-wordmark logo. */
+  .surface-inverted {
+    --bg-primary: 214 27% 97%;        /* #F5F7FA */
+    --bg-secondary: 0 0% 100%;        /* #FFFFFF */
+    --bg-tertiary: 213 25% 93%;       /* light card */
+    --bg-card-hover: 213 25% 88%;
+    --text-primary: 213 59% 10%;      /* #0B1929 */
+    --text-muted: 210 14% 35%;        /* darker on light */
+    --text-dim: 210 16% 50%;
+    --line-default: 213 20% 86%;      /* soft grey rule */
+    --line-strong: 213 22% 74%;
+    color: hsl(var(--text-primary));
+  }
+
   .page-container {
     @apply mx-auto w-full;
     max-width: 1200px;
@@ -410,6 +426,316 @@
     .company-panel-arrow {
       transition-duration: 0ms !important;
     }
+  }
+
+  /* Tabbed reveal pattern for CompanyProfile (option A).
+     Numbered tabs across the top; one panel renders at a time, crossfaded. */
+  .company-tabs {
+    margin-top: 56px;
+  }
+
+  .company-tabs-list {
+    display: flex;
+    border-bottom: 1px solid hsl(var(--line-default));
+    margin-bottom: 48px;
+  }
+
+  .company-tab {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 20px 24px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    text-align: left;
+    cursor: pointer;
+    font-family: 'Montserrat', system-ui, sans-serif;
+    margin-bottom: -1px;
+    transition: border-color 200ms ease, background 200ms ease;
+  }
+  .company-tab:hover { background: hsl(var(--bg-tertiary) / 0.4); }
+  .company-tab:focus-visible {
+    outline: 2px solid var(--panel-accent, hsl(var(--accent-blue)));
+    outline-offset: -2px;
+  }
+  .company-tab[data-active="true"] {
+    border-bottom-color: var(--panel-accent);
+  }
+
+  .company-tab-seq {
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    color: hsl(var(--text-dim));
+    transition: color 200ms ease;
+  }
+  .company-tab[data-active="true"] .company-tab-seq {
+    color: var(--panel-accent);
+  }
+
+  .company-tab-label {
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: hsl(var(--text-muted));
+    transition: color 200ms ease;
+  }
+  .company-tab[data-active="true"] .company-tab-label {
+    color: hsl(var(--text-primary));
+  }
+
+  .company-tabs-panel-wrapper {
+    position: relative;
+    min-height: 280px;
+  }
+
+  .company-tab-panel {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 56px;
+    align-items: start;
+    outline: none;
+  }
+
+  .company-tab-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .company-tab-figure {
+    margin: 0;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: hsl(var(--bg-tertiary));
+  }
+
+  .company-tab-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .company-tab-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 28px 32px;
+    background: hsl(var(--bg-tertiary));
+    border: 1px dashed var(--panel-accent, hsl(var(--accent-blue)));
+    position: relative;
+  }
+  .company-tab-placeholder-seq {
+    font-family: 'Montserrat', system-ui, sans-serif;
+    font-weight: 800;
+    font-size: clamp(72px, 10vw, 140px);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: var(--panel-accent, hsl(var(--accent-blue)));
+    opacity: 0.18;
+    align-self: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    pointer-events: none;
+    user-select: none;
+  }
+  .company-tab-placeholder-tag {
+    position: absolute;
+    top: 28px;
+    left: 32px;
+    font-family: 'Montserrat', system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.20em;
+    text-transform: uppercase;
+    color: var(--panel-accent, hsl(var(--accent-blue)));
+  }
+  .company-tab-placeholder-hint {
+    font-family: 'Montserrat', system-ui, sans-serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 12px;
+    line-height: 1.5;
+    color: hsl(var(--text-muted));
+    max-width: 320px;
+  }
+
+  .company-tab-title {
+    font-family: 'Montserrat', system-ui, sans-serif;
+    font-weight: 800;
+    font-size: clamp(28px, 3.5vw, 44px);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: hsl(var(--text-primary));
+    margin-bottom: 24px;
+  }
+
+  .company-tab-rule {
+    display: block;
+    width: 48px;
+    height: 2px;
+    background: var(--panel-accent, hsl(var(--accent-blue)));
+    margin-bottom: 24px;
+  }
+
+  .company-tab-body {
+    font-family: 'Montserrat', system-ui, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: hsl(var(--text-muted));
+    max-width: 720px;
+    margin-bottom: 32px;
+  }
+
+  .company-tab-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+  }
+  .company-tab-cta-label {
+    font-family: 'Montserrat', system-ui, sans-serif;
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--panel-accent, hsl(var(--accent-blue)));
+  }
+  .company-tab-arrow {
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--panel-accent, hsl(var(--accent-blue)));
+    color: var(--panel-accent, hsl(var(--accent-blue)));
+    font-size: 14px;
+    transition: transform 200ms ease;
+  }
+  .company-tab-cta:hover .company-tab-arrow { transform: translateX(4px); }
+
+  @media (max-width: 767px) {
+    .company-tab { padding: 14px 10px; }
+    .company-tab-label { display: none; }
+    .company-tab-seq { font-size: 20px; }
+    .company-tab-title { font-size: 28px; }
+    .company-tab-body { font-size: 14px; }
+    .company-tab-panel {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .company-tab-figure { aspect-ratio: 16 / 10; }
+    .company-tab-placeholder { padding: 20px 22px; }
+    .company-tab-placeholder-seq { font-size: 80px; }
+  }
+
+  /* Sticky scroll-stack pattern for CompanyProfile.
+     Each card is a sticky tile that slides up over the previous as the user scrolls.
+     The 88px top offset clears the sticky Nav header. */
+  .company-stack {
+    margin-top: 56px;
+    position: relative;
+  }
+
+  .company-stack-card {
+    position: sticky;
+    top: 88px;
+    min-height: calc(100vh - 88px);
+    background: hsl(var(--bg-tertiary));
+    border-top: 3px solid var(--panel-accent, hsl(var(--accent-blue)));
+    padding: 56px 48px;
+    display: flex;
+    align-items: center;
+  }
+
+  .company-stack-inner {
+    width: 100%;
+    max-width: 720px;
+  }
+
+  .company-stack-seq {
+    font-family: 'Montserrat', system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    color: var(--panel-accent, hsl(var(--accent-blue)));
+    margin-bottom: 24px;
+  }
+
+  .company-stack-title {
+    font-family: 'Montserrat', system-ui, sans-serif;
+    font-weight: 800;
+    font-size: clamp(28px, 3.5vw, 44px);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: hsl(var(--text-primary));
+    margin-bottom: 24px;
+  }
+
+  .company-stack-rule {
+    display: block;
+    width: 48px;
+    height: 2px;
+    background: var(--panel-accent, hsl(var(--accent-blue)));
+    margin-bottom: 24px;
+  }
+
+  .company-stack-body {
+    font-family: 'Montserrat', system-ui, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: hsl(var(--text-muted));
+    max-width: 600px;
+    margin-bottom: 32px;
+  }
+
+  .company-stack-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+  }
+  .company-stack-cta-label {
+    font-family: 'Montserrat', system-ui, sans-serif;
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--panel-accent, hsl(var(--accent-blue)));
+  }
+  .company-stack-arrow {
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--panel-accent, hsl(var(--accent-blue)));
+    color: var(--panel-accent, hsl(var(--accent-blue)));
+    font-size: 14px;
+    transition: transform 200ms ease;
+  }
+  .company-stack-cta:hover .company-stack-arrow { transform: translateX(4px); }
+
+  @media (max-width: 767px) {
+    .company-stack-card {
+      top: 80px;
+      min-height: calc(100vh - 80px);
+      padding: 40px 24px;
+    }
+    .company-stack-title { font-size: 28px; }
+    .company-stack-body { font-size: 14px; }
   }
 
 @keyframes marquee-scroll {
@@ -2115,42 +2441,23 @@ section[aria-labelledby="process-heading"] { padding-top: 80px; padding-bottom: 
     flex-direction: column;
   }
 
-  .footer-logo-wordmark {
-    display: flex;
+  .footer-logo-link {
+    display: inline-flex;
     align-items: center;
     gap: 12px;
-    margin-bottom: 14px;
+    margin-bottom: 28px;
   }
-  .footer-logo-mark {
-    width: 36px;
+  .footer-logo-icon {
     height: 36px;
-    border: 1.5px solid hsl(var(--accent-teal));
-    color: hsl(var(--accent-teal));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 13px;
-    font-weight: 800;
-    letter-spacing: 0.04em;
+    width: auto;
+    display: block;
+    flex-shrink: 0;
   }
-  .footer-logo-text {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
-    font-weight: 800;
-    letter-spacing: 0.02em;
-    color: hsl(var(--text-primary));
-    text-transform: uppercase;
-  }
-
-  .footer-tagline {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    font-style: italic;
-    color: hsl(var(--text-muted));
-    margin: 0 0 24px 0;
-    letter-spacing: -0.005em;
+  .footer-logo-image {
+    height: 36px;
+    width: auto;
+    max-width: 100%;
+    display: block;
   }
 
   .footer-address {
