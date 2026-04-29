@@ -26,3 +26,4 @@ dist-ssr
 # Internal / sensitive assets — kept local only
 DREAMZ_HANDOFF.md
 testimonials/
+public/Insights/
