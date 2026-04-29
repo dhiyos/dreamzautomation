@@ -1,3 +1,4 @@
+import profileWhoWeAre from '@/assets/profile-who-we-are.jpg';
 import profileCapability from '@/assets/profile-capability.jpg';
 import profileFacility from '@/assets/profile-facility.jpg';
 import profileSiemens from '@/assets/profile-siemens.jpg';
