@@ -18,7 +18,7 @@ export const companyProfile: ProfileCard[] = [
     title: 'Who We Are',
     body: 'Founded in 2005 by a team of professionals with 30+ years of industry expertise. A leading System Integrator delivering end-to-end Industrial Automation solutions — from concept to commissioning.',
     accent: 'blue',
-    imagePath: null,
+    imagePath: profileWhoWeAre,
     imageHint: 'Founders / leadership team — wide indoor portrait at HQ',
   },
   {
