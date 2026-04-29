@@ -1,4 +1,5 @@
 import { Engineer } from '@/types/content';
+import vinodPandey from '@/assets/engineers/vinod-pandey.jpg';
 
 export const engineers: Engineer[] = [
   {
@@ -9,7 +10,7 @@ export const engineers: Engineer[] = [
     accent: 'teal',
     bio: 'Primary voice for Dreamz on customer engagements and industry commentary. Over three decades in automation across petrochemicals, process industry, and transportation.',
     initials: 'VP',
-    photoPath: null,
+    photoPath: vinodPandey,
   },
   {
     id: 'piyush-pathak',
