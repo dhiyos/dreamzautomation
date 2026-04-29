@@ -35,7 +35,7 @@ const Hero = () => {
         style={{
           backgroundImage: `url(${heroBg})`,
           backgroundSize: "cover",
-          backgroundPosition: "center right",
+          backgroundPosition: "center left",
         }}
       />
       {/* Legibility overlay — strong on left where copy lives, soft on right */}
@@ -44,7 +44,7 @@ const Hero = () => {
         className="absolute inset-0 z-0"
         style={{
           background:
-            "linear-gradient(90deg, hsl(var(--bg-primary) / 0.92) 0%, hsl(var(--bg-primary) / 0.78) 35%, hsl(var(--bg-primary) / 0.55) 65%, hsl(var(--bg-primary) / 0.45) 100%)",
+            "linear-gradient(90deg, hsl(var(--bg-primary) / 0.92) 0%, hsl(var(--bg-primary) / 0.78) 35%, hsl(var(--bg-primary) / 0.65) 65%, hsl(var(--bg-primary) / 0.55) 100%)",
         }}
       />
       <div className="page-container relative z-10">
@@ -100,19 +100,8 @@ const Hero = () => {
               under one roof.
             </motion.p>
 
-            {/* Body */}
-            <motion.p
-              variants={item}
-              className="text-text-muted"
-              style={{ fontWeight: 400, fontSize: 15, lineHeight: 1.75, maxWidth: 460, marginBottom: 36 }}
-            >
-              Siemens Authorized System House for Delhi NCR. 50+ engineering professionals.
-              10,000 sq. ft. integration facility. Trusted by Reliance, IOCL, DMRC, Motherson,
-              Frick, and 50+ industry leaders across India and beyond.
-            </motion.p>
-
             {/* CTA row */}
-            <motion.div variants={item} className="flex flex-wrap items-center" style={{ gap: 12 }}>
+            <motion.div variants={item} className="flex flex-wrap items-center" style={{ gap: 12, marginTop: 8 }}>
               <a
                 href="#"
                 className="bg-accent-blue hover:bg-accent-blue-hover text-text-primary uppercase transition-colors duration-150 inline-block"
