@@ -1,3 +1,7 @@
+import profileCapability from '@/assets/profile-capability.jpg';
+import profileFacility from '@/assets/profile-facility.jpg';
+import profileSiemens from '@/assets/profile-siemens.jpg';
+
 export interface ProfileCard {
   id: string;
   title: string;
@@ -21,7 +25,7 @@ export const companyProfile: ProfileCard[] = [
     title: 'Our Capability',
     body: '50 professionals including a 20-member Engineering Division spanning Electrical, Electronics, Computer Science and Mechanical Engineering. In-house design, assembly, software development and commissioning — all under one roof.',
     accent: 'teal',
-    imagePath: null,
+    imagePath: profileCapability,
     imageHint: 'Engineers at workstations / control desk in operation',
   },
   {
@@ -29,7 +33,7 @@ export const companyProfile: ProfileCard[] = [
     title: 'Our Facility',
     body: '10,000 sq. ft. manufacturing and integration facility in Ghaziabad, UP. Equipped for panel fabrication, system assembly, factory acceptance testing (FAT), and software development for complex automation projects.',
     accent: 'blue',
-    imagePath: null,
+    imagePath: profileFacility,
     imageHint: 'Panel fabrication floor / FAT bay — wide environmental shot',
   },
   {
@@ -37,7 +41,7 @@ export const companyProfile: ProfileCard[] = [
     title: 'Siemens Partnership',
     body: 'Certified Siemens Authorized System House for Automation & Drives — Delhi NCR since 2007. ISO 9001:2015 certified. CE Marked products confirmed by TÜV India under the EU Low Voltage Directive.',
     accent: 'teal',
-    imagePath: null,
+    imagePath: profileSiemens,
     imageHint: 'Siemens-branded equipment in commissioning / S7 PLC rack closeup',
   },
 ];
