@@ -97,4 +97,52 @@ export const testimonials: Testimonial[] = [
     logoPath: null,
     accent: 'blue',
   },
+  {
+    id: 'uflex-line1',
+    clientName: 'Uflex Limited',
+    authorName: 'K. Dimri',
+    authorRole: 'Senior Manager · Uflex',
+    date: 'January 2020',
+    projectContext: 'Line-1 Barmag & Dornier electronics upgrade · S7-400 PLCs, AC/DC drives, SCADA',
+    quote:
+      'Since 7th January 2020 plant is running satisfactorily as required from production point of view. A basic training has been imparted to the Uflex engineers for maintenance and trouble shooting, and final as-built versions of wiring drawing, PLC software, SCADA software and drive configuration were handed over. Project has been completed successfully and is under production.',
+    logoPath: null,
+    accent: 'teal',
+  },
+  {
+    id: 'vacmet-line1',
+    clientName: 'Vacmet India Limited · Chhata Plant (Unit-IV)',
+    authorName: 'S.S. Kholiya',
+    authorRole: 'Vacmet India Ltd.',
+    date: 'March 2025',
+    projectContext: 'Unit-4 Line-1 electronics upgrade · Master Drives → Sinamics AC drives, switchgear retrofit, PLC software modification',
+    quote:
+      'Since first phase to third phase modification, plant is running satisfactorily as required from production point of view. A basic training has been imparted to the Vacmet engineers for maintenance and trouble shooting, and PLC software and drive configuration have been handed over. Project has been completed successfully and is under production.',
+    logoPath: null,
+    accent: 'blue',
+  },
+  {
+    id: 'naini-group',
+    clientName: 'Naini Group of Industries · Naini Paper & Tissues',
+    authorName: 'Naini Group of Industries',
+    authorRole: 'Plant Engineering · OEM Yokogawa India',
+    date: 'December 2018',
+    projectContext: '~30 plant PLC/DCS integrated to MIS via OPC gateway · Biogas, Ash Handling, Dryer, ETP, ODL, Paper Machine, Calender, Boilers',
+    quote:
+      'Above work was carried out to the best of our satisfaction and was completed well within the defined timeframe, and we wish Dreamz Team success in their future projects.',
+    logoPath: null,
+    accent: 'teal',
+  },
+  {
+    id: 'bel-ghaziabad',
+    clientName: 'Bharat Electronics Limited · Ghaziabad',
+    authorName: 'Mohan Lal',
+    authorRole: 'Dy. Manager (CS-Elect) · BEL Ghaziabad',
+    date: 'September 2018',
+    projectContext: 'Networking of sub-stations across 4 phases (2008–2017) · Modbus communication to central SCADA',
+    quote:
+      'The above mentioned works has satisfactorily been completed in all respects as per terms and conditions of the respective work orders. The work mainly includes central control and monitoring of breakers for opening and closing, and display of status and faults through central SCADA system.',
+    logoPath: null,
+    accent: 'blue',
+  },
 ];
