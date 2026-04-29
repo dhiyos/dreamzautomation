@@ -1,5 +1,6 @@
 import { Engineer } from '@/types/content';
 import vinodPandey from '@/assets/engineers/vinod-pandey.jpg';
+import piyushPathak from '@/assets/engineers/piyush-pathak.jpg';
 
 export const engineers: Engineer[] = [
   {
@@ -20,7 +21,7 @@ export const engineers: Engineer[] = [
     accent: 'blue',
     bio: "Leads Dreamz's automation and digitalization engineering. Authors technical deep-dives on SCADA architecture, IT-OT integration, and Siemens ecosystem migrations.",
     initials: 'PP',
-    photoPath: null,
+    photoPath: piyushPathak,
   },
   {
     id: 'tapeshwer-tyagi',
