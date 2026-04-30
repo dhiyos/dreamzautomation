@@ -1,6 +1,7 @@
 import { Engineer } from '@/types/content';
 import vinodPandey from '@/assets/engineers/vinod-pandey.jpg';
 import piyushPathak from '@/assets/engineers/piyush-pathak.jpg';
+import tapeshwerTyagi from '@/assets/engineers/tapeshwer-tyagi.jpg';
 
 export const engineers: Engineer[] = [
   {
@@ -31,6 +32,6 @@ export const engineers: Engineer[] = [
     accent: 'blue',
     bio: 'Leads motion control and drive engineering. Deep expertise in Sinamics drive migrations, servo systems, and precision motion for the converting and automotive verticals.',
     initials: 'TT',
-    photoPath: null,
+    photoPath: tapeshwerTyagi,
   },
 ];
