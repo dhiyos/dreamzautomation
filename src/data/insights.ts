@@ -1,6 +1,7 @@
 import { InsightSlot } from '@/types/content';
 import vinodPandey from '@/assets/engineers/vinod-pandey.jpg';
 import piyushPathak from '@/assets/engineers/piyush-pathak.jpg';
+import tapeshwerTyagi from '@/assets/engineers/tapeshwer-tyagi.jpg';
 
 export const insights: InsightSlot[] = [
   {
@@ -28,7 +29,7 @@ export const insights: InsightSlot[] = [
     authorName: 'Tapeshwer Tyagi',
     authorRole: 'Director Technical · Motion & Drive Technology',
     authorInitials: 'TT',
-    authorPhotoPath: null,
+    authorPhotoPath: tapeshwerTyagi,
     status: 'published',
     title: 'Eleven signals that turn a coating machine into a measurable asset',
     excerpt:
