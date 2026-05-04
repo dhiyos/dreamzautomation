@@ -28,7 +28,7 @@ export const certifications: Certification[] = [
       { label: 'Scope', value: 'Manufacture & trading of automation solutions' },
       { label: 'Validity', value: 'Through November 2027' },
     ],
-    logoPath: null,
+    logoPath: '/logos/certifications/ISO_9001-2015.svg.png',
     markInitials: 'ISO',
   },
   {
@@ -43,7 +43,7 @@ export const certifications: Certification[] = [
       { label: 'Directive', value: 'EU Low Voltage 2014/35/EU' },
       { label: 'Declared', value: 'September 2023' },
     ],
-    logoPath: null,
+    logoPath: '/logos/certifications/TUV.png',
     markInitials: 'CE',
   },
 ];
