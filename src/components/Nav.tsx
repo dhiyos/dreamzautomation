@@ -1,13 +1,21 @@
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { Link } from "react-router-dom";
 
-const NAV_ITEMS = [
-  "Solutions",
-  "Industries",
-  "Case Studies",
-  "Insights",
-  "About Us",
+interface NavItem {
+  label: string;
+  href: string;
+}
+
+const NAV_ITEMS: NavItem[] = [
+  { label: "Solutions", href: "#" },
+  { label: "Industries", href: "#" },
+  { label: "Case Studies", href: "#" },
+  { label: "Insights", href: "#" },
+  { label: "About Us", href: "/about" },
 ];
+
+const isInternal = (href: string) => href.startsWith("/");
 
 const Nav = () => {
   const [open, setOpen] = useState(false);
@@ -63,8 +71,8 @@ const Nav = () => {
         style={{ paddingTop: 18, paddingBottom: 18 }}
       >
         {/* Logo */}
-        <a
-          href="#"
+        <Link
+          to="/"
           aria-label="Dreamz Automation home"
           className="flex items-center shrink-0"
           style={{ gap: 12 }}
@@ -80,19 +88,29 @@ const Nav = () => {
             alt="Dreamz Automation Systems"
             style={{ height: 48, width: "auto", display: "block" }}
           />
-        </a>
+        </Link>
 
         {/* Center nav (desktop) */}
         <ul className="hidden md:flex items-center" style={{ gap: 32 }}>
           {NAV_ITEMS.map((item) => (
-            <li key={item}>
-              <a
-                href="#"
-                className="text-text-muted hover:text-text-primary transition-colors duration-150"
-                style={{ fontWeight: 500, fontSize: 13 }}
-              >
-                {item}
-              </a>
+            <li key={item.label}>
+              {isInternal(item.href) ? (
+                <Link
+                  to={item.href}
+                  className="text-text-muted hover:text-text-primary transition-colors duration-150"
+                  style={{ fontWeight: 500, fontSize: 13 }}
+                >
+                  {item.label}
+                </Link>
+              ) : (
+                <a
+                  href={item.href}
+                  className="text-text-muted hover:text-text-primary transition-colors duration-150"
+                  style={{ fontWeight: 500, fontSize: 13 }}
+                >
+                  {item.label}
+                </a>
+              )}
             </li>
           ))}
         </ul>
@@ -177,21 +195,38 @@ const Nav = () => {
               style={{ paddingTop: 8, paddingBottom: 16 }}
             >
               {NAV_ITEMS.map((item) => (
-                <li key={item}>
-                  <a
-                    href="#"
-                    onClick={() => setOpen(false)}
-                    className="block text-text-primary hover:text-accent-blue transition-colors duration-150"
-                    style={{
-                      fontWeight: 600,
-                      fontSize: 16,
-                      letterSpacing: "-0.005em",
-                      padding: "16px 0",
-                      borderBottom: "1px solid hsl(var(--line-default))",
-                    }}
-                  >
-                    {item}
-                  </a>
+                <li key={item.label}>
+                  {isInternal(item.href) ? (
+                    <Link
+                      to={item.href}
+                      onClick={() => setOpen(false)}
+                      className="block text-text-primary hover:text-accent-blue transition-colors duration-150"
+                      style={{
+                        fontWeight: 600,
+                        fontSize: 16,
+                        letterSpacing: "-0.005em",
+                        padding: "16px 0",
+                        borderBottom: "1px solid hsl(var(--line-default))",
+                      }}
+                    >
+                      {item.label}
+                    </Link>
+                  ) : (
+                    <a
+                      href={item.href}
+                      onClick={() => setOpen(false)}
+                      className="block text-text-primary hover:text-accent-blue transition-colors duration-150"
+                      style={{
+                        fontWeight: 600,
+                        fontSize: 16,
+                        letterSpacing: "-0.005em",
+                        padding: "16px 0",
+                        borderBottom: "1px solid hsl(var(--line-default))",
+                      }}
+                    >
+                      {item.label}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
