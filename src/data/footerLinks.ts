@@ -33,7 +33,7 @@ export const footerColumns: FooterColumn[] = [
     title: 'Company',
     links: [
       { label: 'About Dreamz', href: '#' },
-      { label: 'Meet the Engineers', href: '#engineers' },
+      { label: 'Meet the Founders', href: '#founders-heading' },
       { label: 'Certifications', href: '#certifications' },
       { label: 'Careers', href: '#' },
       { label: 'Contact', href: '#contact' },

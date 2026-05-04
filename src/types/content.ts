@@ -106,17 +106,6 @@ export interface InsightSlot {
   slug?: string;
 }
 
-export interface Engineer {
-  id: string;
-  name: string;
-  title: string;
-  roleTag: string;
-  accent: 'blue' | 'teal';
-  bio: string;
-  initials: string;
-  photoPath: string | null;
-}
-
 export interface CertificationDetail {
   label: string;
   value: string;
