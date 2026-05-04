@@ -6,7 +6,7 @@ const NAV_ITEMS = [
   "Industries",
   "Case Studies",
   "Insights",
-  "About",
+  "About Us",
 ];
 
 const Nav = () => {
