@@ -29,6 +29,7 @@ const Index = () => {
         <Founders
           eyebrow="Insights & Commentary"
           eyebrowVariant="blue"
+          heading="From the founders' desk."
           headingId="insights-heading"
         />
         <CtaStrip />
