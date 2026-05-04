@@ -26,7 +26,11 @@ const Index = () => {
         <Engineers />
         <Certifications />
         <Testimonials />
-        <Founders />
+        <Founders
+          eyebrow="Insights & Commentary"
+          eyebrowVariant="blue"
+          headingId="insights-heading"
+        />
         <CtaStrip />
       </main>
       <Footer />

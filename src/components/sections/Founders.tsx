@@ -3,39 +3,44 @@ import SectionShell from '@/components/shared/SectionShell';
 import SectionHeader from '@/components/shared/SectionHeader';
 import CtaButton from '@/components/shared/CtaButton';
 import {
-  foundersPhotoPath,
   foundersNoteParagraphs,
   foundersSignoff,
   foundersSignoffSubline,
 } from '@/data/founders';
 import { fadeUp, useEntrance } from '@/lib/motion';
 
-const Founders = () => {
+interface FoundersProps {
+  eyebrow?: string;
+  eyebrowVariant?: 'blue' | 'teal' | 'amber';
+  heading?: React.ReactNode;
+  headingId?: string;
+  descriptor?: string;
+}
+
+const Founders = ({
+  eyebrow = 'From the Founders',
+  eyebrowVariant = 'teal',
+  heading = 'Meet the Founders',
+  headingId = 'founders-heading',
+  descriptor = 'Vinod, Tapeshwar, and Piyush founded Dreamz Automation in 2005 and have led every project since. Three decades of combined experience across petrochemicals, process industry, motion control, and digitalization — and a shared conviction that the next era of automation is about elevating legacy systems, not replacing them.',
+}: FoundersProps = {}) => {
   const entrance = useEntrance();
 
   return (
-    <SectionShell background="primary" headingId="founders-heading">
+    <SectionShell background="primary" headingId={headingId}>
       <motion.div {...entrance} variants={fadeUp}>
         <SectionHeader
-          eyebrow="From the Founders"
-          eyebrowVariant="teal"
-          heading="Meet the Founders"
-          headingId="founders-heading"
-          descriptor="Vinod, Tapeshwar, and Piyush founded Dreamz Automation in 2005 and have led every project since. Three decades of combined experience across petrochemicals, process industry, motion control, and digitalization — and a shared conviction that the next era of automation is about elevating legacy systems, not replacing them."
+          eyebrow={eyebrow}
+          eyebrowVariant={eyebrowVariant}
+          heading={heading}
+          headingId={headingId}
+          descriptor={descriptor}
           layout="split"
           className="mb-14"
         />
       </motion.div>
 
       <motion.article className="founders-note" {...entrance} variants={fadeUp}>
-        <figure className="founders-portrait">
-          <img
-            src={foundersPhotoPath}
-            alt="Vinod Pandey, Tapeshwar Tyagi, and Piyush Pathak — founders of Dreamz Automation"
-            className="founders-photo"
-          />
-        </figure>
-
         <div className="founders-note-body">
           <p className="founders-note-lead">{foundersNoteParagraphs[0]}</p>
 
