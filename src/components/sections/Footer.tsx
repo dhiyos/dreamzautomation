@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { footerColumns } from '@/data/footerLinks';
 import { fadeUp, useEntrance } from '@/lib/motion';
+
+const isInternal = (href: string) => href.startsWith('/');
 
 const Footer = () => {
   const entrance = useEntrance();
@@ -18,8 +21,8 @@ const Footer = () => {
       >
         <div className="footer-grid">
           <div className="footer-brand">
-            <a
-              href="#"
+            <Link
+              to="/"
               aria-label="Dreamz Automation home"
               className="footer-logo-link"
             >
@@ -34,7 +37,7 @@ const Footer = () => {
                 alt="Dreamz Automation Systems Pvt. Ltd."
                 className="footer-logo-image"
               />
-            </a>
+            </Link>
             <address className="footer-address">
               Ajanta Compound, 3/19, Industrial Area Site II,
               <br />
@@ -58,9 +61,15 @@ const Footer = () => {
               <ul className="footer-link-list">
                 {col.links.map((link) => (
                   <li key={link.label}>
-                    <a className="footer-link" href={link.href}>
-                      {link.label}
-                    </a>
+                    {isInternal(link.href) && !link.href.includes('#') ? (
+                      <Link className="footer-link" to={link.href}>
+                        {link.label}
+                      </Link>
+                    ) : (
+                      <a className="footer-link" href={link.href}>
+                        {link.label}
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>

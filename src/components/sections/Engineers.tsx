@@ -12,7 +12,7 @@ const Engineers = () => {
     <SectionShell background="primary" headingId="engineers-heading">
       <motion.div {...entrance} variants={fadeUp}>
         <SectionHeader
-          eyebrow="Meet the Engineers"
+          eyebrow="Meet the Founders"
           eyebrowVariant="teal"
           heading={
             <>

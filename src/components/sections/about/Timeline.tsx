@@ -11,11 +11,17 @@ const Timeline = () => {
     <SectionShell background="secondary" headingId="about-timeline-heading">
       <motion.div {...entrance} variants={fadeUp}>
         <SectionHeader
-          eyebrow="Milestones"
+          eyebrow="Capability Arc"
           eyebrowVariant="blue"
-          heading="2005 to today."
+          heading={
+            <>
+              From Siemens System House —
+              <br />
+              to IT-OT integrator.
+            </>
+          }
           headingId="about-timeline-heading"
-          descriptor="The decisions and delivered projects that brought Dreamz from a three-engineer startup in Delhi NCR to a Siemens System House serving the converting, process, and motion-control industries."
+          descriptor="The decisions, credentials, and inflection points that carried Dreamz from a three-engineer Delhi NCR startup, through the Siemens authorisation that defined the next two decades, to the connected-plant work that defines the firm today."
           layout="split"
           className="mb-14"
         />

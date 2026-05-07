@@ -15,13 +15,13 @@ const Story = () => {
           eyebrowVariant="teal"
           heading={
             <>
-              Twenty years of engineering
+              Founder-led since 2005.
               <br />
-              what comes next.
+              Built for what plants need next.
             </>
           }
           headingId="about-story-heading"
-          descriptor="Dreamz Automation is a founder-led system integrator. The same three engineers who started the firm in 2005 still review every project today."
+          descriptor="Dreamz is a founder-led system integrator. The same three engineers who started the firm in 2005 still review every project today — and the firm they built has carried its installed base from classic DCS and PLC work into edge-connected, IT-OT-ready operations."
           layout="split"
           className="mb-14"
         />

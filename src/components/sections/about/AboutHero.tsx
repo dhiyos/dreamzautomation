@@ -44,20 +44,23 @@ const AboutHero = () => {
           </div>
 
           <h1 id="about-hero-heading" className="about-hero-heading">
-            Industrial automation,{' '}
+            Twenty-one years.{' '}
             <span className="about-hero-heading-accent">
-              built by the engineers who have to live with it.
+              Three founders. One Siemens System House, now built for IT-OT.
             </span>
           </h1>
 
           <p className="about-hero-descriptor">
-            Founded in 2005 in Delhi NCR. A Siemens Authorized System House since 2007.
-            Fifty engineers and one accountable team — designing, building, commissioning,
-            and supporting automation systems that have to work the day they go live, and
-            every day after.
+            Founded in Delhi NCR in 2005 by three engineers who had already spent two
+            decades inside petrochemicals, process plants, and motion control. A Siemens
+            Authorized System House since 2007. Today, the same three founders still
+            review every brief — and the firm they built has carried its installed base
+            from classic DCS and PLC work into edge-connected, IT-OT-ready operations.
           </p>
 
           <div className="about-hero-stamps">
+            <span className="about-hero-stamp">Founder-led · Since 2005</span>
+            <span className="about-hero-stamp-divider" aria-hidden="true" />
             <span className="about-hero-stamp">Siemens System House · Since 2007</span>
             <span className="about-hero-stamp-divider" aria-hidden="true" />
             <span className="about-hero-stamp">ISO 9001:2015</span>
