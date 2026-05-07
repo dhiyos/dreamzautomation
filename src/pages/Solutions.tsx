@@ -8,6 +8,7 @@ import SectionShell from '@/components/shared/SectionShell';
 import Eyebrow from '@/components/shared/Eyebrow';
 import { solutions, itemCaseStudies } from '@/data/solutions';
 import { fadeUp, stagger, useEntrance } from '@/lib/motion';
+import solutionsHeroBg from '@/assets/solutions-hero-bg.jpg';
 
 const Solutions = () => {
   const entrance = useEntrance();
@@ -17,6 +18,7 @@ const Solutions = () => {
       <Nav />
       <main>
         <PageHero
+          backgroundImage={solutionsHeroBg}
           eyebrow="What We Build"
           headingId="solutions-page-heading"
           heading={
