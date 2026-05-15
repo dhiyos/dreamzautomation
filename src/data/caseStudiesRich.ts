@@ -12,6 +12,7 @@ export const richCaseStudies: RichCaseStudy[] = [
   // ─────────────────────────────────────────────────────────────────────────────
   {
     slug: 'iocl-mathura',
+    pillarId: 'process',
     client: 'IOCL · Mathura Refinery',
     sectorEyebrow: 'Petrochemicals & Refining',
     title: 'Legacy S-5 Hot-Standby upgrade to S7-400H · WinCC V7',
@@ -68,6 +69,7 @@ export const richCaseStudies: RichCaseStudy[] = [
   // ─────────────────────────────────────────────────────────────────────────────
   {
     slug: 'uflex-bopp',
+    pillarId: 'process',
     client: 'Uflex Industry',
     sectorEyebrow: 'Film Industry · BOPP Line Upgradation',
     title: 'Line-1 upgrade · Barmag extrusion + Dornier line · S5 to S7',
@@ -149,6 +151,7 @@ export const richCaseStudies: RichCaseStudy[] = [
   // ─────────────────────────────────────────────────────────────────────────────
   {
     slug: 'vacmet-bopp',
+    pillarId: 'process',
     client: 'Vacmet Industry',
     sectorEyebrow: 'Film Industry · BOPP Line Upgradation',
     title: 'BOPP drives upgrade to Sinamics S120 on Profinet',
@@ -199,6 +202,7 @@ export const richCaseStudies: RichCaseStudy[] = [
   // ─────────────────────────────────────────────────────────────────────────────
   {
     slug: 'airport-cms',
+    pillarId: 'process',
     client: 'Bangalore International Airport · Hyderabad International Airport',
     sectorEyebrow: 'Building Management · Airports',
     title: 'Condition Monitoring System for lifts, escalators & travelators',
@@ -257,6 +261,7 @@ export const richCaseStudies: RichCaseStudy[] = [
   // ─────────────────────────────────────────────────────────────────────────────
   {
     slug: 'dmrc-metro-line-3',
+    pillarId: 'process',
     client: 'Delhi Metro Rail Corporation · Line 3',
     sectorEyebrow: 'Transportation · Metro Tunnels',
     title: 'NP SCADA subsystem · 22 stations · 31.5 km',
@@ -307,6 +312,7 @@ export const richCaseStudies: RichCaseStudy[] = [
   // ─────────────────────────────────────────────────────────────────────────────
   {
     slug: 'kumarhati-solan-tunnel',
+    pillarId: 'process',
     client: 'Road Tunnel Authority · Kumarhati, Solan',
     sectorEyebrow: 'Transportation · Road Tunnel Automation',
     title: 'PLC, VFD & SCADA delivery for a Himachal road tunnel',

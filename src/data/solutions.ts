@@ -116,7 +116,7 @@ export const itemCaseStudies: Record<string, ItemCaseStudy> = {
     totalInCategory: 3,
   },
   'conveyor-paint': {
-    id: 'motherson-mate',
+    id: 'motherson-mate-manesar',
     client: 'Motherson MATE Manesar',
     sector: 'Automotive · Traceability System',
     metricValue: 'End-to-End',

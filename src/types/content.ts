@@ -195,6 +195,7 @@ export interface RichCaseStudyDataPoint {
 
 export interface RichCaseStudy {
   slug: string;
+  pillarId?: 'process' | 'machines' | 'training';
   client: string;
   sectorEyebrow: string;
   title: string;
