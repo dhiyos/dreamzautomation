@@ -4039,3 +4039,285 @@ section[aria-labelledby="process-heading"] { padding-top: 80px; padding-bottom: 
   }
 }
 
+@layer components {
+  /* ── Case study detail — rich variant (Title line, stamps, body grid) ── */
+  .cs-detail-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(18px, 2vw, 22px);
+    line-height: 1.35;
+    font-weight: 500;
+    font-style: italic;
+    color: hsl(var(--text-muted));
+    margin: -16px 0 28px 0;
+    max-width: 760px;
+  }
+  .cs-detail-stamps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-bottom: 28px;
+    padding-top: 4px;
+  }
+  .cs-detail-stamp {
+    display: flex;
+    flex-direction: column;
+  }
+  .cs-detail-stamp-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: hsl(var(--text-dim));
+    margin-bottom: 6px;
+  }
+  .cs-detail-stamp-value {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: hsl(var(--text-primary));
+  }
+
+  /* ── Rich detail — overview grid (lead + hero figure) ── */
+  .cs-rich-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+  .cs-rich-main { display: flex; flex-direction: column; }
+  .cs-rich-lead {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: hsl(var(--text-muted));
+  }
+  .cs-rich-figure {
+    margin: 0;
+    background: hsl(var(--bg-tertiary));
+    border: 1px solid hsl(var(--line-default));
+  }
+  .cs-rich-figure-img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .cs-rich-figure-caption {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: hsl(var(--text-dim));
+    padding: 12px 16px;
+    border-top: 1px solid hsl(var(--line-default));
+  }
+  @media (max-width: 1023px) {
+    .cs-rich-grid { grid-template-columns: 1fr; gap: 32px; }
+  }
+
+  /* ── Rich detail — section H2 ── */
+  .cs-rich-section-h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(24px, 3vw, 32px);
+    font-weight: 800;
+    letter-spacing: -0.015em;
+    color: hsl(var(--text-primary));
+    margin-bottom: 24px;
+    line-height: 1.15;
+  }
+
+  /* ── Rich detail — spec list (Existing/Upgraded) ── */
+  .cs-rich-spec-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    border-top: 1px solid hsl(var(--line-default));
+  }
+  .cs-rich-spec-row {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 24px;
+    padding: 20px 0;
+    border-bottom: 1px solid hsl(var(--line-default));
+  }
+  .cs-rich-spec-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: hsl(var(--accent-blue));
+  }
+  .cs-rich-spec-value {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: hsl(var(--text-primary));
+    line-height: 1.5;
+    margin: 0;
+  }
+  @media (max-width: 767px) {
+    .cs-rich-spec-row { grid-template-columns: 1fr; gap: 6px; padding: 16px 0; }
+  }
+
+  /* ── Rich detail — labelled bullet sections ── */
+  .cs-rich-sections {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+  .cs-rich-section { display: flex; flex-direction: column; }
+  .cs-rich-section-h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    color: hsl(var(--text-primary));
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid hsl(var(--line-strong));
+  }
+  .cs-rich-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .cs-rich-bullet {
+    position: relative;
+    padding-left: 18px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: hsl(var(--text-muted));
+  }
+  .cs-rich-bullet::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 8px;
+    height: 1px;
+    background: hsl(var(--line-strong));
+  }
+  @media (max-width: 1023px) {
+    .cs-rich-sections { grid-template-columns: 1fr; gap: 32px; }
+  }
+
+  /* ── Rich detail — equipment table ── */
+  .cs-rich-equipment-table-wrap { overflow-x: auto; }
+  .cs-rich-equipment-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .cs-rich-equipment-table th,
+  .cs-rich-equipment-table td {
+    text-align: left;
+    padding: 14px 12px;
+    border-bottom: 1px solid hsl(var(--line-default));
+    font-size: 13px;
+  }
+  .cs-rich-equipment-table thead th {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: hsl(var(--text-dim));
+    border-bottom: 1px solid hsl(var(--line-strong));
+  }
+  .cs-rich-equipment-th-num,
+  .cs-rich-equipment-td-num { width: 56px; color: hsl(var(--text-dim)); }
+  .cs-rich-equipment-td-section { color: hsl(var(--text-primary)); font-weight: 600; }
+  .cs-rich-equipment-th-qty,
+  .cs-rich-equipment-td-qty {
+    width: 80px;
+    text-align: right;
+    color: hsl(var(--accent-blue));
+    font-weight: 700;
+  }
+
+  /* ── Rich detail — data-handled grid ── */
+  .cs-rich-data-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    margin: 0;
+  }
+  .cs-rich-data-cell {
+    padding: 28px 24px;
+    border: 1px solid hsl(var(--line-default));
+    border-right: none;
+    display: flex;
+    flex-direction: column;
+  }
+  .cs-rich-data-cell:last-child { border-right: 1px solid hsl(var(--line-default)); }
+  .cs-rich-data-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: hsl(var(--text-dim));
+    margin-bottom: 14px;
+  }
+  .cs-rich-data-value {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    color: hsl(var(--text-primary));
+    line-height: 1;
+    margin: 0;
+  }
+  @media (max-width: 767px) {
+    .cs-rich-data-grid { grid-template-columns: 1fr; }
+    .cs-rich-data-cell { border-right: 1px solid hsl(var(--line-default)); border-bottom: none; }
+    .cs-rich-data-cell:last-child { border-bottom: 1px solid hsl(var(--line-default)); }
+    .cs-rich-data-cell + .cs-rich-data-cell { border-top: none; }
+  }
+
+  /* ── Rich detail — architecture image ── */
+  .cs-rich-architecture-figure {
+    margin: 0;
+    background: hsl(var(--bg-tertiary));
+    border: 1px solid hsl(var(--line-default));
+    max-width: 1000px;
+  }
+  .cs-rich-architecture-img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* ── Rich detail — SCADA gallery ── */
+  .cs-rich-gallery {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .cs-rich-gallery-item {
+    background: hsl(var(--bg-tertiary));
+    border: 1px solid hsl(var(--line-default));
+  }
+  .cs-rich-gallery-item figure { margin: 0; }
+  .cs-rich-gallery-img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  @media (max-width: 1023px) and (min-width: 768px) {
+    .cs-rich-gallery { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 767px) {
+    .cs-rich-gallery { grid-template-columns: 1fr; }
+  }
+}
+
+

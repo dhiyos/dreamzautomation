@@ -66,17 +66,17 @@ export const solutions: SolutionPillar[] = [
 
 export const itemCaseStudies: Record<string, ItemCaseStudy> = {
   bopp: {
-    id: 'jindal-bopp',
-    client: 'Jindal Polyfilms',
-    sector: 'BOPP Line Automation · 10,000 tpa',
-    metricValue: '+18%',
-    metricLabel: 'OEE Improvement · 12 Months',
+    id: 'uflex-bopp',
+    client: 'Uflex Industry',
+    sector: 'BOPP Film · Line-1 Upgradation',
+    metricValue: 'S5 → S7',
+    metricLabel: 'Hot-Standby PLC Migration',
     description:
-      "End-to-end automation of a 10,000 tpa BOPP line built around Siemens S7-1500 with integrated MES. Real-time production monitoring, automated reject classification, and shift-level OEE reporting — replacing manual logbook entries that had never been digitised.",
+      'End-to-end electronics upgrade of a Barmag extrusion and Dornier BOPP film line — Siemens S5 CPU-948 replaced with S7-400, legacy 6RA-24 DC drives swapped for new AC/DC drives, and a DOS-era black-box SCADA retired in favour of a modern stack. Hardware, software, drawings, and commissioning under one accountable team.',
     totalInCategory: 4,
   },
   tunnel: {
-    id: 'dmrc-l3',
+    id: 'dmrc-metro-line-3',
     client: 'DMRC Metro Line 3',
     sector: 'Tunnel Automation · 31.5 km',
     metricValue: '22',

@@ -162,3 +162,56 @@ export interface FeaturedCaseStudy {
   queueMetric: string;
 }
 
+export interface RichCaseStudyImage {
+  src: string;
+  alt: string;
+  caption?: string;
+}
+
+export interface RichCaseStudySpec {
+  label: string;
+  value: string;
+}
+
+export interface RichCaseStudySection {
+  label: string;
+  items: string[];
+}
+
+export interface RichCaseStudyEquipmentRow {
+  section: string;
+  quantity: string;
+}
+
+export interface RichCaseStudyEquipment {
+  title: string;
+  rows: RichCaseStudyEquipmentRow[];
+}
+
+export interface RichCaseStudyDataPoint {
+  label: string;
+  value: string;
+}
+
+export interface RichCaseStudy {
+  slug: string;
+  client: string;
+  sectorEyebrow: string;
+  title: string;
+  subtitle?: string;
+  year?: string;
+  application?: string;
+  intro: string;
+  partnerLine?: string;
+  metrics?: FeaturedMetric[];
+  spec?: RichCaseStudySpec[];
+  sections?: RichCaseStudySection[];
+  equipment?: RichCaseStudyEquipment;
+  highlights?: string[];
+  dataHandled?: RichCaseStudyDataPoint[];
+  heroImage?: RichCaseStudyImage;
+  architectureImage?: RichCaseStudyImage;
+  galleryImages?: RichCaseStudyImage[];
+  draft?: boolean;
+}
+
