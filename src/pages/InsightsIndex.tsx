@@ -41,6 +41,11 @@ const InsightsIndex = () => {
 
   return (
     <div className="min-h-screen bg-bg-primary">
+      <SEO
+        title="Insights — Technical, Market & Founder Commentary"
+        description="Engineering deep-dives, plant-floor digitalisation perspectives, and founder commentary from Dreamz Automation directors."
+        path="/insights"
+      />
       <Nav />
       <main>
         <PageHero
