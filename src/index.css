@@ -22,7 +22,7 @@
     /* Text */
     --text-primary: 0 0% 100%;        /* #FFFFFF */
     --text-muted: 210 14% 61%;        /* #8B9BAB */
-    --text-dim: 210 16% 42%;          /* #5A6B7D */
+    --text-dim: 210 16% 58%;          /* #8593A3 — AA on dark bg */
 
     /* Lines */
     --line-default: 213 46% 22%;      /* #1E3350 */
