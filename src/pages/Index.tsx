@@ -11,6 +11,9 @@ import Certifications from "@/components/sections/Certifications";
 import Testimonials from "@/components/sections/Testimonials";
 import CtaStrip from "@/components/sections/CtaStrip";
 import Footer from "@/components/sections/Footer";
+import SEO from "@/components/shared/SEO";
+import heroBg from "@/assets/hero-it-ot-convergence.jpg";
+import { Helmet } from "react-helmet-async";
 
 const Index = () => {
   return (
