@@ -9,8 +9,9 @@ import {
   allCaseStudies,
   findCaseStudyBySlug,
   findRichCaseStudyBySlug,
+  type UnifiedCaseStudy,
 } from '@/lib/caseStudies';
-import type { RichCaseStudy, UnifiedCaseStudy } from '@/types/content';
+import type { RichCaseStudy } from '@/types/content';
 import { fadeUp, useEntrance } from '@/lib/motion';
 
 const RichDetail = ({ cs }: { cs: RichCaseStudy }) => {
