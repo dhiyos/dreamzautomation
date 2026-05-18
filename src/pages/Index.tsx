@@ -25,7 +25,14 @@ const Index = () => {
         path="/"
       />
       <Helmet>
-        <link rel="preload" as="image" href={heroBg} fetchPriority="high" />
+        <link
+          rel="preload"
+          as="image"
+          href={heroBg}
+          imageSrcSet={heroBgSrcSet}
+          imageSizes="100vw"
+          fetchPriority="high"
+        />
       </Helmet>
       <Nav />
       <main>
