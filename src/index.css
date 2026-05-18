@@ -3188,8 +3188,10 @@ section[aria-labelledby="process-heading"] { padding-top: 80px; padding-bottom: 
   .page-hero-bg {
     position: absolute;
     inset: 0;
-    background-size: cover;
-    background-position: center;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
     z-index: 0;
   }
   .page-hero-bg-overlay {
