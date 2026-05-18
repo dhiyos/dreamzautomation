@@ -1,0 +1,17 @@
+# Dreamz Automation Systems
+
+> Siemens Authorized System House in Ghaziabad, India, delivering end-to-end industrial automation — DCS, PLC, SCADA, machine automation and IT-OT convergence. Operating since 2005.
+
+## Pages
+
+- [Home](/): Company overview, capabilities, featured case studies, and founders.
+- [About](/about): Company story, timeline, founders' pedigree, facility, and certifications.
+- [Solutions](/solutions): Three pillars — process industry automation, machine-level motion, and customised training kits.
+- [Industries](/industries): Verticals served — petrochemicals, BOPP/converting, automotive, food, transportation, water, and education.
+- [Case Studies](/case-studies): Selected work across DCS, PLC, SCADA, and machine automation projects.
+- [Insights](/insights): Technical, market, and founder commentary on automation and digitalization.
+
+## Optional
+
+- [IOCL Mathura case study](/case-studies/iocl-mathura): S5 → S7-400H Hot-Standby migration with WinCC V7.
+- [DMRC Metro Line 3 case study](/case-studies/dmrc-metro-line-3): Metro automation project.

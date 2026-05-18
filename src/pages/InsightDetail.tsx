@@ -7,6 +7,7 @@ import SectionShell from '@/components/shared/SectionShell';
 import NotFound from './NotFound';
 import { insights } from '@/data/insights';
 import { fadeUp, useEntrance } from '@/lib/motion';
+import SEO from '@/components/shared/SEO';
 
 const InsightDetail = () => {
   const { slug = '' } = useParams();
@@ -28,6 +29,28 @@ const InsightDetail = () => {
 
   return (
     <div className="min-h-screen bg-bg-primary">
+      <SEO
+        title={`${article.title} — Dreamz Automation`}
+        description={article.excerpt.slice(0, 158)}
+        path={`/insights/${article.slug}`}
+        ogType="article"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'Article',
+          headline: article.title,
+          description: article.excerpt,
+          author: {
+            '@type': 'Person',
+            name: article.authorName,
+            jobTitle: article.authorRole,
+          },
+          datePublished: article.date,
+          publisher: {
+            '@type': 'Organization',
+            name: 'Dreamz Automation Systems Pvt. Ltd.',
+          },
+        }}
+      />
       <Nav />
       <main>
         <section className="article-hero" aria-labelledby="article-heading">

@@ -9,9 +9,11 @@ import {
   allCaseStudies,
   findCaseStudyBySlug,
   findRichCaseStudyBySlug,
+  type UnifiedCaseStudy,
 } from '@/lib/caseStudies';
-import type { RichCaseStudy, UnifiedCaseStudy } from '@/types/content';
+import type { RichCaseStudy } from '@/types/content';
 import { fadeUp, useEntrance } from '@/lib/motion';
+import SEO from '@/components/shared/SEO';
 
 const RichDetail = ({ cs }: { cs: RichCaseStudy }) => {
   const entrance = useEntrance();
@@ -317,8 +319,36 @@ const CaseStudyDetail = () => {
   const allOthers = allCaseStudies().filter((c) => c.slug !== slug);
   const related = allOthers.slice(0, 3);
 
+  const seoTitle = rich
+    ? `${rich.client} — ${rich.title}`.slice(0, 70)
+    : cs
+      ? `${cs!.client} — ${cs!.sectorEyebrow} | Case Study`.slice(0, 70)
+      : 'Case Study';
+  const seoDesc = (rich ? rich.intro : cs?.description ?? '').slice(0, 158);
+
   return (
     <div className="min-h-screen bg-bg-primary">
+      <SEO
+        title={seoTitle}
+        description={seoDesc}
+        path={`/case-studies/${slug}`}
+        ogType="article"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'Article',
+          headline: rich ? rich.title : cs?.client ?? 'Case Study',
+          description: seoDesc,
+          author: {
+            '@type': 'Organization',
+            name: 'Dreamz Automation Systems Pvt. Ltd.',
+          },
+          publisher: {
+            '@type': 'Organization',
+            name: 'Dreamz Automation Systems Pvt. Ltd.',
+          },
+          ...(rich?.heroImage ? { image: rich.heroImage.src } : {}),
+        }}
+      />
       <Nav />
       <main>
         {rich ? <RichDetail cs={rich} /> : cs ? <ThinDetail cs={cs} /> : null}

@@ -8,6 +8,7 @@ import SectionShell from '@/components/shared/SectionShell';
 import SectionHeader from '@/components/shared/SectionHeader';
 import { insights } from '@/data/insights';
 import { fadeUp, stagger, useEntrance } from '@/lib/motion';
+import SEO from '@/components/shared/SEO';
 
 const PILLAR_ORDER: Array<{
   pillar: 'technical' | 'market' | 'founder';
@@ -40,6 +41,11 @@ const InsightsIndex = () => {
 
   return (
     <div className="min-h-screen bg-bg-primary">
+      <SEO
+        title="Insights — Technical, Market & Founder Commentary"
+        description="Engineering deep-dives, plant-floor digitalisation perspectives, and founder commentary from Dreamz Automation directors."
+        path="/insights"
+      />
       <Nav />
       <main>
         <PageHero
