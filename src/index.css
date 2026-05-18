@@ -96,7 +96,7 @@
     --bg-card-hover: 213 25% 88%;
     --text-primary: 213 59% 10%;      /* #0B1929 */
     --text-muted: 210 14% 35%;        /* darker on light */
-    --text-dim: 210 16% 50%;
+    --text-dim: 210 16% 35%;          /* AA on light bg */
     --line-default: 213 20% 86%;      /* soft grey rule */
     --line-strong: 213 22% 74%;
     color: hsl(var(--text-primary));
