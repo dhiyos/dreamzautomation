@@ -18,6 +18,14 @@ import { Helmet } from "react-helmet-async";
 const Index = () => {
   return (
     <div className="min-h-screen bg-bg-primary">
+      <SEO
+        title="Dreamz Automation — Siemens System Integrator"
+        description="Siemens Authorized System House delivering DCS, PLC, SCADA, machine automation and IT-OT convergence across India since 2005."
+        path="/"
+      />
+      <Helmet>
+        <link rel="preload" as="image" href={heroBg} fetchpriority="high" />
+      </Helmet>
       <Nav />
       <main>
         <Hero />

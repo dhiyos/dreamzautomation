@@ -8,6 +8,7 @@ import SectionShell from '@/components/shared/SectionShell';
 import SectionHeader from '@/components/shared/SectionHeader';
 import { insights } from '@/data/insights';
 import { fadeUp, stagger, useEntrance } from '@/lib/motion';
+import SEO from '@/components/shared/SEO';
 
 const PILLAR_ORDER: Array<{
   pillar: 'technical' | 'market' | 'founder';

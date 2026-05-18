@@ -7,12 +7,18 @@ import PageHero from '@/components/shared/PageHero';
 import SectionShell from '@/components/shared/SectionShell';
 import { industries } from '@/data/industries';
 import { fadeUp, stagger, useEntrance } from '@/lib/motion';
+import SEO from '@/components/shared/SEO';
 
 const Industries = () => {
   const entrance = useEntrance();
 
   return (
     <div className="min-h-screen bg-bg-primary">
+      <SEO
+        title="Industries Served — Process, Converting, Automotive & More"
+        description="Two decades across petrochemicals, BOPP/converting, automotive, food, transportation, water and engineering education in India."
+        path="/industries"
+      />
       <Nav />
       <main>
         <PageHero

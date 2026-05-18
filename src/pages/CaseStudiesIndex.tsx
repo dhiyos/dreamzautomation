@@ -8,6 +8,7 @@ import SectionShell from '@/components/shared/SectionShell';
 import SectionHeader from '@/components/shared/SectionHeader';
 import { caseStudiesByPillar } from '@/lib/caseStudies';
 import { fadeUp, stagger, useEntrance } from '@/lib/motion';
+import SEO from '@/components/shared/SEO';
 
 const PILLAR_BLURBS: Record<'process' | 'machines' | 'training', string> = {
   process:
@@ -24,6 +25,11 @@ const CaseStudiesIndex = () => {
 
   return (
     <div className="min-h-screen bg-bg-primary">
+      <SEO
+        title="Case Studies — Industrial Automation Projects in India"
+        description="Selected commissioned projects across DCS, PLC, SCADA, and machine automation — IOCL Mathura, DMRC Metro, UFlex BOPP, and more."
+        path="/case-studies"
+      />
       <Nav />
       <main>
         <PageHero

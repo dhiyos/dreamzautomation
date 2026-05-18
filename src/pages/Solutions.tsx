@@ -9,12 +9,18 @@ import Eyebrow from '@/components/shared/Eyebrow';
 import { solutions, itemCaseStudies } from '@/data/solutions';
 import { fadeUp, stagger, useEntrance } from '@/lib/motion';
 import solutionsHeroBg from '@/assets/solutions-hero-bg.jpg';
+import SEO from '@/components/shared/SEO';
 
 const Solutions = () => {
   const entrance = useEntrance();
 
   return (
     <div className="min-h-screen bg-bg-primary">
+      <SEO
+        title="Solutions — DCS, PLC, SCADA & Machine Automation"
+        description="Three pillars: process-industry automation, machine-level motion & converting, and customised training kits — designed and commissioned in Ghaziabad."
+        path="/solutions"
+      />
       <Nav />
       <main>
         <PageHero
