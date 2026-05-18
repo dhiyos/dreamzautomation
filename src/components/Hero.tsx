@@ -1,6 +1,7 @@
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 import SiemensCard from "./SiemensCard";
-import heroBg from "@/assets/hero-it-ot-convergence.jpg";
+import heroBg from "@/assets/hero-it-ot-convergence.jpg?w=768;1280;1920&format=webp&as=srcset";
+import heroBgFallback from "@/assets/hero-it-ot-convergence.jpg?w=1280&format=webp";
 
 const Hero = () => {
   const reduce = useReducedMotion();
@@ -29,14 +30,16 @@ const Hero = () => {
       className="w-full hero-section relative overflow-hidden"
     >
       {/* Background: IT–OT convergence */}
-      <div
+      <img
         aria-hidden="true"
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: `url(${heroBg})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center left",
-        }}
+        alt=""
+        src={heroBgFallback}
+        srcSet={heroBg}
+        sizes="100vw"
+        loading="eager"
+        fetchPriority="high"
+        decoding="async"
+        className="absolute inset-0 z-0 w-full h-full object-cover object-left"
       />
       {/* Legibility overlay — strong on left where copy lives, soft on right */}
       <div

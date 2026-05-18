@@ -22,7 +22,7 @@
     /* Text */
     --text-primary: 0 0% 100%;        /* #FFFFFF */
     --text-muted: 210 14% 61%;        /* #8B9BAB */
-    --text-dim: 210 16% 42%;          /* #5A6B7D */
+    --text-dim: 210 16% 58%;          /* #8593A3 — AA on dark bg */
 
     /* Lines */
     --line-default: 213 46% 22%;      /* #1E3350 */
@@ -96,7 +96,7 @@
     --bg-card-hover: 213 25% 88%;
     --text-primary: 213 59% 10%;      /* #0B1929 */
     --text-muted: 210 14% 35%;        /* darker on light */
-    --text-dim: 210 16% 50%;
+    --text-dim: 210 16% 35%;          /* AA on light bg */
     --line-default: 213 20% 86%;      /* soft grey rule */
     --line-strong: 213 22% 74%;
     color: hsl(var(--text-primary));
@@ -3188,8 +3188,10 @@ section[aria-labelledby="process-heading"] { padding-top: 80px; padding-bottom: 
   .page-hero-bg {
     position: absolute;
     inset: 0;
-    background-size: cover;
-    background-position: center;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
     z-index: 0;
   }
   .page-hero-bg-overlay {

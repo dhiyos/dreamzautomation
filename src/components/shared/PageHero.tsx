@@ -8,6 +8,7 @@ interface PageHeroProps {
   descriptor?: string;
   stamps?: string[];
   backgroundImage?: string;
+  backgroundImageSrcSet?: string;
 }
 
 const PageHero: React.FC<PageHeroProps> = ({
@@ -17,6 +18,7 @@ const PageHero: React.FC<PageHeroProps> = ({
   descriptor,
   stamps,
   backgroundImage,
+  backgroundImageSrcSet,
 }) => {
   const reduce = useReducedMotion();
   const initial = reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 };
@@ -32,10 +34,15 @@ const PageHero: React.FC<PageHeroProps> = ({
     >
       {backgroundImage ? (
         <>
-          <div
-            className="page-hero-bg"
-            style={{ backgroundImage: `url(${backgroundImage})` }}
+          <img
+            src={backgroundImage}
+            srcSet={backgroundImageSrcSet}
+            sizes="100vw"
+            alt=""
             aria-hidden="true"
+            loading="eager"
+            decoding="async"
+            className="page-hero-bg"
           />
           <div className="page-hero-bg-overlay" aria-hidden="true" />
         </>

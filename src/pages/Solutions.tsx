@@ -8,7 +8,8 @@ import SectionShell from '@/components/shared/SectionShell';
 import Eyebrow from '@/components/shared/Eyebrow';
 import { solutions, itemCaseStudies } from '@/data/solutions';
 import { fadeUp, stagger, useEntrance } from '@/lib/motion';
-import solutionsHeroBg from '@/assets/solutions-hero-bg.jpg';
+import solutionsHeroBg from '@/assets/solutions-hero-bg.jpg?w=1280&format=webp';
+import solutionsHeroBgSrcSet from '@/assets/solutions-hero-bg.jpg?w=768;1280;1920&format=webp&as=srcset';
 import SEO from '@/components/shared/SEO';
 
 const Solutions = () => {
@@ -25,6 +26,7 @@ const Solutions = () => {
       <main>
         <PageHero
           backgroundImage={solutionsHeroBg}
+          backgroundImageSrcSet={solutionsHeroBgSrcSet}
           eyebrow="What We Build"
           headingId="solutions-page-heading"
           heading={
