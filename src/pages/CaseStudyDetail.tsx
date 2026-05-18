@@ -13,6 +13,7 @@ import {
 } from '@/lib/caseStudies';
 import type { RichCaseStudy } from '@/types/content';
 import { fadeUp, useEntrance } from '@/lib/motion';
+import SEO from '@/components/shared/SEO';
 
 const RichDetail = ({ cs }: { cs: RichCaseStudy }) => {
   const entrance = useEntrance();
