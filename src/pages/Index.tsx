@@ -12,7 +12,8 @@ import Testimonials from "@/components/sections/Testimonials";
 import CtaStrip from "@/components/sections/CtaStrip";
 import Footer from "@/components/sections/Footer";
 import SEO from "@/components/shared/SEO";
-import heroBg from "@/assets/hero-it-ot-convergence.jpg";
+import heroBg from "@/assets/hero-it-ot-convergence.jpg?w=1280&format=webp";
+import heroBgSrcSet from "@/assets/hero-it-ot-convergence.jpg?w=768;1280;1920&format=webp&as=srcset";
 import { Helmet } from "react-helmet-async";
 
 const Index = () => {
