@@ -32,11 +32,17 @@ const findPillarForItem = (
   return null;
 };
 
-// Legacy featured entries don't carry pillar metadata. Map them here so the
-// CaseStudies index can group everything under a Solutions pillar.
-const LEGACY_PILLAR_OVERRIDES: Record<string, 'process' | 'machines' | 'training'> = {
-  'hero-motocorp-gurgaon': 'machines',
-  'motherson-mate-manesar': 'machines',
+// Legacy featured entries don't carry pillar or solution-item metadata.
+// Map them here so the CaseStudies index can group everything under both a
+// pillar and the specific solution vertical from the homepage.
+interface LegacyOverride {
+  pillarId: 'process' | 'machines' | 'training';
+  solutionItemId: string;
+}
+
+const LEGACY_OVERRIDES: Record<string, LegacyOverride> = {
+  'hero-motocorp-gurgaon': { pillarId: 'machines', solutionItemId: 'conveyor-paint' },
+  'motherson-mate-manesar': { pillarId: 'machines', solutionItemId: 'conveyor-paint' },
 };
 
 const pillarLabelFor = (
@@ -46,8 +52,17 @@ const pillarLabelFor = (
   return solutions.find((p) => p.id === pillarId)?.category;
 };
 
+const itemNameFor = (
+  pillarId: 'process' | 'machines' | 'training' | undefined,
+  itemId: string | undefined,
+): string | undefined => {
+  if (!pillarId || !itemId) return undefined;
+  const pillar = solutions.find((p) => p.id === pillarId);
+  return pillar?.items.find((i) => i.id === itemId)?.name;
+};
+
 const fromFeatured = (cs: FeaturedCaseStudy): UnifiedCaseStudy => {
-  const pillarId = LEGACY_PILLAR_OVERRIDES[cs.slug];
+  const override = LEGACY_OVERRIDES[cs.slug];
   return {
     slug: cs.slug,
     source: 'featured',
@@ -56,8 +71,10 @@ const fromFeatured = (cs: FeaturedCaseStudy): UnifiedCaseStudy => {
     subtitle: cs.subtitle,
     description: cs.description,
     metrics: cs.metrics,
-    pillarId,
-    pillarLabel: pillarLabelFor(pillarId),
+    pillarId: override?.pillarId,
+    pillarLabel: pillarLabelFor(override?.pillarId),
+    industryItemId: override?.solutionItemId,
+    industryItemName: itemNameFor(override?.pillarId, override?.solutionItemId),
   };
 };
 
@@ -86,10 +103,12 @@ const fromRich = (rich: RichCaseStudy): UnifiedCaseStudy => ({
   client: rich.client,
   sectorEyebrow: rich.sectorEyebrow,
   subtitle: rich.subtitle ?? rich.title,
-  description: rich.intro,
+  description: rich.valueHeadline ?? rich.intro,
   metrics: rich.metrics ?? [],
   pillarId: rich.pillarId,
   pillarLabel: pillarLabelFor(rich.pillarId),
+  industryItemId: rich.solutionItemId,
+  industryItemName: itemNameFor(rich.pillarId, rich.solutionItemId),
 });
 
 export const allCaseStudies = (): UnifiedCaseStudy[] => {
@@ -138,6 +157,21 @@ export interface PillarCaseStudies {
   caseStudies: UnifiedCaseStudy[];
 }
 
+export interface ItemCaseStudies {
+  itemId: string;
+  itemName: string;
+  caseStudies: UnifiedCaseStudy[];
+}
+
+export interface PillarWithItems {
+  pillarId: 'process' | 'machines' | 'training';
+  pillarCategory: string;
+  pillarTitle: string;
+  pillarBlurb: string;
+  pillarAccent: 'blue' | 'teal' | 'amber';
+  items: ItemCaseStudies[];
+}
+
 export const caseStudiesByPillar = (): PillarCaseStudies[] => {
   const all = allCaseStudies();
   return solutions
@@ -149,6 +183,31 @@ export const caseStudiesByPillar = (): PillarCaseStudies[] => {
       caseStudies: all.filter((cs) => cs.pillarId === pillar.id),
     }))
     .filter((group) => group.caseStudies.length > 0);
+};
+
+export const caseStudiesByPillarAndItem = (): PillarWithItems[] => {
+  const all = allCaseStudies();
+  return solutions
+    .map((pillar) => {
+      const items = pillar.items
+        .map((item) => ({
+          itemId: item.id,
+          itemName: item.name,
+          caseStudies: all.filter(
+            (cs) => cs.pillarId === pillar.id && cs.industryItemId === item.id,
+          ),
+        }))
+        .filter((entry) => entry.caseStudies.length > 0);
+      return {
+        pillarId: pillar.id as 'process' | 'machines' | 'training',
+        pillarCategory: pillar.category,
+        pillarTitle: pillar.title,
+        pillarBlurb: pillar.blurb,
+        pillarAccent: pillar.accent,
+        items,
+      };
+    })
+    .filter((group) => group.items.length > 0);
 };
 
 export const itemCaseStudiesUnified = (): UnifiedCaseStudy[] => {

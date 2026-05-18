@@ -193,18 +193,41 @@ export interface RichCaseStudyDataPoint {
   value: string;
 }
 
+export interface RichCaseStudyBeforeAfter {
+  beforeLabel: string;
+  before: RichCaseStudySpec[];
+  afterLabel: string;
+  after: RichCaseStudySpec[];
+}
+
+export interface RichCaseStudyChallenge {
+  intro?: string;
+  painPoints?: string[];
+}
+
+export interface RichCaseStudyOutcome {
+  intro?: string;
+  benefits?: string[];
+}
+
 export interface RichCaseStudy {
   slug: string;
   pillarId?: 'process' | 'machines' | 'training';
+  solutionItemId?: string;
   client: string;
   sectorEyebrow: string;
   title: string;
   subtitle?: string;
+  valueHeadline?: string;
   year?: string;
   application?: string;
   intro: string;
   partnerLine?: string;
   metrics?: FeaturedMetric[];
+  challenge?: RichCaseStudyChallenge;
+  workIntro?: string;
+  beforeAfter?: RichCaseStudyBeforeAfter;
+  outcome?: RichCaseStudyOutcome;
   spec?: RichCaseStudySpec[];
   sections?: RichCaseStudySection[];
   equipment?: RichCaseStudyEquipment;
@@ -213,6 +236,7 @@ export interface RichCaseStudy {
   heroImage?: RichCaseStudyImage;
   architectureImage?: RichCaseStudyImage;
   galleryImages?: RichCaseStudyImage[];
+  projectFacts?: RichCaseStudyDataPoint[];
   draft?: boolean;
 }
 
