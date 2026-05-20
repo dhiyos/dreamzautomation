@@ -360,9 +360,6 @@ const Industries: React.FC = () => {
                 has lived, what we've shipped, and where you'll find us this decade.
               </p>
 
-              <div className="mt-14 flex flex-wrap items-center gap-x-10 gap-y-4 text-[11px] uppercase tracking-[0.3em] font-bold text-white/50" style={FONT_HEAD}>
-                <span><span style={{ color: INDIGO_SOFT }}>20+</span> &nbsp; Years on the floor</span>
-              </div>
             </motion.div>
           </div>
         </section>
