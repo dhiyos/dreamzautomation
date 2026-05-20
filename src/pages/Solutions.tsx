@@ -289,9 +289,9 @@ const Solutions = () => {
               variants={fadeUp}
               className="text-lg md:text-2xl text-slate-300/80 max-w-3xl leading-relaxed"
             >
-              Three pillars, one accountable team in Ghaziabad — process control across
-              refineries and plants, motion and machine automation for high-speed lines, and
-              the training that puts the next generation of engineers on the floor.
+              DCS, PLC, SCADA, and machine automation — designed, built, and commissioned
+              by a single accountable team in Ghaziabad. Brownfield migrations without
+              production loss. Greenfield lines delivered on schedule.
             </motion.p>
           </motion.div>
         </header>
