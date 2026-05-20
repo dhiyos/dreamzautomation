@@ -452,10 +452,10 @@ const Industries: React.FC = () => {
 
               <motion.ul
                 variants={staggerParent}
-                className="grid gap-4 md:gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 list-none"
+                className="list-none border-b border-white/10"
               >
                 {typographicIds.map((id, i) => (
-                  <TypoTile key={id} id={id} index={i} />
+                  <AlsoServingRow key={id} id={id} index={i} />
                 ))}
               </motion.ul>
             </motion.div>
