@@ -344,11 +344,10 @@ const Industries: React.FC = () => {
                 className="text-[44px] sm:text-6xl md:text-7xl lg:text-[112px] font-black leading-[0.92] tracking-[-0.03em] text-white"
                 style={FONT_HEAD}
               >
-                Refineries, lines, tunnels &amp; plant floors.
-                <br />
                 <span style={{ color: INDIGO_SOFT, fontStyle: 'italic', fontWeight: 600 }}>
                   Engineered to run.
-                </span>{' '}
+                </span>
+                <br />
                 Built to last.
               </h1>
               <p
