@@ -15,8 +15,8 @@ import { fadeUp, useEntrance } from '@/lib/motion';
 import SEO from '@/components/shared/SEO';
 import CaseStudyArchitecture from '@/components/shared/CaseStudyArchitecture';
 
-const FONT_HEAD: React.CSSProperties = {};
-const FONT_BODY: React.CSSProperties = {};
+const FONT_HEAD: Record<string, string> = {};
+const FONT_BODY: Record<string, string> = {};
 
 const SectionLabel = ({ children }: { children: React.ReactNode }) => (
   <h2
