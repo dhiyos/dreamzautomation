@@ -2,6 +2,7 @@ import { motion, useReducedMotion, type Variants } from "framer-motion";
 import SiemensCard from "./SiemensCard";
 import heroBg from "@/assets/hero-it-ot-convergence.jpg?w=768;1280;1920&format=webp&as=srcset";
 import heroBgFallback from "@/assets/hero-it-ot-convergence.jpg?w=1280&format=webp";
+import heroVideo from "@/assets/home-hero.mp4.asset.json";
 
 const Hero = () => {
   const reduce = useReducedMotion();
