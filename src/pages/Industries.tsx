@@ -16,6 +16,7 @@ import { industries } from '@/data/industries';
 
 import heroBg from '@/assets/solutions-hero-bg.jpg?w=1920&format=webp';
 import heroBgSrcSet from '@/assets/solutions-hero-bg.jpg?w=768;1280;1920&format=webp&as=srcset';
+import heroVideo from '@/assets/industries/hero.mp4.asset.json';
 import imgPetrochem from '@/assets/industries/petrochem.jpg?w=1400&format=webp';
 import imgConverting from '@/assets/industries/converting.jpg?w=1000&format=webp';
 import imgAutomotive from '@/assets/industries/automotive.jpg?w=1000&format=webp';
