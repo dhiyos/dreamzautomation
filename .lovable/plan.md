@@ -1,111 +1,76 @@
+## Goal
 
+Replace the current bento + 4-column tile grid on `/industries` with an editorial, full-width stacked layout. One industry per scroll band, alternating image and copy across the band, with generous vertical breathing room. Nothing stitched together, nothing fighting for attention.
 
-## Finalised Architecture — Confirmed & Locked
-
-All adjustments and answers integrated. Ready to build shared primitives first, then sections one prompt at a time.
-
----
-
-### Confirmations
-
-I will:
-
-- **Build shared primitives first, in one commit**, before any section work — so every section can import from a stable foundation.
-- **Follow exact component APIs** from the approved plan + your adjustments below.
-- **Respect all design constraints**: sharp corners (`rounded-none` everywhere), Montserrat only, no gradients, no shadows (except focus-visible rings), no `rounded-*` utilities.
-- **Data layer**: typed arrays in `src/data/*.ts`, shared interfaces in `src/types/content.ts`.
-- **Animations**: every section entrance goes through the shared `useEntrance` hook; `useReducedMotion` honoured globally; marquee uses CSS keyframes paused under `prefers-reduced-motion: reduce`.
-- **No speculative plumbing**: no CMS, no routing, no auth — just static composition.
-
----
-
-### Adjustments locked in
-
-| # | Adjustment | Status |
-|---|---|---|
-| 1 | Footer = Brand / Solutions / Case Studies / Insights / Company (no Industries column) | Locked |
-| 2 | H2: clamp(32px, 4vw, 48px), tracking -0.02em, line-height 1.08, ExtraBold | Locked |
-| 3 | `AccentCard hover='surface'` → `bg-card-hover` (#1A3048) | Locked |
-| 4 | Engineers: Vinod gets `accent-teal` top rule; Piyush + Tapeshwer get `accent-blue` top rules | Locked |
-| 5 | `CtaButton` accepts `icon?: string` prop, default `→`, rendered after label | Locked |
-
-### Open-question answers locked in
-
-- **Case study cards**: whole card = `<a>` wrapping `<article>`, ghost "Read case study →" inside.
-- **Insights**: local `data/insights.ts` + `// TODO: Replace with CMS integration...` comment.
-- **Engineers**: 2-sentence bios, email always visible via `ContactEmail`.
-- **Architecture**: `PlaceholderImage` 16/10, label `SYSTEM ARCHITECTURE DIAGRAM — DMRC METRO LINE 3`.
-- **Certifications**: small 80×80 placeholder area, typography-led card body.
-- **Trust bar**: monochrome `<span>` wordmarks (Montserrat tracking tuned per brand), opacity 0.5 → 1.0 + `text-muted` → `text-primary` on hover. Swap to `<img>` later, no other changes.
-- **CTA strip**: full-bleed `accent-blue` band, inner content in `.page-container`, primary button = white bg / `accent-blue` text (amber stays training-only).
-
----
-
-### Additions accepted
-
-**Addition A — `ContactEmail` primitive** added to shared primitives commit:
-
-```ts
-interface ContactEmailProps {
-  email: string;
-  className?: string;
-  label?: string;     // optional override; default = email itself
-}
-// Renders <a href="mailto:..."> with text-accent-blue + hover underline.
-```
-
-**Addition B — Global typography utilities** added to `src/index.css` under `@layer components`:
-
-- `.text-eyebrow` — Semibold 11px uppercase, tracking 0.18em, `text-accent-blue`
-- `.text-tagline-italic` — Medium Italic 22px (clamped where used), line-height 1.4, `text-text-muted`
-- `.text-body-large` — Regular 15px, line-height 1.75, `text-text-muted`, max-width 460px
-- `.text-card-title` — Bold 17px, tracking -0.005em, `text-text-primary`
-- `.text-card-body` — Regular 13px, line-height 1.7, `text-text-muted`
-
-Sections apply these via single class names instead of 5–6 Tailwind utilities.
-
----
-
-### Updated shared-primitives file list (Prompt 1 scope)
+## Layout
 
 ```text
-src/components/shared/
-  SectionShell.tsx
-  SectionHeader.tsx
-  Eyebrow.tsx
-  AccentCard.tsx
-  CtaButton.tsx           ← now accepts icon prop
-  PlaceholderImage.tsx
-  SequenceMarker.tsx
-  ContactEmail.tsx        ← NEW (Addition A)
-src/lib/
-  motion.ts               ← fadeUp, stagger, useEntrance
-src/types/
-  content.ts              ← shared interfaces
-src/index.css             ← + .text-eyebrow / .text-tagline-italic / .text-body-large / .text-card-title / .text-card-body (Addition B)
+┌──────────────────────────────────────────────────────────────┐
+│ HERO (unchanged: "Engineered to run. / Built to last.")      │
+└──────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────────────────────────────────────────┐
+│  01 · Petrochemicals & Refining                              │
+│  ┌────────────────────────┐    Pillar · Process              │
+│  │                        │    Big serif/italic accent       │
+│  │     image (left)       │    Blurb (max ~60ch)             │
+│  │                        │    [ Explore more → ]            │
+│  └────────────────────────┘                                  │
+└──────────────────────────────────────────────────────────────┘
+                          ~ 160px gap
+┌──────────────────────────────────────────────────────────────┐
+│  02 · Converting & Film Plants            ┌───────────────┐  │
+│  Pillar · Process / Machines              │               │  │
+│  Blurb                                    │ image (right) │  │
+│  [ Explore more → ]                       │               │  │
+│                                           └───────────────┘  │
+└──────────────────────────────────────────────────────────────┘
+... continues alternating for all 5 featured industries ...
+
+┌──────────────────────────────────────────────────────────────┐
+│  ALSO SERVING                                                │
+│  Single quiet section: 4 industries as a horizontal          │
+│  type-only list (name · pillar · one-line blurb), no cards.  │
+└──────────────────────────────────────────────────────────────┘
+
+CTA strip + Footer (unchanged)
 ```
 
-No section files touched in Prompt 1. `Hero.tsx` will be lightly refactored later (after primitives exist) to consume `Eyebrow` + `CtaButton` — but only as a follow-up cleanup, not in Prompt 1, to avoid scope creep.
+Each band is ≥ 80vh on desktop so only one industry is visible at a time. Image takes ~50% of the band width, copy column ~40%, with ~10% gutter. Mobile collapses to a single stacked column with the image on top.
 
----
+## Sections
 
-### Build order (locked)
+1. **Hero** — keep as-is.
+2. **Featured industries (5 bands)** — Petrochemicals, Converting, Automotive, Transportation, Education. One per full-width section, alternating sides (odd = image-left, even = image-right). Each band contains:
+   - Index number (`01 — 05`) as oversized faint numeral in the background of the copy column
+   - Pillar eyebrow chip (Process / Machines / Training, colored per existing accent)
+   - Industry name as the big editorial heading
+   - Blurb (existing copy from `industries.ts`)
+   - "Explore more →" link wrapping the whole band when a `caseStudySlug` exists
+3. **Also serving** — replace the 4-column TypoTile grid with a single quiet typographic list. One row per industry, separated by hairlines: `Name · Pillar · short blurb`. No card chrome.
+4. **CTA strip + Footer** — unchanged.
 
-1. **Shared primitives** ← awaiting your Prompt 1 spec
-2. Trust Bar
-3. Company Profile
-4. Solutions
-5. Featured Product
-6. Featured Case Studies
-7. Architecture Showcase
-8. Engineers
-9. Certifications
-10. Testimonials
-11. Insights Preview
-12. CTA Strip
-13. Footer
+## Motion
 
----
+- Each band fades + slides up on enter (existing `fadeUp` variant) with `viewport={{ once: true, amount: 0.3 }}`.
+- Image inside the band keeps the existing `ParallaxImage` scroll-linked parallax so the band has subtle life as the user scrolls through it.
+- Reduced-motion: fades disabled, parallax disabled (already wired via `useReducedMotion`).
 
-Confirmed and ready. Send the **Prompt 1 — Shared Primitives** spec when ready and I'll build the full primitives commit against the APIs above.
+## Technical changes
 
+- **`src/pages/Industries.tsx`** — rewrite the two sections after the hero (`Featured industries` bento + `Also serving` grid).
+  - Remove the `ImageTile` bento block and the `TypoTile` 4-column grid.
+  - Add a new `IndustryBand` local component that renders one full-width section, takes an `index` prop to decide alignment (`index % 2 === 0` → image-left), and reuses the same data lookups (`get(id)`, `pillarAccentColor`).
+  - Map `featuredOrder` → `<IndustryBand />` stack.
+  - Add a new `AlsoServingList` block: simple `<ul>` of typographic rows with hairline `border-b`.
+- Reuse existing `FONT_HEAD`, `FONT_BODY`, `INDIGO`, `INDIGO_SOFT`, accent helpers, and the existing `ParallaxImage` and `Tilt` (Tilt is dropped for bands — too noisy at full width).
+- No data changes (`src/data/industries.ts` stays the same).
+- No new routes, no new dependencies.
+- No changes to `index.css` / `tailwind.config.ts`.
+
+## Out of scope
+
+- Hero (unchanged).
+- Industry copy / order in `industries.ts` (unchanged).
+- CTA strip and footer (unchanged).
+- Other pages.

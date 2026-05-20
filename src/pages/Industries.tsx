@@ -135,143 +135,154 @@ const featuredOrder: ImgKey[] = [
 ];
 const typographicIds = ['food-beverage', 'water', 'building-services', 'ceramics'];
 
-// ── Image-led bento tile ─────────────────────────────────────────────────
-const ImageTile: React.FC<{
-  id: ImgKey;
-  index: number;
-  className?: string;
-}> = ({ id, index, className }) => {
+// ── Editorial band (one industry, full-width, alternating sides) ─────────
+const IndustryBand: React.FC<{ id: ImgKey; index: number }> = ({ id, index }) => {
   const ind = get(id);
   if (!ind) return null;
-  const inner = (
-    <Tilt className="w-full h-full">
+  const imageLeft = index % 2 === 0;
+
+  const accentColor =
+    ind.pillarAccent === 'teal' ? '#5eead4' : ind.pillarAccent === 'amber' ? '#fbbf24' : INDIGO_SOFT;
+
+  const media = (
+    <div className="relative w-full" style={{ aspectRatio: '4 / 3' }}>
+      <ParallaxImage
+        src={heroImages[id]}
+        alt={ind.name}
+        className="absolute inset-0 w-full h-full"
+        imgClassName="w-full h-full object-cover"
+        range={50}
+      />
       <div
-        className="group relative overflow-hidden h-full"
+        aria-hidden="true"
+        className="absolute inset-0 pointer-events-none"
         style={{
-          background: SURFACE,
-          boxShadow: '0 30px 80px -40px rgba(79,70,229,0.45)',
+          background:
+            'linear-gradient(180deg, rgba(10,10,26,0) 60%, rgba(10,10,26,0.55) 100%)',
+        }}
+      />
+    </div>
+  );
+
+  const copy = (
+    <div className="relative">
+      <span
+        aria-hidden="true"
+        className="absolute -top-10 md:-top-14 -left-2 md:-left-4 font-black select-none pointer-events-none leading-none"
+        style={{
+          ...FONT_HEAD,
+          fontSize: 'clamp(120px, 18vw, 240px)',
+          color: 'rgba(79,70,229,0.07)',
+          letterSpacing: '-0.05em',
         }}
       >
-        <ParallaxImage
-          src={heroImages[id]}
-          alt={ind.name}
-          className="absolute inset-0 w-full h-full"
-          imgClassName="w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-[900ms]"
-          range={45}
-        />
-        {/* gradient overlays */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              'linear-gradient(180deg, rgba(10,10,26,0.15) 0%, rgba(10,10,26,0.55) 55%, rgba(10,10,26,0.92) 100%)',
-          }}
-        />
-        {/* indigo edge wash on hover */}
-        <div
-          className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700"
-          style={{
-            background:
-              'radial-gradient(ellipse at top right, rgba(79,70,229,0.35), transparent 60%)',
-          }}
-        />
+        {String(index + 1).padStart(2, '0')}
+      </span>
 
-        {/* numeric index */}
+      <div className="relative">
         <div
-          className="absolute top-5 left-6 text-[10px] font-bold uppercase tracking-[0.35em]"
-          style={{ ...FONT_HEAD, color: INDIGO_SOFT, transform: 'translateZ(40px)' }}
+          className="text-[11px] font-bold uppercase tracking-[0.35em] mb-6 flex items-center gap-3"
+          style={{ ...FONT_HEAD, color: accentColor }}
         >
+          <span
+            aria-hidden="true"
+            style={{ background: accentColor, width: 28, height: 1, display: 'inline-block' }}
+          />
           {String(index + 1).padStart(2, '0')} · {ind.pillarLabel}
         </div>
 
-        {/* arrow */}
-        <div
-          className="absolute top-4 right-4 h-9 w-9 rounded-full border border-white/20 flex items-center justify-center text-sm text-white/70 group-hover:bg-[#4f46e5] group-hover:border-[#4f46e5] group-hover:text-white transition-all duration-300"
-          style={{ transform: 'translateZ(60px)' }}
+        <h3
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-bold leading-[1.02] tracking-[-0.02em] text-white mb-8"
+          style={FONT_HEAD}
         >
-          ↗
-        </div>
+          {ind.name}
+        </h3>
 
-        {/* content */}
-        <div
-          className="absolute inset-x-0 bottom-0 p-6 md:p-8 flex flex-col gap-3"
-          style={{ transform: 'translateZ(30px)' }}
+        <p
+          className="text-base md:text-lg leading-relaxed text-white/70 max-w-[58ch] mb-10"
+          style={FONT_BODY}
         >
-          <h3
-            className="text-2xl md:text-[28px] lg:text-3xl font-bold leading-[1.05] text-white tracking-tight"
+          {ind.blurb}
+        </p>
+
+        {ind.caseStudySlug ? (
+          <span
+            className="inline-flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.25em] text-white"
             style={FONT_HEAD}
           >
-            {ind.name}
-          </h3>
-          <p
-            className="text-sm md:text-[15px] leading-relaxed text-white/70 max-w-[52ch] line-clamp-3 md:line-clamp-4"
-            style={FONT_BODY}
-          >
-            {ind.blurb}
-          </p>
-          {ind.caseStudySlug ? (
-            <div className="mt-2 flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.22em] text-[#a5b4fc]">
-              <span
-                aria-hidden="true"
-                style={{ background: INDIGO, width: 24, height: 1, display: 'inline-block' }}
-              />
-              <span className="truncate" style={FONT_HEAD}>
-                Explore more →
-              </span>
-            </div>
-          ) : null}
-        </div>
+            <span
+              aria-hidden="true"
+              className="block h-px w-10 group-hover:w-16 transition-all duration-500"
+              style={{ background: accentColor }}
+            />
+            Explore more →
+          </span>
+        ) : null}
       </div>
-    </Tilt>
+    </div>
   );
 
-  const wrapperClass = className;
-  return ind.caseStudySlug ? (
-    <Link
-      to={`/case-studies/${ind.caseStudySlug}`}
-      aria-label={`${ind.name} — explore more`}
-      className={wrapperClass}
+  const inner = (
+    <motion.div
+      variants={fadeUp}
+      className="group grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 lg:gap-20 items-center"
     >
-      {inner}
-    </Link>
-  ) : (
-    <div className={wrapperClass}>{inner}</div>
+      <div className={`md:col-span-7 ${imageLeft ? 'md:order-1' : 'md:order-2'}`}>{media}</div>
+      <div className={`md:col-span-5 ${imageLeft ? 'md:order-2' : 'md:order-1'}`}>{copy}</div>
+    </motion.div>
   );
+
+  if (ind.caseStudySlug) {
+    return (
+      <Link
+        to={`/case-studies/${ind.caseStudySlug}`}
+        aria-label={`${ind.name} — explore more`}
+        className="block"
+      >
+        {inner}
+      </Link>
+    );
+  }
+  return inner;
 };
 
-// ── Typographic tile (no image) ──────────────────────────────────────────
-const TypoTile: React.FC<{ id: string; index: number }> = ({ id, index }) => {
+// ── Quiet typographic row for "Also serving" ─────────────────────────────
+const AlsoServingRow: React.FC<{ id: string; index: number }> = ({ id, index }) => {
   const ind = get(id);
   if (!ind) return null;
   return (
     <motion.li
       variants={fadeUp}
-      className="group relative h-full p-7 md:p-8 border border-white/10 hover:border-[#4f46e5]/60 transition-colors duration-300"
-      style={{ background: 'rgba(20,20,50,0.4)', backdropFilter: 'blur(6px)' }}
+      className="grid grid-cols-12 gap-6 md:gap-10 items-baseline py-7 md:py-9 border-t border-white/10"
     >
       <div
-        className="text-[10px] font-bold uppercase tracking-[0.35em] mb-5"
+        className="col-span-2 md:col-span-1 text-[11px] font-bold tracking-[0.25em] pt-1"
         style={{ ...FONT_HEAD, color: INDIGO_SOFT }}
       >
-        {String(index + 6).padStart(2, '0')} · {ind.pillarLabel}
+        {String(index + 6).padStart(2, '0')}
       </div>
       <h3
-        className="text-xl md:text-2xl font-bold leading-tight text-white tracking-tight mb-3"
+        className="col-span-10 md:col-span-4 text-xl md:text-2xl font-bold text-white tracking-tight"
         style={FONT_HEAD}
       >
         {ind.name}
       </h3>
-      <p className="text-sm leading-relaxed text-white/65" style={FONT_BODY}>
+      <div
+        className="hidden md:block md:col-span-2 text-[10px] font-bold uppercase tracking-[0.3em] text-white/40"
+        style={FONT_HEAD}
+      >
+        {ind.pillarLabel}
+      </div>
+      <p
+        className="col-span-12 md:col-span-5 text-sm md:text-[15px] leading-relaxed text-white/60"
+        style={FONT_BODY}
+      >
         {ind.blurb}
       </p>
-      <div
-        aria-hidden="true"
-        className="absolute left-0 top-0 h-px w-0 group-hover:w-full transition-all duration-700"
-        style={{ background: INDIGO }}
-      />
     </motion.li>
   );
 };
+
 
 // ── Page ─────────────────────────────────────────────────────────────────
 const Industries: React.FC = () => {
@@ -394,43 +405,12 @@ const Industries: React.FC = () => {
                 </p>
               </motion.div>
 
-              {/* Bento layout */}
-              <motion.div
-                variants={staggerParent}
-                className="grid gap-4 md:gap-5"
-                style={{
-                  gridTemplateColumns: 'repeat(12, minmax(0, 1fr))',
-                  gridAutoRows: 'minmax(260px, auto)',
-                }}
-              >
-                <motion.div
-                  variants={fadeUp}
-                  className="col-span-12 md:col-span-8 md:row-span-2"
-                  style={{ minHeight: 540 }}
-                >
-                  <ImageTile id="petrochemicals" index={featuredOrder.indexOf('petrochemicals')} className="block h-full" />
-                </motion.div>
-                <motion.div variants={fadeUp} className="col-span-12 md:col-span-4">
-                  <ImageTile id="converting-films" index={featuredOrder.indexOf('converting-films')} className="block h-full" />
-                </motion.div>
-                <motion.div variants={fadeUp} className="col-span-12 md:col-span-4">
-                  <ImageTile id="automotive" index={featuredOrder.indexOf('automotive')} className="block h-full" />
-                </motion.div>
-                <motion.div
-                  variants={fadeUp}
-                  className="col-span-12 md:col-span-7"
-                  style={{ minHeight: 360 }}
-                >
-                  <ImageTile id="transportation" index={featuredOrder.indexOf('transportation')} className="block h-full" />
-                </motion.div>
-                <motion.div
-                  variants={fadeUp}
-                  className="col-span-12 md:col-span-5"
-                  style={{ minHeight: 360 }}
-                >
-                  <ImageTile id="education" index={featuredOrder.indexOf('education')} className="block h-full" />
-                </motion.div>
-              </motion.div>
+              {/* Editorial stack: one industry per band, alternating sides */}
+              <div className="flex flex-col gap-28 md:gap-40 lg:gap-48 mt-4">
+                {featuredOrder.map((id, i) => (
+                  <IndustryBand key={id} id={id} index={i} />
+                ))}
+              </div>
             </motion.div>
           </div>
         </section>
@@ -472,10 +452,10 @@ const Industries: React.FC = () => {
 
               <motion.ul
                 variants={staggerParent}
-                className="grid gap-4 md:gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 list-none"
+                className="list-none border-b border-white/10"
               >
                 {typographicIds.map((id, i) => (
-                  <TypoTile key={id} id={id} index={i} />
+                  <AlsoServingRow key={id} id={id} index={i} />
                 ))}
               </motion.ul>
             </motion.div>
