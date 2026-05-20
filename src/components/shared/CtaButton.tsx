@@ -20,7 +20,7 @@ const variantClass = {
   ghost:
     'border border-line-strong bg-transparent text-white font-semibold hover:border-accent-blue px-7 py-[13px]',
   white:
-    'bg-white text-accent-blue font-bold hover:bg-[#E8F7FC] px-7 py-[14px]',
+    'bg-white text-accent-blue font-bold hover:bg-surface-light px-7 py-[14px]',
 } as const;
 
 const sizing = 'text-[12px] tracking-[0.02em]';
