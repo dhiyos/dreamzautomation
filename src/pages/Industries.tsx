@@ -339,13 +339,6 @@ const Industries: React.FC = () => {
               transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
               className="max-w-[1100px]"
             >
-              <div
-                className="flex items-center gap-4 text-[11px] font-bold uppercase tracking-[0.4em] mb-8"
-                style={{ ...FONT_HEAD, color: INDIGO_SOFT }}
-              >
-                <span style={{ background: INDIGO, width: 48, height: 1, display: 'inline-block' }} />
-                Industries · Where we operate
-              </div>
               <h1
                 id="industries-page-heading"
                 className="text-[44px] sm:text-6xl md:text-7xl lg:text-[112px] font-black leading-[0.92] tracking-[-0.03em] text-white"
