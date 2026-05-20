@@ -405,43 +405,12 @@ const Industries: React.FC = () => {
                 </p>
               </motion.div>
 
-              {/* Bento layout */}
-              <motion.div
-                variants={staggerParent}
-                className="grid gap-4 md:gap-5"
-                style={{
-                  gridTemplateColumns: 'repeat(12, minmax(0, 1fr))',
-                  gridAutoRows: 'minmax(260px, auto)',
-                }}
-              >
-                <motion.div
-                  variants={fadeUp}
-                  className="col-span-12 md:col-span-8 md:row-span-2"
-                  style={{ minHeight: 540 }}
-                >
-                  <ImageTile id="petrochemicals" index={featuredOrder.indexOf('petrochemicals')} className="block h-full" />
-                </motion.div>
-                <motion.div variants={fadeUp} className="col-span-12 md:col-span-4">
-                  <ImageTile id="converting-films" index={featuredOrder.indexOf('converting-films')} className="block h-full" />
-                </motion.div>
-                <motion.div variants={fadeUp} className="col-span-12 md:col-span-4">
-                  <ImageTile id="automotive" index={featuredOrder.indexOf('automotive')} className="block h-full" />
-                </motion.div>
-                <motion.div
-                  variants={fadeUp}
-                  className="col-span-12 md:col-span-7"
-                  style={{ minHeight: 360 }}
-                >
-                  <ImageTile id="transportation" index={featuredOrder.indexOf('transportation')} className="block h-full" />
-                </motion.div>
-                <motion.div
-                  variants={fadeUp}
-                  className="col-span-12 md:col-span-5"
-                  style={{ minHeight: 360 }}
-                >
-                  <ImageTile id="education" index={featuredOrder.indexOf('education')} className="block h-full" />
-                </motion.div>
-              </motion.div>
+              {/* Editorial stack: one industry per band, alternating sides */}
+              <div className="flex flex-col gap-28 md:gap-40 lg:gap-48 mt-4">
+                {featuredOrder.map((id, i) => (
+                  <IndustryBand key={id} id={id} index={i} />
+                ))}
+              </div>
             </motion.div>
           </div>
         </section>
