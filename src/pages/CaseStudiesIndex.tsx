@@ -167,12 +167,9 @@ const CaseStudiesIndex = () => {
                 Selected Work
               </span>
             </div>
-            <h1
-              className="text-5xl md:text-7xl leading-tight mb-8 text-white"
-              style={FONT_HEAD}
-            >
+            <h1 className="heading-h1 mb-8">
               Plants that{' '}
-              <span className="italic font-normal text-slate-400">have to work</span> —
+              <span className="font-normal text-[hsl(var(--text-muted))]">have to work</span> —
               <br />
               every shift, every day.
             </h1>
