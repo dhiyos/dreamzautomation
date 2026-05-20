@@ -274,7 +274,7 @@ const Solutions = () => {
           >
             <motion.h1
               variants={fadeUp}
-              className="text-6xl sm:text-7xl md:text-[10rem] font-extrabold leading-[0.85] mb-10 tracking-tighter"
+              className="text-[44px] sm:text-6xl md:text-7xl lg:text-[112px] font-black leading-[0.92] tracking-[-0.03em] mb-10"
               style={FONT_HEAD}
             >
               Automation that
