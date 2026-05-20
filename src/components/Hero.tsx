@@ -31,17 +31,32 @@ const Hero = () => {
       className="w-full hero-section relative overflow-hidden"
     >
       {/* Background: IT–OT convergence */}
-      <img
-        aria-hidden="true"
-        alt=""
-        src={heroBgFallback}
-        srcSet={heroBg}
-        sizes="100vw"
-        loading="eager"
-        fetchPriority="high"
-        decoding="async"
-        className="absolute inset-0 z-0 w-full h-full object-cover object-left"
-      />
+      {reduce ? (
+        <img
+          aria-hidden="true"
+          alt=""
+          src={heroBgFallback}
+          srcSet={heroBg}
+          sizes="100vw"
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
+          className="absolute inset-0 z-0 w-full h-full object-cover object-left"
+        />
+      ) : (
+        <video
+          aria-hidden="true"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster={heroBgFallback}
+          className="absolute inset-0 z-0 w-full h-full object-cover object-left"
+        >
+          <source src={heroVideo.url} type="video/mp4" />
+        </video>
+      )}
       {/* Legibility overlay — strong on left where copy lives, soft on right */}
       <div
         aria-hidden="true"
