@@ -11,6 +11,7 @@ import CaseStudiesIndex from "./pages/CaseStudiesIndex.tsx";
 import CaseStudyDetail from "./pages/CaseStudyDetail.tsx";
 import InsightsIndex from "./pages/InsightsIndex.tsx";
 import InsightDetail from "./pages/InsightDetail.tsx";
+import Contact from "./pages/Contact.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
