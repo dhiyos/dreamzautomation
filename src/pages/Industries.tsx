@@ -349,12 +349,12 @@ const Industries: React.FC = () => {
                 className="text-[44px] sm:text-6xl md:text-7xl lg:text-[112px] font-black leading-[0.92] tracking-[-0.03em] text-white"
                 style={FONT_HEAD}
               >
-                Nine verticals.
+                From the refinery to the plant floor.
                 <br />
                 <span style={{ color: INDIGO_SOFT, fontStyle: 'italic', fontWeight: 600 }}>
                   Two decades
                 </span>{' '}
-                of operating-floor instinct.
+                of automation in India.
               </h1>
               <p
                 className="mt-10 max-w-[640px] text-base md:text-lg leading-relaxed text-white/75"
