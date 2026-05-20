@@ -66,6 +66,96 @@
     --sidebar-border: var(--line-default);
     --sidebar-ring: var(--accent-blue);
   }
+
+  /* Midnight Indigo theme — scoped to Case Studies (and any other section
+     that opts in via the `.theme-indigo` class). Overrides the same semantic
+     tokens so every utility resolves to the indigo palette without hex literals. */
+  .theme-indigo {
+    --bg-primary: 240 35% 7%;          /* #0a0a1a */
+    --bg-secondary: 240 39% 14%;       /* #141432 */
+    --bg-tertiary: 240 51% 24%;        /* #1e1e5a */
+    --bg-card-hover: 240 51% 30%;
+    --accent-blue: 239 84% 60%;        /* #4f46e5 */
+    --accent-blue-hover: 234 89% 74%;  /* #a5b4fc */
+    --accent-teal: 234 89% 74%;
+    --accent-amber: 234 89% 74%;
+    --text-primary: 0 0% 100%;
+    --text-muted: 215 20% 65%;
+    --text-dim: 215 16% 55%;
+    --line-default: 240 51% 24%;
+    --line-strong: 239 84% 60%;
+    --background: var(--bg-primary);
+    --foreground: var(--text-primary);
+    --card: var(--bg-secondary);
+    --card-foreground: var(--text-primary);
+    --primary: var(--accent-blue);
+    --primary-foreground: 0 0% 100%;
+    --muted: var(--bg-secondary);
+    --muted-foreground: var(--text-muted);
+    --border: var(--line-default);
+    --input: var(--line-default);
+    --ring: var(--accent-blue);
+  }
+}
+
+/* Canonical typography scale — Montserrat only. Use these utilities
+   site-wide; no inline fontFamily, no ad-hoc text-[..px]. */
+@layer components {
+  .text-display {
+    font-family: 'Montserrat', system-ui, sans-serif;
+    font-weight: 800;
+    font-size: clamp(40px, 6vw, 72px);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: hsl(var(--text-primary));
+  }
+  .text-display-italic { font-style: italic; font-weight: 500; color: hsl(var(--text-muted)); }
+  .heading-h1 {
+    font-family: 'Montserrat', system-ui, sans-serif;
+    font-weight: 800;
+    font-size: clamp(36px, 5vw, 56px);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    color: hsl(var(--text-primary));
+  }
+  .heading-h4 {
+    font-family: 'Montserrat', system-ui, sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.3;
+    letter-spacing: -0.005em;
+    color: hsl(var(--text-primary));
+  }
+  .text-body-lg {
+    font-family: 'Montserrat', system-ui, sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.6;
+    color: hsl(var(--text-muted));
+  }
+  .text-body {
+    font-family: 'Montserrat', system-ui, sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.65;
+    color: hsl(var(--text-muted));
+  }
+  .text-caption {
+    font-family: 'Montserrat', system-ui, sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: hsl(var(--text-muted));
+  }
+  .text-metric {
+    font-family: 'Montserrat', system-ui, sans-serif;
+    font-weight: 300;
+    font-size: clamp(40px, 5vw, 64px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: hsl(var(--accent-blue-hover));
+  }
 }
 
 @layer base {
