@@ -122,14 +122,14 @@ const Hero = () => {
             {/* CTA row */}
             <motion.div variants={item} className="flex flex-wrap items-center" style={{ gap: 12, marginTop: 8 }}>
               <a
-                href="#"
+                href="/contact"
                 className="bg-accent-blue hover:bg-accent-blue-hover text-text-primary uppercase transition-colors duration-150 inline-block"
                 style={{ fontWeight: 700, fontSize: 12, letterSpacing: "0.02em", padding: "14px 28px" }}
               >
                 Request an Assessment →
               </a>
               <a
-                href="#"
+                href="/solutions"
                 className="text-text-primary uppercase inline-block border border-line-strong hover:border-accent-blue bg-transparent transition-colors duration-150"
                 style={{
                   fontWeight: 600,
