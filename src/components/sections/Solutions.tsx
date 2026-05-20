@@ -193,7 +193,7 @@ export const Solutions = () => {
                   <p className="case-description">{currentCaseStudy.description}</p>
 
                   <div className="case-footer">
-                    <a href="#case-studies" className="case-cta">
+                    <a href="/case-studies" className="case-cta">
                       <span>Read the Full Case Study</span>
                       <span className="case-cta-arrow" aria-hidden="true">
                         →
@@ -217,7 +217,7 @@ export const Solutions = () => {
                   <p className="case-empty-text">
                     A case study from this area is being prepared.
                   </p>
-                  <a href="#contact" className="case-cta">
+                  <a href="/contact" className="case-cta">
                     <span>Request an Assessment</span>
                     <span className="case-cta-arrow" aria-hidden="true">
                       →

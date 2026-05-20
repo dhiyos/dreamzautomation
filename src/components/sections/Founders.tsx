@@ -69,7 +69,7 @@ const Founders = ({
             </span>
           </p>
         </div>
-        <CtaButton variant="primary" href="#contact">
+        <CtaButton variant="primary" href="/contact">
           Request an Assessment
         </CtaButton>
       </motion.div>

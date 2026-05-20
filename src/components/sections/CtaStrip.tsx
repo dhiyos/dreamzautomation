@@ -24,7 +24,7 @@ const CtaStrip = () => {
         </div>
 
         <div className="cta-strip-action">
-          <CtaButton variant="white" href="#contact">
+          <CtaButton variant="white" href="/contact">
             Request an Assessment
           </CtaButton>
         </div>
