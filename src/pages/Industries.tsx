@@ -368,10 +368,6 @@ const Industries: React.FC = () => {
               </p>
 
               <div className="mt-14 flex flex-wrap items-center gap-x-10 gap-y-4 text-[11px] uppercase tracking-[0.3em] font-bold text-white/50" style={FONT_HEAD}>
-                <span><span style={{ color: INDIGO_SOFT }}>05</span> &nbsp; Featured verticals</span>
-                <span className="w-px h-4 bg-white/15" />
-                <span><span style={{ color: INDIGO_SOFT }}>04</span> &nbsp; Also serving</span>
-                <span className="w-px h-4 bg-white/15" />
                 <span><span style={{ color: INDIGO_SOFT }}>20+</span> &nbsp; Years on the floor</span>
               </div>
             </motion.div>
