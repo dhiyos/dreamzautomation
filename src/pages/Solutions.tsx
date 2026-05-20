@@ -282,7 +282,7 @@ const Solutions = () => {
                 className="text-[#a5b4fc] font-bold tracking-[0.35em] text-[10px] uppercase"
                 style={FONT_HEAD}
               >
-                Expertise & Solutions
+                What we do
               </span>
             </motion.div>
             <motion.h1
@@ -290,9 +290,9 @@ const Solutions = () => {
               className="text-6xl sm:text-7xl md:text-9xl font-extrabold leading-[0.85] mb-8 tracking-tighter"
               style={FONT_HEAD}
             >
-              THREE
+              BUILT TO
               <br />
-              PILLARS.
+              RUN.
             </motion.h1>
             <motion.p
               variants={fadeUp}
@@ -301,16 +301,6 @@ const Solutions = () => {
               From process-wide control to high-speed machine motion to the next generation of plant
               engineers — precision delivered out of one accountable team in Ghaziabad.
             </motion.p>
-
-            <motion.div
-              variants={fadeUp}
-              className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-3 text-[10px] tracking-[0.25em] uppercase font-bold text-white/40"
-              style={FONT_HEAD}
-            >
-              <span className="inline-flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-[#4f46e5]" /> Siemens System House · 2007
-              </span>
-            </motion.div>
           </motion.div>
         </header>
 
