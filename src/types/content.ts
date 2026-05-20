@@ -210,6 +210,28 @@ export interface RichCaseStudyOutcome {
   benefits?: string[];
 }
 
+export type ArchitectureLayer = 'enterprise' | 'supervisory' | 'control' | 'field';
+
+export interface ArchitectureNode {
+  id: string;
+  label: string;
+  sublabel?: string;
+  layer: ArchitectureLayer;
+  accent?: 'blue' | 'teal' | 'amber';
+}
+
+export interface ArchitectureEdge {
+  from: string;
+  to: string;
+  protocol?: string;
+}
+
+export interface ArchitectureDiagram {
+  caption?: string;
+  nodes: ArchitectureNode[];
+  edges: ArchitectureEdge[];
+}
+
 export interface RichCaseStudy {
   slug: string;
   pillarId?: 'process' | 'machines' | 'training';
@@ -235,6 +257,7 @@ export interface RichCaseStudy {
   dataHandled?: RichCaseStudyDataPoint[];
   heroImage?: RichCaseStudyImage;
   architectureImage?: RichCaseStudyImage;
+  architecture?: ArchitectureDiagram;
   galleryImages?: RichCaseStudyImage[];
   projectFacts?: RichCaseStudyDataPoint[];
   draft?: boolean;

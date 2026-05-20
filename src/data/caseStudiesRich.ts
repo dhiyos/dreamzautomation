@@ -86,6 +86,24 @@ export const richCaseStudies: RichCaseStudy[] = [
       { label: 'Application', value: 'Feed Filter Backwashing' },
       { label: 'Site', value: 'IOCL Mathura Refinery, UP' },
     ],
+    architecture: {
+      caption: 'Hot-Standby S7-400H pair driving WinCC V7 — feed filter backwashing.',
+      nodes: [
+        { id: 'wincc', label: 'WinCC V7', sublabel: 'Operator Station', layer: 'supervisory', accent: 'teal' },
+        { id: 'cpu-a', label: 'S7-400H · CPU A', sublabel: 'Hot-Standby Primary', layer: 'control', accent: 'blue' },
+        { id: 'cpu-b', label: 'S7-400H · CPU B', sublabel: 'Hot-Standby Standby', layer: 'control', accent: 'blue' },
+        { id: 'valves', label: 'Backwash Valves', layer: 'field' },
+        { id: 'pumps', label: 'Feed Pumps', layer: 'field' },
+        { id: 'sensors', label: 'Filter Sensors', layer: 'field' },
+      ],
+      edges: [
+        { from: 'wincc', to: 'cpu-a', protocol: 'Industrial Ethernet' },
+        { from: 'wincc', to: 'cpu-b', protocol: 'Industrial Ethernet' },
+        { from: 'cpu-a', to: 'valves', protocol: 'Profibus DP' },
+        { from: 'cpu-a', to: 'pumps' },
+        { from: 'cpu-b', to: 'sensors' },
+      ],
+    },
     draft: true,
   },
 
@@ -165,6 +183,26 @@ export const richCaseStudies: RichCaseStudy[] = [
       { label: 'Application', value: 'BOPP Line-1 Upgradation' },
       { label: 'Scope', value: 'PLC + Drives + SCADA + Panels + Site' },
     ],
+    architecture: {
+      caption: 'Upgraded Line-1 stack — S7-400 PLC, new AC/DC drives, modern SCADA.',
+      nodes: [
+        { id: 'scada', label: 'PLC-integrated SCADA', sublabel: 'Operator Stations', layer: 'supervisory', accent: 'teal' },
+        { id: 's7', label: 'Siemens S7-400', sublabel: 'New PLC + I/Os', layer: 'control', accent: 'blue' },
+        { id: 'ac-drives', label: 'AC Drives', sublabel: 'New, networked', layer: 'control', accent: 'blue' },
+        { id: 'dc-drives', label: 'DC Drives', sublabel: 'New, networked', layer: 'control', accent: 'blue' },
+        { id: 'barmag', label: 'Barmag Extrusion', sublabel: 'Retained', layer: 'field' },
+        { id: 'dornier', label: 'Dornier Line', sublabel: 'Retained', layer: 'field' },
+        { id: 'winders', label: 'Winders & Aux', layer: 'field' },
+      ],
+      edges: [
+        { from: 'scada', to: 's7', protocol: 'Industrial Ethernet' },
+        { from: 's7', to: 'ac-drives', protocol: 'Profibus DP' },
+        { from: 's7', to: 'dc-drives', protocol: 'Profibus DP' },
+        { from: 's7', to: 'barmag' },
+        { from: 'ac-drives', to: 'dornier' },
+        { from: 'dc-drives', to: 'winders' },
+      ],
+    },
     // TODO: export Existing Architecture (image16.emf) + Upgraded System Architecture
     // (image17.emf, image24.emf) from Word as PNG. Place at
     // /public/images/case-studies/uflex-bopp-architecture-{existing,upgraded}.png
@@ -245,6 +283,24 @@ export const richCaseStudies: RichCaseStudy[] = [
       { label: 'Application', value: 'BOPP Drive Modernisation' },
       { label: 'Scope', value: 'Drives + Software + Site Wiring' },
     ],
+    architecture: {
+      caption: 'Sinamics S120 retrofit — 12 sections unified on Profinet, existing panels retained.',
+      nodes: [
+        { id: 'hmi', label: 'HMI / SCADA', sublabel: 'Operator View', layer: 'supervisory', accent: 'teal' },
+        { id: 'plc', label: 'Siemens PLC', sublabel: 'Existing — software updated', layer: 'control', accent: 'blue' },
+        { id: 'sinamics', label: 'Sinamics S120', sublabel: '12 line sections', layer: 'control', accent: 'blue' },
+        { id: 'extruders', label: 'Extruders & Melt Pumps', layer: 'field' },
+        { id: 'chill', label: 'Chill Roll & MDO', layer: 'field' },
+        { id: 'coater', label: 'Coater & Winder', layer: 'field' },
+      ],
+      edges: [
+        { from: 'hmi', to: 'plc', protocol: 'Ethernet' },
+        { from: 'plc', to: 'sinamics', protocol: 'Profinet' },
+        { from: 'sinamics', to: 'extruders' },
+        { from: 'sinamics', to: 'chill' },
+        { from: 'sinamics', to: 'coater' },
+      ],
+    },
     // TODO: export Upgraded System Architecture (image25.emf, image26.emf,
     // image27.emf) from Word as PNG. Place at
     // /public/images/case-studies/vacmet-bopp-architecture.png
@@ -321,6 +377,24 @@ export const richCaseStudies: RichCaseStudy[] = [
       { label: 'Equipment', value: 'Lifts · Escalators · Travelators' },
       { label: 'Alerting', value: 'SMS · BMS over Modbus TCP/IP' },
     ],
+    architecture: {
+      caption: 'CMS concentrator polls vertical-transport assets, surfaces faults to BMS and SMS.',
+      nodes: [
+        { id: 'bms', label: 'Airport BMS', sublabel: '3rd-party supervisory', layer: 'enterprise', accent: 'amber' },
+        { id: 'sms', label: 'SMS Gateway', sublabel: 'Maintenance Team', layer: 'enterprise', accent: 'amber' },
+        { id: 'cms', label: 'CMS Concentrator', sublabel: 'Per Airport', layer: 'supervisory', accent: 'teal' },
+        { id: 'lifts', label: 'Lifts', sublabel: 'Sensors + Drives', layer: 'field' },
+        { id: 'esc', label: 'Escalators', sublabel: 'Sensors + Drives', layer: 'field' },
+        { id: 'trav', label: 'Travelators', sublabel: 'Sensors + Drives', layer: 'field' },
+      ],
+      edges: [
+        { from: 'bms', to: 'cms', protocol: 'Modbus TCP/IP' },
+        { from: 'sms', to: 'cms', protocol: 'SMS Events' },
+        { from: 'cms', to: 'lifts' },
+        { from: 'cms', to: 'esc' },
+        { from: 'cms', to: 'trav' },
+      ],
+    },
     draft: true,
   },
 
@@ -382,6 +456,28 @@ export const richCaseStudies: RichCaseStudy[] = [
       { label: 'Partner', value: 'Siemens' },
       { label: 'Depot', value: '1' },
     ],
+    architecture: {
+      caption: 'Client-server NP SCADA — redundant OCC, redundant station RTUs across 22 stations.',
+      nodes: [
+        { id: 'occ-a', label: 'OCC Server A', sublabel: 'Dual-Redundant', layer: 'enterprise', accent: 'amber' },
+        { id: 'occ-b', label: 'OCC Server B', sublabel: 'Dual-Redundant', layer: 'enterprise', accent: 'amber' },
+        { id: 'ws', label: 'Operator Workstations', sublabel: '6 stations', layer: 'supervisory', accent: 'teal' },
+        { id: 'rtu', label: 'SIMATIC S7-300 RTU', sublabel: 'Redundant CPU · ×22', layer: 'control', accent: 'blue' },
+        { id: 'io', label: 'Web-based I/O Units', sublabel: 'Power & Aux', layer: 'control', accent: 'blue' },
+        { id: 'tvs', label: 'TVS / ECS', layer: 'field' },
+        { id: 'tcom', label: 'Telecom · PA · PIDS', layer: 'field' },
+        { id: 'cctv', label: 'CCTV · TETRA · AFC', layer: 'field' },
+      ],
+      edges: [
+        { from: 'occ-a', to: 'ws', protocol: 'Server LAN' },
+        { from: 'occ-b', to: 'ws', protocol: 'Server LAN' },
+        { from: 'ws', to: 'rtu', protocol: 'Backbone' },
+        { from: 'ws', to: 'io', protocol: 'Backbone' },
+        { from: 'rtu', to: 'tvs' },
+        { from: 'rtu', to: 'tcom' },
+        { from: 'io', to: 'cctv' },
+      ],
+    },
     // TODO: export the two system architecture diagrams (image35.emf, image37.emf)
     // from Word as PNG. Place at /public/images/case-studies/dmrc-architecture-{occ,station}.png
     draft: true,
@@ -436,6 +532,24 @@ export const richCaseStudies: RichCaseStudy[] = [
       { label: 'Scope', value: 'Material + Engineering + Site' },
       { label: 'Hardware', value: '5× PLC · 3× VFD · 1× SCADA' },
     ],
+    architecture: {
+      caption: 'Turnkey tunnel control — 5 PLCs and 3 VFD panels under one SCADA station.',
+      nodes: [
+        { id: 'scada', label: 'SCADA Station', sublabel: 'Fault log · Reporting', layer: 'supervisory', accent: 'teal' },
+        { id: 'plc1', label: 'PLC ×5', sublabel: 'Tunnel control panels', layer: 'control', accent: 'blue' },
+        { id: 'vfd', label: 'VFD ×3', sublabel: 'Drive panels', layer: 'control', accent: 'blue' },
+        { id: 'vent', label: 'Ventilation Fans', layer: 'field' },
+        { id: 'light', label: 'Lighting & Traffic', layer: 'field' },
+        { id: 'instr', label: 'Field Instrumentation', layer: 'field' },
+      ],
+      edges: [
+        { from: 'scada', to: 'plc1', protocol: 'Ethernet' },
+        { from: 'scada', to: 'vfd', protocol: 'Ethernet' },
+        { from: 'plc1', to: 'light' },
+        { from: 'plc1', to: 'instr' },
+        { from: 'vfd', to: 'vent' },
+      ],
+    },
     // TODO: export system architecture (image38.emf, image39.emf) from Word
     // as PNG. Place at /public/images/case-studies/kumarhati-architecture.png
     draft: true,

@@ -29,8 +29,6 @@ export const industries: IndustryEntry[] = [
     pillarAccent: 'teal',
     blurb:
       'BOPP and BOPET line automation and the entire converting machine stack — printing, coating, lamination, slitting, winding. Edge-connected retrofits that surface line health without rewriting PLC code.',
-    caseStudySlug: 'jindal-bopp',
-    caseStudyLabel: 'Jindal Polyfilms · 10,000 tpa BOPP line · +18% OEE',
   },
   {
     id: 'automotive',

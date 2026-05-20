@@ -14,6 +14,8 @@ import {
 import type { RichCaseStudy } from '@/types/content';
 import { fadeUp, useEntrance } from '@/lib/motion';
 import SEO from '@/components/shared/SEO';
+import AnimatedMetric from '@/components/shared/AnimatedMetric';
+import CaseStudyArchitecture from '@/components/shared/CaseStudyArchitecture';
 
 const RichDetail = ({ cs }: { cs: RichCaseStudy }) => {
   const entrance = useEntrance();
@@ -24,7 +26,10 @@ const RichDetail = ({ cs }: { cs: RichCaseStudy }) => {
   const hasOutcome =
     !!cs.outcome && (cs.outcome.intro || (cs.outcome.benefits?.length ?? 0) > 0);
   const hasSupporting =
-    !!cs.architectureImage || (cs.galleryImages?.length ?? 0) > 0 || !!cs.equipment;
+    !!cs.architecture ||
+    !!cs.architectureImage ||
+    (cs.galleryImages?.length ?? 0) > 0 ||
+    !!cs.equipment;
 
   return (
     <>
@@ -49,10 +54,7 @@ const RichDetail = ({ cs }: { cs: RichCaseStudy }) => {
           {cs.metrics && cs.metrics.length > 0 ? (
             <ul className="cs-detail-metric-row cs-detail-metric-row-outcome">
               {cs.metrics.map((m, idx) => (
-                <li key={idx} className="cs-detail-metric">
-                  <span className="cs-detail-metric-value">{m.value}</span>
-                  <span className="cs-detail-metric-label">{m.label}</span>
-                </li>
+                <AnimatedMetric key={idx} value={m.value} label={m.label} />
               ))}
             </ul>
           ) : null}
@@ -254,7 +256,16 @@ const RichDetail = ({ cs }: { cs: RichCaseStudy }) => {
             </motion.div>
           ) : null}
 
-          {cs.architectureImage ? (
+          {cs.architecture ? (
+            <motion.div
+              {...entrance}
+              variants={fadeUp}
+              className="cs-supporting-block"
+            >
+              <h3 className="cs-rich-section-h3">System architecture</h3>
+              <CaseStudyArchitecture diagram={cs.architecture} />
+            </motion.div>
+          ) : cs.architectureImage ? (
             <motion.div
               {...entrance}
               variants={fadeUp}

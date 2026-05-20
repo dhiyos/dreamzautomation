@@ -2,6 +2,7 @@ import { featuredCaseStudies } from '@/data/featuredCaseStudies';
 import { itemCaseStudies, solutions } from '@/data/solutions';
 import { richCaseStudies, richCaseStudiesBySlug } from '@/data/caseStudiesRich';
 import type {
+  ArchitectureDiagram,
   FeaturedCaseStudy,
   ItemCaseStudy,
   RichCaseStudy,
@@ -20,6 +21,9 @@ export type UnifiedCaseStudy = {
   pillarLabel?: string;
   industryItemId?: string;
   industryItemName?: string;
+  heroImage?: { src: string; alt: string };
+  hasArchitecture?: boolean;
+  architecture?: ArchitectureDiagram;
 };
 
 const findPillarForItem = (
@@ -109,6 +113,11 @@ const fromRich = (rich: RichCaseStudy): UnifiedCaseStudy => ({
   pillarLabel: pillarLabelFor(rich.pillarId),
   industryItemId: rich.solutionItemId,
   industryItemName: itemNameFor(rich.pillarId, rich.solutionItemId),
+  heroImage: rich.heroImage
+    ? { src: rich.heroImage.src, alt: rich.heroImage.alt }
+    : undefined,
+  hasArchitecture: !!rich.architecture,
+  architecture: rich.architecture,
 });
 
 export const allCaseStudies = (): UnifiedCaseStudy[] => {
