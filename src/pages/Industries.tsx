@@ -23,13 +23,13 @@ import imgAutomotive from '@/assets/industries/automotive.jpg?w=1000&format=webp
 import imgMetro from '@/assets/industries/metro.jpg?w=1200&format=webp';
 import imgEducation from '@/assets/industries/education.jpg?w=1200&format=webp';
 
-const FONT_HEAD: React.CSSProperties = { fontFamily: "'Urbanist', sans-serif" };
-const FONT_BODY: React.CSSProperties = { fontFamily: "'Epilogue', sans-serif" };
+const FONT_HEAD: React.CSSProperties = {};
+const FONT_BODY: React.CSSProperties = {};
 
-const INK = '#0a0a1a';
-const SURFACE = '#141432';
-const INDIGO = '#4f46e5';
-const INDIGO_SOFT = '#a5b4fc';
+const INK = 'hsl(var(--bg-primary))';
+const SURFACE = 'hsl(var(--bg-secondary))';
+const INDIGO = 'hsl(var(--accent-blue))';
+const INDIGO_SOFT = 'hsl(var(--accent-blue-hover))';
 
 // ── Motion primitives ────────────────────────────────────────────────────
 const fadeUp = {
@@ -142,7 +142,7 @@ const IndustryBand: React.FC<{ id: ImgKey; index: number }> = ({ id, index }) =>
   const imageLeft = index % 2 === 0;
 
   const accentColor =
-    ind.pillarAccent === 'teal' ? '#5eead4' : ind.pillarAccent === 'amber' ? '#fbbf24' : INDIGO_SOFT;
+    INDIGO_SOFT;
 
   const media = (
     <div className="relative w-full" style={{ aspectRatio: '4 / 3' }}>
@@ -296,13 +296,13 @@ const Industries: React.FC = () => {
   const heroOpacity = useTransform(heroProg, [0, 1], [1, 0.3]);
 
   return (
-    <div className="min-h-screen" style={{ background: INK, color: '#fff', ...FONT_BODY }}>
+    <div className="theme-indigo min-h-screen" style={{ background: INK, color: 'hsl(var(--text-primary))', ...FONT_BODY }}>
       <SEO
         title="Industries Served — Process, Converting, Automotive & More"
         description="Two decades across petrochemicals, BOPP/converting, automotive, food, transportation, water and engineering education in India."
         path="/industries"
       />
-      <style>{`@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700;800;900&family=Epilogue:wght@300;400;500;600&display=swap');`}</style>
+      
       <Nav />
       <main>
         {/* ── HERO ────────────────────────────────────────────────────── */}
@@ -419,7 +419,7 @@ const Industries: React.FC = () => {
         <section
           aria-label="Also serving"
           className="relative py-20 md:py-28 border-t border-white/5"
-          style={{ background: 'linear-gradient(180deg, #0a0a1a 0%, #0d0d24 100%)' }}
+          style={{ background: 'linear-gradient(180deg, hsl(var(--bg-primary)) 0%, hsl(var(--bg-secondary)) 100%)' }}
         >
           <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-14">
             <motion.div
