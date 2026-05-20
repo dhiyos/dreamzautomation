@@ -23,8 +23,8 @@ import imgAutomotive from '@/assets/industries/automotive.jpg?w=1000&format=webp
 import imgMetro from '@/assets/industries/metro.jpg?w=1200&format=webp';
 import imgEducation from '@/assets/industries/education.jpg?w=1200&format=webp';
 
-const FONT_HEAD: React.CSSProperties = { fontFamily: "'Urbanist', sans-serif" };
-const FONT_BODY: React.CSSProperties = { fontFamily: "'Epilogue', sans-serif" };
+const FONT_HEAD: React.CSSProperties = {};
+const FONT_BODY: React.CSSProperties = {};
 
 const INK = 'hsl(var(--bg-primary))';
 const SURFACE = 'hsl(var(--bg-secondary))';

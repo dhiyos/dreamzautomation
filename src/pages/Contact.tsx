@@ -9,8 +9,8 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { toast } from '@/hooks/use-toast';
 
-const FONT_HEAD: React.CSSProperties = { fontFamily: "'Urbanist', sans-serif" };
-const FONT_BODY: React.CSSProperties = { fontFamily: "'Epilogue', sans-serif" };
+const FONT_HEAD: React.CSSProperties = {};
+const FONT_BODY: React.CSSProperties = {};
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, 'Name is required').max(100),

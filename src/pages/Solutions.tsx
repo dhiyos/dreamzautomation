@@ -23,8 +23,8 @@ import imgPrinting from '@/assets/solutions/machines-printing.jpg?w=1200&format=
 import imgRobotics from '@/assets/solutions/machines-robotics.jpg?w=1200&format=webp';
 import imgTraining from '@/assets/solutions/training-kit.jpg?w=1200&format=webp';
 
-const FONT_HEAD: React.CSSProperties = { fontFamily: "'Urbanist', sans-serif" };
-const FONT_BODY: React.CSSProperties = { fontFamily: "'Epilogue', sans-serif" };
+const FONT_HEAD: React.CSSProperties = {};
+const FONT_BODY: React.CSSProperties = {};
 
 interface Tile {
   itemId: string;

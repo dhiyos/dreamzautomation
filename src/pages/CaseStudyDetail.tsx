@@ -15,8 +15,8 @@ import { fadeUp, useEntrance } from '@/lib/motion';
 import SEO from '@/components/shared/SEO';
 import CaseStudyArchitecture from '@/components/shared/CaseStudyArchitecture';
 
-const FONT_HEAD = { fontFamily: "'Libre Baskerville', Georgia, serif" } as const;
-const FONT_BODY = { fontFamily: "'IBM Plex Sans', system-ui, sans-serif" } as const;
+const FONT_HEAD: React.CSSProperties = {};
+const FONT_BODY: React.CSSProperties = {};
 
 const SectionLabel = ({ children }: { children: React.ReactNode }) => (
   <h2

@@ -10,8 +10,8 @@ import SEO from '@/components/shared/SEO';
 
 type PillarFilter = 'all' | 'process' | 'machines' | 'training';
 
-const FONT_HEAD = { fontFamily: "'Libre Baskerville', Georgia, serif" } as const;
-const FONT_BODY = { fontFamily: "'IBM Plex Sans', system-ui, sans-serif" } as const;
+const FONT_HEAD: React.CSSProperties = {};
+const FONT_BODY: React.CSSProperties = {};
 
 const PILLAR_OPTIONS: { id: PillarFilter; label: string }[] = [
   { id: 'all', label: 'All Sectors' },
