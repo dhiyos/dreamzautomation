@@ -158,7 +158,7 @@ const Nav = () => {
           </button>
 
           <a
-            href="#"
+            href="/contact"
             className="bg-accent-blue hover:bg-accent-blue-hover text-white uppercase transition-colors duration-150 shrink-0 inline-block"
             style={{
               fontWeight: 700,

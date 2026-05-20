@@ -110,7 +110,7 @@ export const CompanyProfile = () => {
                 <h3 className="company-tab-title">{activeCard.title}</h3>
                 <span className="company-tab-rule" aria-hidden="true" />
                 <p className="company-tab-body">{activeCard.body}</p>
-                <a href="#" className="company-tab-cta">
+                <a href="/solutions" className="company-tab-cta">
                   <span className="company-tab-cta-label">LEARN MORE</span>
                   <span className="company-tab-arrow" aria-hidden="true">
                     →

@@ -11,6 +11,7 @@ import CaseStudiesIndex from "./pages/CaseStudiesIndex.tsx";
 import CaseStudyDetail from "./pages/CaseStudyDetail.tsx";
 import InsightsIndex from "./pages/InsightsIndex.tsx";
 import InsightDetail from "./pages/InsightDetail.tsx";
+import Contact from "./pages/Contact.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/case-studies/:slug" element={<CaseStudyDetail />} />
           <Route path="/insights" element={<InsightsIndex />} />
           <Route path="/insights/:slug" element={<InsightDetail />} />
+          <Route path="/contact" element={<Contact />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
