@@ -229,7 +229,7 @@ const ImageTile: React.FC<{
   return ind.caseStudySlug ? (
     <Link
       to={`/case-studies/${ind.caseStudySlug}`}
-      aria-label={`${ind.name} — view case study`}
+      aria-label={`${ind.name} — explore more`}
       className={wrapperClass}
     >
       {inner}
