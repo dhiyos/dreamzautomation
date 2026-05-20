@@ -301,14 +301,15 @@ const Industries: React.FC = () => {
           className="relative overflow-hidden"
           style={{ minHeight: '92vh', background: INK }}
         >
-          <motion.img
-            src={heroBg}
-            srcSet={heroBgSrcSet}
-            sizes="100vw"
-            alt=""
+          <motion.video
+            src={heroVideo.url}
+            poster={heroBg}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
             aria-hidden="true"
-            loading="eager"
-            decoding="async"
             className="absolute inset-0 w-full h-full object-cover"
             style={reduce ? { opacity: 0.35 } : { y: heroY, opacity: heroOpacity, scale: 1.1 }}
           />
