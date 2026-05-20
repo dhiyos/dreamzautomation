@@ -58,9 +58,6 @@ const AboutHero = () => {
             from classic DCS and PLC work into edge-connected, IT-OT-ready operations.
           </p>
 
-          <div className="about-hero-stamps">
-            <span className="about-hero-stamp">Siemens System House · Since 2007</span>
-          </div>
         </motion.div>
       </div>
     </section>
