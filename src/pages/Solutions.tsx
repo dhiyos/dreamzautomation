@@ -310,12 +310,6 @@ const Solutions = () => {
               <span className="inline-flex items-center gap-2">
                 <span className="w-1.5 h-1.5 bg-[#4f46e5]" /> Siemens System House · 2007
               </span>
-              <span className="inline-flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-[#4f46e5]" /> ISO 9001:2015
-              </span>
-              <span className="inline-flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-[#4f46e5]" /> CE Marked · TÜV India
-              </span>
             </motion.div>
           </motion.div>
         </header>
