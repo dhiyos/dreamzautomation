@@ -209,14 +209,14 @@ const ImageTile: React.FC<{
           >
             {ind.blurb}
           </p>
-          {ind.caseStudySlug && ind.caseStudyLabel ? (
+          {ind.caseStudySlug ? (
             <div className="mt-2 flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.22em] text-[#a5b4fc]">
               <span
                 aria-hidden="true"
                 style={{ background: INDIGO, width: 24, height: 1, display: 'inline-block' }}
               />
               <span className="truncate" style={FONT_HEAD}>
-                Case study — {ind.caseStudyLabel.split(' · ')[0]}
+                Explore more →
               </span>
             </div>
           ) : null}
