@@ -276,30 +276,22 @@ const Solutions = () => {
             animate="show"
             variants={staggerParent}
           >
-            <motion.div variants={fadeUp} className="flex items-center gap-4 mb-6">
-              <div className="h-px w-12 bg-[#4f46e5]" />
-              <span
-                className="text-[#a5b4fc] font-bold tracking-[0.35em] text-[10px] uppercase"
-                style={FONT_HEAD}
-              >
-                What we do
-              </span>
-            </motion.div>
             <motion.h1
               variants={fadeUp}
-              className="text-6xl sm:text-7xl md:text-9xl font-extrabold leading-[0.85] mb-8 tracking-tighter"
+              className="text-6xl sm:text-7xl md:text-[10rem] font-extrabold leading-[0.85] mb-10 tracking-tighter"
               style={FONT_HEAD}
             >
-              BUILT TO
+              Automation that
               <br />
-              RUN.
+              <span className="text-[#a5b4fc]">stays running.</span>
             </motion.h1>
             <motion.p
               variants={fadeUp}
-              className="text-lg md:text-2xl text-slate-300/80 max-w-2xl leading-relaxed"
+              className="text-lg md:text-2xl text-slate-300/80 max-w-3xl leading-relaxed"
             >
-              From process-wide control to high-speed machine motion to the next generation of plant
-              engineers — precision delivered out of one accountable team in Ghaziabad.
+              Three pillars, one accountable team in Ghaziabad — process control across
+              refineries and plants, motion and machine automation for high-speed lines, and
+              the training that puts the next generation of engineers on the floor.
             </motion.p>
           </motion.div>
         </header>
