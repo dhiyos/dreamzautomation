@@ -59,13 +59,7 @@ const AboutHero = () => {
           </p>
 
           <div className="about-hero-stamps">
-            <span className="about-hero-stamp">Founder-led · Since 2005</span>
-            <span className="about-hero-stamp-divider" aria-hidden="true" />
             <span className="about-hero-stamp">Siemens System House · Since 2007</span>
-            <span className="about-hero-stamp-divider" aria-hidden="true" />
-            <span className="about-hero-stamp">ISO 9001:2015</span>
-            <span className="about-hero-stamp-divider" aria-hidden="true" />
-            <span className="about-hero-stamp">CE Marked · TÜV India</span>
           </div>
         </motion.div>
       </div>
