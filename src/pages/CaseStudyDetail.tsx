@@ -512,10 +512,6 @@ const CaseStudyDetail = () => {
           ...(rich?.heroImage ? { image: rich.heroImage.src } : {}),
         }}
       />
-      <link
-        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
-        rel="stylesheet"
-      />
       <Nav />
       <main>
         <EditorialDetail {...props} />

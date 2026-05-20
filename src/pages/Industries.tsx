@@ -302,7 +302,7 @@ const Industries: React.FC = () => {
         description="Two decades across petrochemicals, BOPP/converting, automotive, food, transportation, water and engineering education in India."
         path="/industries"
       />
-      <style>{`@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700;800;900&family=Epilogue:wght@300;400;500;600&display=swap');`}</style>
+      
       <Nav />
       <main>
         {/* ── HERO ────────────────────────────────────────────────────── */}

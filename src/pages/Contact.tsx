@@ -63,10 +63,6 @@ const Contact = () => {
         description="Tell us about your plant, line, or training need. Founder-led response within one working day."
         path="/contact"
       />
-      <link
-        href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;700;800;900&family=Epilogue:wght@300;400;500;600&display=swap"
-        rel="stylesheet"
-      />
       <Nav />
       <main>
         <header className="relative px-6 md:px-20 pt-40 pb-16 overflow-hidden">

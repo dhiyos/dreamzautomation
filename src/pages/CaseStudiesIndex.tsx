@@ -156,10 +156,6 @@ const CaseStudiesIndex = () => {
         description="Selected commissioned projects across DCS, PLC, SCADA, and machine automation — IOCL Mathura, DMRC Metro, UFlex BOPP, and more."
         path="/case-studies"
       />
-      <link
-        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
-        rel="stylesheet"
-      />
       <Nav />
       <main className="text-slate-200" style={FONT_BODY}>
         {/* HERO */}
