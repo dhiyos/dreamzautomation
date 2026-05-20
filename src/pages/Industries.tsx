@@ -26,10 +26,10 @@ import imgEducation from '@/assets/industries/education.jpg?w=1200&format=webp';
 const FONT_HEAD: React.CSSProperties = { fontFamily: "'Urbanist', sans-serif" };
 const FONT_BODY: React.CSSProperties = { fontFamily: "'Epilogue', sans-serif" };
 
-const INK = '#0a0a1a';
-const SURFACE = '#141432';
-const INDIGO = '#4f46e5';
-const INDIGO_SOFT = '#a5b4fc';
+const INK = 'hsl(var(--bg-primary))';
+const SURFACE = 'hsl(var(--bg-secondary))';
+const INDIGO = 'hsl(var(--accent-blue))';
+const INDIGO_SOFT = 'hsl(var(--accent-blue-hover))';
 
 // ── Motion primitives ────────────────────────────────────────────────────
 const fadeUp = {
@@ -419,7 +419,7 @@ const Industries: React.FC = () => {
         <section
           aria-label="Also serving"
           className="relative py-20 md:py-28 border-t border-white/5"
-          style={{ background: 'linear-gradient(180deg, #0a0a1a 0%, #0d0d24 100%)' }}
+          style={{ background: 'linear-gradient(180deg, hsl(var(--bg-primary)) 0%, #0d0d24 100%)' }}
         >
           <div className="max-w-[1400px] mx-auto px-6 md:px-10 lg:px-14">
             <motion.div

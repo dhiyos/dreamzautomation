@@ -27,10 +27,10 @@ const FeatureCard = ({ cs }: { cs: UnifiedCaseStudy }) => {
   return (
     <Link
       to={`/case-studies/${cs.slug}`}
-      className="group block bg-[#141432] rounded-sm overflow-hidden border border-[#1e1e5a]/60 hover:border-[#4f46e5] transition-all"
+      className="group block bg-[hsl(var(--bg-secondary))] rounded-sm overflow-hidden border border-[hsl(var(--bg-tertiary))]/60 hover:border-[hsl(var(--accent-blue))] transition-all"
     >
       <div className="grid md:grid-cols-2">
-        <div className="aspect-video md:aspect-auto bg-[#1e1e5a]/40 relative overflow-hidden min-h-[280px]">
+        <div className="aspect-video md:aspect-auto bg-[hsl(var(--bg-tertiary))]/40 relative overflow-hidden min-h-[280px]">
           {cs.heroImage ? (
             <img
               src={cs.heroImage.src}
@@ -40,15 +40,15 @@ const FeatureCard = ({ cs }: { cs: UnifiedCaseStudy }) => {
             />
           ) : (
             <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-[10rem] text-[#1e1e5a]/60 font-light leading-none" style={FONT_HEAD}>
+              <span className="text-[10rem] text-[hsl(var(--bg-tertiary))]/60 font-light leading-none" style={FONT_HEAD}>
                 {cs.client.charAt(0)}
               </span>
             </div>
           )}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#141432]/40 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[hsl(var(--bg-secondary))]/40 pointer-events-none" />
         </div>
         <div className="p-8 lg:p-12 flex flex-col justify-center">
-          <div className="text-[#a5b4fc] text-[10px] font-semibold tracking-[0.25em] uppercase mb-5">
+          <div className="text-[hsl(var(--accent-blue-hover))] text-[10px] font-semibold tracking-[0.25em] uppercase mb-5">
             Featured · {cs.sectorEyebrow}
           </div>
           <h2 className="text-3xl md:text-4xl mb-3 text-white leading-tight" style={FONT_HEAD}>
@@ -58,7 +58,7 @@ const FeatureCard = ({ cs }: { cs: UnifiedCaseStudy }) => {
           {heroMetric ? (
             <div className="mb-8">
               <span
-                className="block text-4xl text-[#a5b4fc] font-light mb-1 leading-none"
+                className="block text-4xl text-[hsl(var(--accent-blue-hover))] font-light mb-1 leading-none"
                 style={FONT_HEAD}
               >
                 {heroMetric.value}
@@ -68,7 +68,7 @@ const FeatureCard = ({ cs }: { cs: UnifiedCaseStudy }) => {
               </span>
             </div>
           ) : null}
-          <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-[#a5b4fc] group-hover:text-white transition-colors">
+          <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.25em] text-[hsl(var(--accent-blue-hover))] group-hover:text-white transition-colors">
             View Case Study
             <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -86,9 +86,9 @@ const ProjectCard = ({ cs }: { cs: UnifiedCaseStudy }) => {
     <motion.li variants={fadeUp} className="group">
       <Link
         to={`/case-studies/${cs.slug}`}
-        className="flex flex-col h-full bg-[#141432] p-8 rounded-sm border border-[#1e1e5a]/60 hover:border-[#4f46e5] transition-all"
+        className="flex flex-col h-full bg-[hsl(var(--bg-secondary))] p-8 rounded-sm border border-[hsl(var(--bg-tertiary))]/60 hover:border-[hsl(var(--accent-blue))] transition-all"
       >
-        <div className="text-[#a5b4fc] text-[10px] font-semibold tracking-[0.25em] uppercase mb-5">
+        <div className="text-[hsl(var(--accent-blue-hover))] text-[10px] font-semibold tracking-[0.25em] uppercase mb-5">
           {cs.sectorEyebrow}
         </div>
         <h3 className="text-2xl mb-3 text-white leading-tight" style={FONT_HEAD}>
@@ -100,7 +100,7 @@ const ProjectCard = ({ cs }: { cs: UnifiedCaseStudy }) => {
         {heroMetric ? (
           <div className="mb-6">
             <span
-              className="block text-3xl text-[#a5b4fc] font-light mb-1 leading-none"
+              className="block text-3xl text-[hsl(var(--accent-blue-hover))] font-light mb-1 leading-none"
               style={FONT_HEAD}
             >
               {heroMetric.value}
@@ -110,7 +110,7 @@ const ProjectCard = ({ cs }: { cs: UnifiedCaseStudy }) => {
             </span>
           </div>
         ) : null}
-        <span className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.25em] text-[#a5b4fc] group-hover:text-white transition-colors">
+        <span className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.25em] text-[hsl(var(--accent-blue-hover))] group-hover:text-white transition-colors">
           Read
           <svg className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -150,7 +150,7 @@ const CaseStudiesIndex = () => {
   );
 
   return (
-    <div className="min-h-screen bg-[#0a0a1a]">
+    <div className="min-h-screen bg-[hsl(var(--bg-primary))]">
       <SEO
         title="Case Studies — Industrial Automation Projects in India"
         description="Selected commissioned projects across DCS, PLC, SCADA, and machine automation — IOCL Mathura, DMRC Metro, UFlex BOPP, and more."
@@ -166,8 +166,8 @@ const CaseStudiesIndex = () => {
         <header className="pt-32 pb-20 px-6 sm:px-12 lg:px-24">
           <div className="max-w-6xl mx-auto">
             <div className="flex items-center gap-4 mb-6">
-              <div className="w-12 h-px bg-[#4f46e5]" />
-              <span className="text-[#a5b4fc] text-xs font-semibold uppercase tracking-[0.25em]">
+              <div className="w-12 h-px bg-[hsl(var(--accent-blue))]" />
+              <span className="text-[hsl(var(--accent-blue-hover))] text-xs font-semibold uppercase tracking-[0.25em]">
                 Selected Work
               </span>
             </div>
@@ -188,7 +188,7 @@ const CaseStudiesIndex = () => {
 
         {/* FILTER NAV */}
         <nav className="px-6 sm:px-12 lg:px-24">
-          <div className="max-w-6xl mx-auto flex flex-wrap items-end gap-8 border-b border-[#1e1e5a] pb-6 mb-12">
+          <div className="max-w-6xl mx-auto flex flex-wrap items-end gap-8 border-b border-[hsl(var(--bg-tertiary))] pb-6 mb-12">
             {PILLAR_OPTIONS.map((opt) => {
               const active = activePillar === opt.id;
               return (
@@ -198,7 +198,7 @@ const CaseStudiesIndex = () => {
                   onClick={() => setPillar(opt.id)}
                   className={`pb-1 text-sm font-medium tracking-wide transition-colors border-b-2 -mb-[25px] ${
                     active
-                      ? 'text-[#a5b4fc] border-[#4f46e5]'
+                      ? 'text-[hsl(var(--accent-blue-hover))] border-[hsl(var(--accent-blue))]'
                       : 'text-slate-500 border-transparent hover:text-white'
                   }`}
                 >

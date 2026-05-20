@@ -57,7 +57,7 @@ const Contact = () => {
   const initial = reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 };
 
   return (
-    <div className="min-h-screen bg-[#0a0a1a] text-white" style={FONT_BODY}>
+    <div className="min-h-screen bg-[hsl(var(--bg-primary))] text-white" style={FONT_BODY}>
       <SEO
         title="Contact — Request an Assessment | Dreamz Automation"
         description="Tell us about your plant, line, or training need. Founder-led response within one working day."
@@ -92,7 +92,7 @@ const Contact = () => {
               className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[0.9] tracking-[-0.03em]"
               style={FONT_HEAD}
             >
-              <span style={{ color: '#a5b4fc', fontStyle: 'italic', fontWeight: 600 }}>
+              <span style={{ color: 'hsl(var(--accent-blue-hover))', fontStyle: 'italic', fontWeight: 600 }}>
                 Tell us about
               </span>
               <br />
@@ -130,7 +130,7 @@ const Contact = () => {
                     autoComplete="name"
                     maxLength={100}
                     required
-                    className="bg-transparent border-white/15 text-white placeholder:text-white/30 focus-visible:ring-[#4f46e5] focus-visible:ring-offset-0"
+                    className="bg-transparent border-white/15 text-white placeholder:text-white/30 focus-visible:ring-[hsl(var(--accent-blue))] focus-visible:ring-offset-0"
                   />
                   {errors.name ? (
                     <p className="text-xs text-red-400">{errors.name}</p>
@@ -147,7 +147,7 @@ const Contact = () => {
                     autoComplete="email"
                     maxLength={255}
                     required
-                    className="bg-transparent border-white/15 text-white placeholder:text-white/30 focus-visible:ring-[#4f46e5] focus-visible:ring-offset-0"
+                    className="bg-transparent border-white/15 text-white placeholder:text-white/30 focus-visible:ring-[hsl(var(--accent-blue))] focus-visible:ring-offset-0"
                   />
                   {errors.email ? (
                     <p className="text-xs text-red-400">{errors.email}</p>
@@ -164,7 +164,7 @@ const Contact = () => {
                   name="company"
                   autoComplete="organization"
                   maxLength={120}
-                  className="bg-transparent border-white/15 text-white placeholder:text-white/30 focus-visible:ring-[#4f46e5] focus-visible:ring-offset-0"
+                  className="bg-transparent border-white/15 text-white placeholder:text-white/30 focus-visible:ring-[hsl(var(--accent-blue))] focus-visible:ring-offset-0"
                 />
               </div>
 
@@ -179,7 +179,7 @@ const Contact = () => {
                   maxLength={2000}
                   required
                   placeholder="Plant, scope, timeline, anything we should know…"
-                  className="bg-transparent border-white/15 text-white placeholder:text-white/30 focus-visible:ring-[#4f46e5] focus-visible:ring-offset-0"
+                  className="bg-transparent border-white/15 text-white placeholder:text-white/30 focus-visible:ring-[hsl(var(--accent-blue))] focus-visible:ring-offset-0"
                 />
                 {errors.message ? (
                   <p className="text-xs text-red-400">{errors.message}</p>
@@ -189,7 +189,7 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={submitting}
-                className="inline-flex items-center gap-3 bg-[#4f46e5] hover:bg-[#4338ca] disabled:opacity-60 text-white font-bold uppercase tracking-[0.18em] text-[12px] px-8 py-4 transition-colors"
+                className="inline-flex items-center gap-3 bg-[hsl(var(--accent-blue))] hover:bg-[hsl(var(--accent-blue))] disabled:opacity-60 text-white font-bold uppercase tracking-[0.18em] text-[12px] px-8 py-4 transition-colors"
                 style={FONT_HEAD}
               >
                 {submitting ? 'Sending…' : 'Send brief'}
@@ -206,7 +206,7 @@ const Contact = () => {
             >
               <div>
                 <div
-                  className="text-[10px] font-bold uppercase tracking-[0.35em] mb-3 text-[#a5b4fc]"
+                  className="text-[10px] font-bold uppercase tracking-[0.35em] mb-3 text-[hsl(var(--accent-blue-hover))]"
                   style={FONT_HEAD}
                 >
                   Where we are
@@ -219,7 +219,7 @@ const Contact = () => {
               </div>
               <div>
                 <div
-                  className="text-[10px] font-bold uppercase tracking-[0.35em] mb-3 text-[#a5b4fc]"
+                  className="text-[10px] font-bold uppercase tracking-[0.35em] mb-3 text-[hsl(var(--accent-blue-hover))]"
                   style={FONT_HEAD}
                 >
                   Response window
@@ -231,7 +231,7 @@ const Contact = () => {
               </div>
               <div>
                 <div
-                  className="text-[10px] font-bold uppercase tracking-[0.35em] mb-3 text-[#a5b4fc]"
+                  className="text-[10px] font-bold uppercase tracking-[0.35em] mb-3 text-[hsl(var(--accent-blue-hover))]"
                   style={FONT_HEAD}
                 >
                   Already a partner?

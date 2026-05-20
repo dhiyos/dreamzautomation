@@ -20,7 +20,7 @@ const FONT_BODY = { fontFamily: "'IBM Plex Sans', system-ui, sans-serif" } as co
 
 const SectionLabel = ({ children }: { children: React.ReactNode }) => (
   <h2
-    className="text-[11px] uppercase tracking-[0.3em] text-[#a5b4fc] font-semibold mb-6"
+    className="text-[11px] uppercase tracking-[0.3em] text-[hsl(var(--accent-blue-hover))] font-semibold mb-6"
     style={FONT_BODY}
   >
     {children}
@@ -73,13 +73,13 @@ const EditorialDetail = (p: EditorialProps) => {
     !!p.nextCase;
 
   return (
-    <div className="bg-[#0a0a1a] text-slate-200 pt-28 pb-24 px-6 sm:px-12 lg:px-24" style={FONT_BODY}>
+    <div className="bg-[hsl(var(--bg-primary))] text-slate-200 pt-28 pb-24 px-6 sm:px-12 lg:px-24" style={FONT_BODY}>
       <div className="max-w-5xl mx-auto">
         {/* Breadcrumb */}
         <nav className="mb-12">
           <Link
             to="/case-studies"
-            className="text-[#a5b4fc] hover:text-white text-[11px] tracking-[0.25em] uppercase inline-flex items-center gap-2 group transition-colors"
+            className="text-[hsl(var(--accent-blue-hover))] hover:text-white text-[11px] tracking-[0.25em] uppercase inline-flex items-center gap-2 group transition-colors"
           >
             <svg className="w-3.5 h-3.5 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -90,11 +90,11 @@ const EditorialDetail = (p: EditorialProps) => {
 
         {/* Header */}
         <motion.header className="mb-14" {...entrance} variants={fadeUp}>
-          <div className="flex flex-wrap items-center gap-3 text-[#a5b4fc]/70 uppercase tracking-[0.25em] text-[10px] font-semibold mb-7">
+          <div className="flex flex-wrap items-center gap-3 text-[hsl(var(--accent-blue-hover))]/70 uppercase tracking-[0.25em] text-[10px] font-semibold mb-7">
             {p.eyebrow.split('·').map((part, i, arr) => (
               <span key={i} className="flex items-center gap-3">
                 <span>{part.trim()}</span>
-                {i < arr.length - 1 && <span className="w-1 h-1 bg-[#4f46e5]/60 rounded-full" />}
+                {i < arr.length - 1 && <span className="w-1 h-1 bg-[hsl(var(--accent-blue))]/60 rounded-full" />}
               </span>
             ))}
           </div>
@@ -114,11 +114,11 @@ const EditorialDetail = (p: EditorialProps) => {
         {/* Hero Image */}
         {p.heroImage ? (
           <motion.figure
-            className="relative aspect-[16/9] w-full overflow-hidden bg-[#141432] rounded-sm mb-16"
+            className="relative aspect-[16/9] w-full overflow-hidden bg-[hsl(var(--bg-secondary))] rounded-sm mb-16"
             {...entrance}
             variants={fadeUp}
           >
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a1a] via-transparent to-transparent opacity-60 z-10 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--bg-primary))] via-transparent to-transparent opacity-60 z-10 pointer-events-none" />
             <img
               src={p.heroImage.src}
               alt={p.heroImage.alt}
@@ -131,7 +131,7 @@ const EditorialDetail = (p: EditorialProps) => {
         {/* KPI Strip */}
         {p.metrics.length > 0 ? (
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-0 mb-20 border-y border-[#1e1e5a]/60 py-10"
+            className="grid grid-cols-1 md:grid-cols-3 gap-0 mb-20 border-y border-[hsl(var(--bg-tertiary))]/60 py-10"
             {...entrance}
             variants={fadeUp}
           >
@@ -139,11 +139,11 @@ const EditorialDetail = (p: EditorialProps) => {
               <div
                 key={idx}
                 className={`px-2 py-6 md:py-0 md:px-10 ${
-                  idx === 1 ? 'border-y md:border-y-0 md:border-x border-[#1e1e5a]/60' : ''
+                  idx === 1 ? 'border-y md:border-y-0 md:border-x border-[hsl(var(--bg-tertiary))]/60' : ''
                 }`}
               >
                 <div
-                  className="text-4xl md:text-5xl text-[#a5b4fc] font-light mb-2 leading-none"
+                  className="text-4xl md:text-5xl text-[hsl(var(--accent-blue-hover))] font-light mb-2 leading-none"
                   style={FONT_HEAD}
                 >
                   {m.value}
@@ -168,7 +168,7 @@ const EditorialDetail = (p: EditorialProps) => {
 
             {(p.challengeIntro || (p.painPoints && p.painPoints.length > 0)) ? (
               <motion.section
-                className="bg-[#141432]/40 p-8 md:p-12 border-l-2 border-[#4f46e5]/60"
+                className="bg-[hsl(var(--bg-secondary))]/40 p-8 md:p-12 border-l-2 border-[hsl(var(--accent-blue))]/60"
                 {...entrance}
                 variants={fadeUp}
               >
@@ -180,7 +180,7 @@ const EditorialDetail = (p: EditorialProps) => {
                   <ul className="space-y-3 mt-4">
                     {p.painPoints.map((pp, i) => (
                       <li key={i} className="flex gap-3 text-slate-300 leading-relaxed">
-                        <span className="text-[#4f46e5] mt-2 w-1.5 h-1.5 bg-[#4f46e5] rounded-full shrink-0" />
+                        <span className="text-[hsl(var(--accent-blue))] mt-2 w-1.5 h-1.5 bg-[hsl(var(--accent-blue))] rounded-full shrink-0" />
                         <span>{pp}</span>
                       </li>
                     ))}
@@ -198,7 +198,7 @@ const EditorialDetail = (p: EditorialProps) => {
 
                 {p.beforeAfter ? (
                   <div className="grid md:grid-cols-2 gap-6 mt-6">
-                    <div className="border border-[#1e1e5a]/60 p-6">
+                    <div className="border border-[hsl(var(--bg-tertiary))]/60 p-6">
                       <div className="text-[10px] uppercase tracking-[0.25em] text-slate-500 font-semibold mb-4">
                         {p.beforeAfter.beforeLabel}
                       </div>
@@ -213,14 +213,14 @@ const EditorialDetail = (p: EditorialProps) => {
                         ))}
                       </dl>
                     </div>
-                    <div className="border border-[#4f46e5]/40 p-6 bg-[#141432]/40">
-                      <div className="text-[10px] uppercase tracking-[0.25em] text-[#a5b4fc] font-semibold mb-4">
+                    <div className="border border-[hsl(var(--accent-blue))]/40 p-6 bg-[hsl(var(--bg-secondary))]/40">
+                      <div className="text-[10px] uppercase tracking-[0.25em] text-[hsl(var(--accent-blue-hover))] font-semibold mb-4">
                         {p.beforeAfter.afterLabel}
                       </div>
                       <dl className="space-y-3">
                         {p.beforeAfter.after.map((s, idx) => (
                           <div key={idx}>
-                            <dt className="text-[11px] uppercase tracking-wider text-[#a5b4fc]/60">
+                            <dt className="text-[11px] uppercase tracking-wider text-[hsl(var(--accent-blue-hover))]/60">
                               {s.label}
                             </dt>
                             <dd className="text-white">{s.value}</dd>
@@ -239,7 +239,7 @@ const EditorialDetail = (p: EditorialProps) => {
                         <ul className="space-y-2.5">
                           {s.items.map((it, i) => (
                             <li key={i} className="flex gap-3 text-slate-300 leading-relaxed">
-                              <span className="text-[#4f46e5] mt-2.5 w-1 h-1 bg-[#4f46e5] rounded-full shrink-0" />
+                              <span className="text-[hsl(var(--accent-blue))] mt-2.5 w-1 h-1 bg-[hsl(var(--accent-blue))] rounded-full shrink-0" />
                               <span>{it}</span>
                             </li>
                           ))}
@@ -261,7 +261,7 @@ const EditorialDetail = (p: EditorialProps) => {
                   <ul className="space-y-3">
                     {p.benefits.map((b, i) => (
                       <li key={i} className="flex gap-3 text-slate-300 leading-relaxed">
-                        <span className="text-[#a5b4fc] shrink-0">✓</span>
+                        <span className="text-[hsl(var(--accent-blue-hover))] shrink-0">✓</span>
                         <span>{b}</span>
                       </li>
                     ))}
@@ -274,7 +274,7 @@ const EditorialDetail = (p: EditorialProps) => {
               <motion.blockquote
                 {...entrance}
                 variants={fadeUp}
-                className="py-10 text-2xl md:text-3xl italic text-white leading-snug border-t border-[#1e1e5a]/60"
+                className="py-10 text-2xl md:text-3xl italic text-white leading-snug border-t border-[hsl(var(--bg-tertiary))]/60"
                 style={FONT_HEAD}
               >
                 “{p.pullQuote}”
@@ -284,9 +284,9 @@ const EditorialDetail = (p: EditorialProps) => {
             {p.dataHandled && p.dataHandled.length > 0 ? (
               <motion.section {...entrance} variants={fadeUp}>
                 <SectionLabel>At Scale</SectionLabel>
-                <dl className="grid grid-cols-2 md:grid-cols-3 gap-px bg-[#1e1e5a]/40 border border-[#1e1e5a]/40">
+                <dl className="grid grid-cols-2 md:grid-cols-3 gap-px bg-[hsl(var(--bg-tertiary))]/40 border border-[hsl(var(--bg-tertiary))]/40">
                   {p.dataHandled.map((d, idx) => (
-                    <div key={idx} className="bg-[#0a0a1a] p-5">
+                    <div key={idx} className="bg-[hsl(var(--bg-primary))] p-5">
                       <dt className="text-[10px] uppercase tracking-[0.25em] text-slate-500 font-semibold mb-2">
                         {d.label}
                       </dt>
@@ -304,8 +304,8 @@ const EditorialDetail = (p: EditorialProps) => {
           {hasSidebar ? (
             <aside className="lg:col-span-4 space-y-10">
               {(p.year || p.application || p.partnerLine || (p.projectFacts && p.projectFacts.length > 0)) ? (
-                <div className="border border-[#1e1e5a]/60 p-6 bg-[#141432]/30">
-                  <h3 className="text-[10px] uppercase tracking-[0.25em] text-[#a5b4fc]/70 font-semibold mb-5">
+                <div className="border border-[hsl(var(--bg-tertiary))]/60 p-6 bg-[hsl(var(--bg-secondary))]/30">
+                  <h3 className="text-[10px] uppercase tracking-[0.25em] text-[hsl(var(--accent-blue-hover))]/70 font-semibold mb-5">
                     Project Facts
                   </h3>
                   <dl className="space-y-4 text-sm">
@@ -339,14 +339,14 @@ const EditorialDetail = (p: EditorialProps) => {
 
               {p.equipment ? (
                 <div>
-                  <h3 className="text-[10px] uppercase tracking-[0.25em] text-[#a5b4fc]/70 font-semibold mb-4">
+                  <h3 className="text-[10px] uppercase tracking-[0.25em] text-[hsl(var(--accent-blue-hover))]/70 font-semibold mb-4">
                     {p.equipment.title}
                   </h3>
-                  <ul className="divide-y divide-[#1e1e5a]/40 border-y border-[#1e1e5a]/40">
+                  <ul className="divide-y divide-[hsl(var(--bg-tertiary))]/40 border-y border-[hsl(var(--bg-tertiary))]/40">
                     {p.equipment.rows.map((row, idx) => (
                       <li key={idx} className="flex items-center justify-between gap-4 py-2.5 text-sm">
                         <span className="text-slate-300">{row.section}</span>
-                        <span className="text-[#a5b4fc] tabular-nums">{row.quantity}</span>
+                        <span className="text-[hsl(var(--accent-blue-hover))] tabular-nums">{row.quantity}</span>
                       </li>
                     ))}
                   </ul>
@@ -356,18 +356,18 @@ const EditorialDetail = (p: EditorialProps) => {
               {p.nextCase ? (
                 <Link
                   to={`/case-studies/${p.nextCase.slug}`}
-                  className="block bg-[#141432]/40 border border-[#1e1e5a]/60 p-6 hover:border-[#4f46e5]/60 transition-colors group"
+                  className="block bg-[hsl(var(--bg-secondary))]/40 border border-[hsl(var(--bg-tertiary))]/60 p-6 hover:border-[hsl(var(--accent-blue))]/60 transition-colors group"
                 >
-                  <h3 className="text-[10px] uppercase tracking-[0.25em] text-[#a5b4fc]/70 font-semibold mb-3">
+                  <h3 className="text-[10px] uppercase tracking-[0.25em] text-[hsl(var(--accent-blue-hover))]/70 font-semibold mb-3">
                     Next Case Study
                   </h3>
                   <div className="text-[10px] uppercase tracking-[0.2em] text-slate-500 mb-2">
                     {p.nextCase.sectorEyebrow}
                   </div>
-                  <h4 className="text-lg text-white mb-4 group-hover:text-[#a5b4fc] transition-colors" style={FONT_HEAD}>
+                  <h4 className="text-lg text-white mb-4 group-hover:text-[hsl(var(--accent-blue-hover))] transition-colors" style={FONT_HEAD}>
                     {p.nextCase.client}
                   </h4>
-                  <span className="inline-flex items-center gap-2 text-xs text-[#a5b4fc] uppercase tracking-[0.2em]">
+                  <span className="inline-flex items-center gap-2 text-xs text-[hsl(var(--accent-blue-hover))] uppercase tracking-[0.2em]">
                     Read project
                     <svg className="w-3 h-3 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -393,7 +393,7 @@ const EditorialDetail = (p: EditorialProps) => {
                 src={p.architectureImage.src}
                 alt={p.architectureImage.alt}
                 loading="lazy"
-                className="w-full border border-[#1e1e5a]/60"
+                className="w-full border border-[hsl(var(--bg-tertiary))]/60"
               />
               {p.architectureImage.caption ? (
                 <figcaption className="text-xs text-slate-500 mt-3 italic">
@@ -410,7 +410,7 @@ const EditorialDetail = (p: EditorialProps) => {
             <SectionLabel>On-site</SectionLabel>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
               {p.galleryImages.map((img, idx) => (
-                <figure key={idx} className="aspect-square bg-[#141432] overflow-hidden">
+                <figure key={idx} className="aspect-square bg-[hsl(var(--bg-secondary))] overflow-hidden">
                   <img
                     src={img.src}
                     alt={img.alt}
@@ -496,7 +496,7 @@ const CaseStudyDetail = () => {
   const props = toEditorial(rich, cs, nextCase);
 
   return (
-    <div className="min-h-screen bg-[#0a0a1a]">
+    <div className="min-h-screen bg-[hsl(var(--bg-primary))]">
       <SEO
         title={seoTitle}
         description={seoDesc}

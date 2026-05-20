@@ -134,7 +134,7 @@ const TileCard: React.FC<{ tile: Tile }> = ({ tile }) => {
   const cs = itemCaseStudies[tile.itemId];
   const inner = (
     <Tilt className="w-full h-full">
-      <div className="group relative overflow-hidden bg-[#141432] aspect-[4/5] shadow-[0_20px_60px_-30px_rgba(79,70,229,0.4)]">
+      <div className="group relative overflow-hidden bg-[hsl(var(--bg-secondary))] aspect-[4/5] shadow-[0_20px_60px_-30px_rgba(79,70,229,0.4)]">
         <ParallaxImage
           src={tile.image}
           alt={tile.title}
@@ -142,22 +142,22 @@ const TileCard: React.FC<{ tile: Tile }> = ({ tile }) => {
           imgClassName="w-full h-full object-cover opacity-60 group-hover:opacity-90 transition-opacity duration-700"
           range={40}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a1a] via-[#0a0a1a]/40 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--bg-primary))] via-[hsl(var(--bg-primary))]/40 to-transparent pointer-events-none" />
         <div className="absolute inset-0 p-6 flex flex-col justify-end" style={{ transform: 'translateZ(30px)' }}>
-          <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#a5b4fc] mb-2" style={FONT_HEAD}>
+          <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[hsl(var(--accent-blue-hover))] mb-2" style={FONT_HEAD}>
             {tile.eyebrow}
           </span>
           <p className="text-base md:text-lg font-semibold leading-tight text-white" style={FONT_HEAD}>
             {tile.title}
           </p>
           {cs ? (
-            <span className="mt-3 inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-[#a5b4fc] opacity-0 group-hover:opacity-100 transition-opacity">
+            <span className="mt-3 inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-[hsl(var(--accent-blue-hover))] opacity-0 group-hover:opacity-100 transition-opacity">
               Case study <span aria-hidden="true">→</span>
             </span>
           ) : null}
         </div>
         <div
-          className="absolute top-4 right-4 h-8 w-8 rounded-full border border-white/20 flex items-center justify-center text-xs text-white/70 group-hover:bg-[#4f46e5] group-hover:border-[#4f46e5] group-hover:text-white transition-all"
+          className="absolute top-4 right-4 h-8 w-8 rounded-full border border-white/20 flex items-center justify-center text-xs text-white/70 group-hover:bg-[hsl(var(--accent-blue))] group-hover:border-[hsl(var(--accent-blue))] group-hover:text-white transition-all"
           style={{ transform: 'translateZ(50px)' }}
         >
           ↗
@@ -187,17 +187,17 @@ const Chips: React.FC<{ items: { id: string; name: string }[]; usedIds: string[]
       {remaining.map((it) => {
         const cs = itemCaseStudies[it.id];
         const base =
-          'inline-flex items-center gap-2 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] border border-white/10 bg-[#0a0a1a]/40 transition-colors';
+          'inline-flex items-center gap-2 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] border border-white/10 bg-[hsl(var(--bg-primary))]/40 transition-colors';
         return (
           <motion.li key={it.id} variants={fadeUp}>
             {cs ? (
               <Link
                 to={`/case-studies/${cs.id}`}
-                className={`${base} text-white/80 hover:text-white hover:bg-[#4f46e5] hover:border-[#4f46e5]`}
+                className={`${base} text-white/80 hover:text-white hover:bg-[hsl(var(--accent-blue))] hover:border-[hsl(var(--accent-blue))]`}
                 style={FONT_HEAD}
               >
                 {it.name}
-                <span className="text-[#a5b4fc]" aria-hidden="true">→</span>
+                <span className="text-[hsl(var(--accent-blue-hover))]" aria-hidden="true">→</span>
               </Link>
             ) : (
               <span className={`${base} text-white/60`} style={FONT_HEAD}>
@@ -232,7 +232,7 @@ const Solutions = () => {
   const heroOpacity = useTransform(heroProg, [0, 1], [1, 0.25]);
 
   return (
-    <div className="min-h-screen bg-[#0a0a1a] text-[#f8fafc]" style={FONT_BODY}>
+    <div className="min-h-screen bg-[hsl(var(--bg-primary))] text-[hsl(var(--text-primary))]" style={FONT_BODY}>
       <SEO
         title="Solutions — DCS, PLC, SCADA & Machine Automation"
         description="Three pillars: process-industry automation, machine-level motion & converting, and customised training kits — designed and commissioned in Ghaziabad."
@@ -266,8 +266,8 @@ const Solutions = () => {
               decoding="async"
               className="w-full h-[120%] object-cover object-center opacity-30"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a1a] via-[#0a0a1a]/70 to-transparent" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a1a] via-transparent to-[#0a0a1a]/60" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--bg-primary))] via-[hsl(var(--bg-primary))]/70 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[hsl(var(--bg-primary))] via-transparent to-[hsl(var(--bg-primary))]/60" />
           </motion.div>
 
           <motion.div
@@ -283,7 +283,7 @@ const Solutions = () => {
             >
               Automation that
               <br />
-              <span className="text-[#a5b4fc]">stays running.</span>
+              <span className="text-[hsl(var(--accent-blue-hover))]">stays running.</span>
             </motion.h1>
             <motion.p
               variants={fadeUp}
@@ -307,7 +307,7 @@ const Solutions = () => {
           >
             <motion.div variants={fadeUp} className="md:w-1/3">
               <span
-                className="text-[7rem] md:text-[9rem] font-black text-[#1e1e5a]/40 block leading-none -mb-8 select-none"
+                className="text-[7rem] md:text-[9rem] font-black text-[hsl(var(--bg-tertiary))]/40 block leading-none -mb-8 select-none"
                 style={FONT_HEAD}
                 aria-hidden="true"
               >
@@ -320,7 +320,7 @@ const Solutions = () => {
               >
                 Process Industry
                 <br />
-                <span className="text-[#a5b4fc]">Automation</span>
+                <span className="text-[hsl(var(--accent-blue-hover))]">Automation</span>
               </h2>
               <p className="mt-6 text-slate-400 leading-relaxed max-w-md">{process.blurb}</p>
               <p className="mt-6 text-xs uppercase tracking-[0.3em] text-white/30" style={FONT_HEAD}>
@@ -348,7 +348,7 @@ const Solutions = () => {
         {/* ── PILLAR 02 · MACHINES ───────────────────────────────────────── */}
         <section
           aria-labelledby="pillar-machines"
-          className="py-24 md:py-32 px-6 md:px-20 bg-[#141432]/40 border-t border-white/5"
+          className="py-24 md:py-32 px-6 md:px-20 bg-[hsl(var(--bg-secondary))]/40 border-t border-white/5"
         >
           <motion.div
             className="flex flex-col md:flex-row-reverse gap-12 md:gap-16"
@@ -359,7 +359,7 @@ const Solutions = () => {
           >
             <motion.div variants={fadeUp} className="md:w-1/3 md:text-right">
               <span
-                className="text-[7rem] md:text-[9rem] font-black text-[#1e1e5a]/40 block leading-none -mb-8 select-none"
+                className="text-[7rem] md:text-[9rem] font-black text-[hsl(var(--bg-tertiary))]/40 block leading-none -mb-8 select-none"
                 style={FONT_HEAD}
                 aria-hidden="true"
               >
@@ -372,7 +372,7 @@ const Solutions = () => {
               >
                 Machine
                 <br />
-                <span className="text-[#a5b4fc]">Automation</span>
+                <span className="text-[hsl(var(--accent-blue-hover))]">Automation</span>
               </h2>
               <p className="mt-6 text-slate-400 leading-relaxed md:ml-auto max-w-md">
                 {machines.blurb}
@@ -392,7 +392,7 @@ const Solutions = () => {
                       <ParallaxImage
                         src={tile.image}
                         alt={tile.title}
-                        className="relative aspect-video bg-[#141432]"
+                        className="relative aspect-video bg-[hsl(var(--bg-secondary))]"
                         imgClassName="w-full h-full object-cover"
                         range={60}
                       />
@@ -402,7 +402,7 @@ const Solutions = () => {
                       >
                         <div>
                           <span
-                            className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#a5b4fc]"
+                            className="text-[10px] font-bold uppercase tracking-[0.3em] text-[hsl(var(--accent-blue-hover))]"
                             style={FONT_HEAD}
                           >
                             {tile.eyebrow}
@@ -414,7 +414,7 @@ const Solutions = () => {
                             <p className="text-sm text-slate-400 mt-2">Case study: {cs.client}</p>
                           ) : null}
                         </div>
-                        <div className="shrink-0 h-10 w-10 flex items-center justify-center border border-white/10 rounded-full group-hover:bg-[#4f46e5] group-hover:border-[#4f46e5] transition-all">
+                        <div className="shrink-0 h-10 w-10 flex items-center justify-center border border-white/10 rounded-full group-hover:bg-[hsl(var(--accent-blue))] group-hover:border-[hsl(var(--accent-blue))] transition-all">
                           <span className="text-xs">↗</span>
                         </div>
                       </div>
@@ -447,7 +447,7 @@ const Solutions = () => {
           >
             <motion.div
               variants={fadeUp}
-              className="relative overflow-hidden bg-[#141432] border border-white/5 p-8 md:p-16"
+              className="relative overflow-hidden bg-[hsl(var(--bg-secondary))] border border-white/5 p-8 md:p-16"
             >
               <div className="absolute right-0 top-0 w-full md:w-1/2 h-full opacity-50">
                 <ParallaxImage
@@ -457,12 +457,12 @@ const Solutions = () => {
                   imgClassName="w-full h-full object-cover"
                   range={70}
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-[#141432] via-[#141432]/70 md:via-transparent to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[hsl(var(--bg-secondary))] via-[hsl(var(--bg-secondary))]/70 md:via-transparent to-transparent pointer-events-none" />
               </div>
 
               <div className="relative z-10 md:w-1/2">
                 <span
-                  className="text-[7rem] md:text-[9rem] font-black text-[#1e1e5a]/40 block leading-none -mb-8 select-none"
+                  className="text-[7rem] md:text-[9rem] font-black text-[hsl(var(--bg-tertiary))]/40 block leading-none -mb-8 select-none"
                   style={FONT_HEAD}
                   aria-hidden="true"
                 >
@@ -475,7 +475,7 @@ const Solutions = () => {
                 >
                   Education &
                   <br />
-                  <span className="text-[#a5b4fc]">Training</span>
+                  <span className="text-[hsl(var(--accent-blue-hover))]">Training</span>
                 </h2>
                 <p className="text-slate-300 mb-10 leading-relaxed max-w-md">{training.blurb}</p>
 
@@ -492,7 +492,7 @@ const Solutions = () => {
                       variants={fadeUp}
                       className="flex items-center gap-3 text-sm text-slate-300"
                     >
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#4f46e5]" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-[hsl(var(--accent-blue))]" />
                       <span style={FONT_HEAD} className="uppercase tracking-[0.12em] text-xs">
                         {it.name}
                       </span>
@@ -502,7 +502,7 @@ const Solutions = () => {
 
                 <Link
                   to="/case-studies"
-                  className="inline-block bg-white text-[#0a0a1a] px-8 py-3 font-bold text-xs uppercase tracking-[0.2em] hover:bg-[#4f46e5] hover:text-white transition-all"
+                  className="inline-block bg-white text-[hsl(var(--bg-primary))] px-8 py-3 font-bold text-xs uppercase tracking-[0.2em] hover:bg-[hsl(var(--accent-blue))] hover:text-white transition-all"
                   style={FONT_HEAD}
                 >
                   Request Catalogue
