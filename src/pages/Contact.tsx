@@ -57,7 +57,7 @@ const Contact = () => {
   const initial = reduce ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 };
 
   return (
-    <div className="min-h-screen bg-[hsl(var(--bg-primary))] text-white" style={FONT_BODY}>
+    <div className="theme-indigo min-h-screen bg-[hsl(var(--bg-primary))] text-white" style={FONT_BODY}>
       <SEO
         title="Contact — Request an Assessment | Dreamz Automation"
         description="Tell us about your plant, line, or training need. Founder-led response within one working day."

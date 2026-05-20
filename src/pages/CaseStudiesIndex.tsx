@@ -150,7 +150,7 @@ const CaseStudiesIndex = () => {
   );
 
   return (
-    <div className="min-h-screen bg-[hsl(var(--bg-primary))]">
+    <div className="theme-indigo min-h-screen bg-[hsl(var(--bg-primary))]">
       <SEO
         title="Case Studies — Industrial Automation Projects in India"
         description="Selected commissioned projects across DCS, PLC, SCADA, and machine automation — IOCL Mathura, DMRC Metro, UFlex BOPP, and more."
