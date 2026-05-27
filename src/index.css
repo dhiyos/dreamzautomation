@@ -839,12 +839,6 @@
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .marquee-track {
-    animation: none !important;
-  }
-}
-
 /* Solutions — tabbed typographic layout */
 .solutions-tabs {
   display: flex;

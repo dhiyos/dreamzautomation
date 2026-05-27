@@ -1,4 +1,4 @@
-import foundersPhoto from '@/assets/founders/founders.jpg';
+import foundersPhoto from '@/assets/founders/founders.jpg?w=1280&format=webp';
 
 export const foundersPhotoPath = foundersPhoto;
 

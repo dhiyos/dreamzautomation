@@ -1,7 +1,7 @@
-import profileWhoWeAre from '@/assets/profile-who-we-are.jpg';
-import profileCapability from '@/assets/profile-capability.jpg';
-import profileFacility from '@/assets/profile-facility.jpg';
-import profileSiemens from '@/assets/profile-siemens.jpg';
+import profileWhoWeAre from '@/assets/profile-who-we-are.jpg?w=1280&format=webp';
+import profileCapability from '@/assets/profile-capability.jpg?w=1280&format=webp';
+import profileFacility from '@/assets/profile-facility.jpg?w=1280&format=webp';
+import profileSiemens from '@/assets/profile-siemens.jpg?w=1280&format=webp';
 
 export interface ProfileCard {
   id: string;

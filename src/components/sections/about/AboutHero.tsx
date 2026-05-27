@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import facilityHero from '@/assets/facility-india-1.jpg';
+import facilityHero from '@/assets/facility-india-1.jpg?w=1920&format=webp';
 
 const AboutHero = () => {
   const reduce = useReducedMotion();

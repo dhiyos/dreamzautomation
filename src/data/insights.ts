@@ -1,7 +1,7 @@
 import { InsightSlot } from '@/types/content';
-import vinodPandey from '@/assets/engineers/vinod-pandey.jpg';
-import piyushPathak from '@/assets/engineers/piyush-pathak.jpg';
-import tapeshwerTyagi from '@/assets/engineers/tapeshwer-tyagi.jpg';
+import vinodPandey from '@/assets/engineers/vinod-pandey.jpg?w=800&format=webp';
+import piyushPathak from '@/assets/engineers/piyush-pathak.jpg?w=800&format=webp';
+import tapeshwerTyagi from '@/assets/engineers/tapeshwer-tyagi.jpg?w=800&format=webp';
 
 export const insights: InsightSlot[] = [
   {

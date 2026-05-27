@@ -1,7 +1,7 @@
-import facilityIndia1 from '@/assets/facility-india-1.jpg';
-import facilityIndia2 from '@/assets/facility-india-2.jpg';
-import facilityIndia3 from '@/assets/facility-india-3.jpg';
-import profileFacility from '@/assets/profile-facility.jpg';
+import facilityIndia1 from '@/assets/facility-india-1.jpg?w=1000&format=webp';
+import facilityIndia2 from '@/assets/facility-india-2.jpg?w=1000&format=webp';
+import facilityIndia3 from '@/assets/facility-india-3.jpg?w=1000&format=webp';
+import profileFacility from '@/assets/profile-facility.jpg?w=1000&format=webp';
 
 export interface AboutStat {
   value: string;
