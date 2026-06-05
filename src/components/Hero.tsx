@@ -116,12 +116,12 @@ const Hero = () => {
               </a>
               <a
                 href="/solutions"
-                className="text-text-primary uppercase inline-block border border-line-strong hover:border-accent-blue bg-transparent transition-colors duration-150"
+                className="bg-accent-teal text-text-primary uppercase inline-block hover:brightness-110 transition-all duration-150"
                 style={{
                   fontWeight: 600,
                   fontSize: 12,
                   letterSpacing: "0.02em",
-                  padding: "13px 28px",
+                  padding: "14px 28px",
                 }}
               >
                 Explore Solutions
