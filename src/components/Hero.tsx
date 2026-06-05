@@ -56,21 +56,6 @@ const Hero = () => {
         <div className="grid items-center grid-cols-1 lg:grid-cols-[1.2fr_1fr] hero-grid">
           {/* Left column */}
           <motion.div variants={container} initial="hidden" animate="show" className="self-center">
-            {/* Eyebrow */}
-            <motion.div variants={item} className="flex items-center gap-3" style={{ marginBottom: 24 }}>
-              <span
-                aria-hidden="true"
-                className="bg-accent-blue inline-block shrink-0 border-0 rounded-none"
-                style={{ width: 40, height: 1 }}
-              />
-              <span
-                className="text-accent-blue uppercase"
-                style={{ fontWeight: 600, fontSize: 11, letterSpacing: "0.18em" }}
-              >
-                IT — OT CONVERGENCE · INDUSTRIAL AUTOMATION · DIGITALIZATION
-              </span>
-            </motion.div>
-
             {/* Headline */}
             <motion.h1
               id="hero-heading"
