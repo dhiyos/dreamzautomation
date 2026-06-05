@@ -2028,12 +2028,15 @@ section[aria-labelledby="process-heading"] { padding-top: 80px; padding-bottom: 
   }
   .cert-strip-mark:has(img) {
     border: none;
+    background: #ffffff;
+    padding: 6px;
   }
   .cert-strip-mark img {
     width: 100%;
     height: 100%;
     object-fit: contain;
   }
+
 
   .cert-strip-text {
     display: flex;
