@@ -296,7 +296,7 @@ const Industries: React.FC = () => {
   const heroOpacity = useTransform(heroProg, [0, 1], [1, 0.3]);
 
   return (
-    <div className="theme-indigo min-h-screen" style={{ background: INK, color: 'hsl(var(--text-primary))', ...FONT_BODY }}>
+    <div className="min-h-screen" style={{ background: INK, color: 'hsl(var(--text-primary))', ...FONT_BODY }}>
       <SEO
         title="Industries Served — Process, Converting, Automotive & More"
         description="Two decades across petrochemicals, BOPP/converting, automotive, food, transportation, water and engineering education in India."
