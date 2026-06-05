@@ -496,7 +496,7 @@ const CaseStudyDetail = () => {
   const props = toEditorial(rich, cs, nextCase);
 
   return (
-    <div className="theme-indigo min-h-screen bg-[hsl(var(--bg-primary))]">
+    <div className="min-h-screen bg-[hsl(var(--bg-primary))]">
       <SEO
         title={seoTitle}
         description={seoDesc}

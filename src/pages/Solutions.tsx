@@ -232,7 +232,7 @@ const Solutions = () => {
   const heroOpacity = useTransform(heroProg, [0, 1], [1, 0.25]);
 
   return (
-    <div className="theme-indigo min-h-screen bg-[hsl(var(--bg-primary))] text-[hsl(var(--text-primary))]" style={FONT_BODY}>
+    <div className="min-h-screen bg-[hsl(var(--bg-primary))] text-[hsl(var(--text-primary))]" style={FONT_BODY}>
       <SEO
         title="Solutions — DCS, PLC, SCADA & Machine Automation"
         description="Three pillars: process-industry automation, machine-level motion & converting, and customised training kits — designed and commissioned in Ghaziabad."
