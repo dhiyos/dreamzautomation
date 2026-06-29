@@ -20,7 +20,7 @@ export const industries: IndustryEntry[] = [
     blurb:
       'Hot-Standby PLC and SCADA work in safety-critical process environments. SIL-3 functions, redundant controllers, brownfield S5-to-S7 migrations executed without halting production.',
     caseStudySlug: 'iocl-mathura',
-    caseStudyLabel: 'IOCL Mathura · S5 to S7 with zero production loss',
+    caseStudyLabel: 'A major Indian oil refinery · S5 to S7 with zero production loss',
   },
   {
     id: 'converting-films',
@@ -38,7 +38,7 @@ export const industries: IndustryEntry[] = [
     blurb:
       'Paint shop conveyors, ED/CED body lines, and end-to-end traceability for the tier-1 automotive supply base. Forty-plus PLCs networked into MES with OPC-bridged data on the line side.',
     caseStudySlug: 'hero-motocorp-gurgaon',
-    caseStudyLabel: 'Hero MotoCorp · 40+ PLCs networked into MES',
+    caseStudyLabel: 'Leading two-wheeler OEM · 40+ PLCs networked into MES',
   },
   {
     id: 'food-beverage',
@@ -48,7 +48,7 @@ export const industries: IndustryEntry[] = [
     blurb:
       'Concept-to-commissioning automation for food processing plants. Legacy PLC migrations, batch and recipe management, and panel work designed to live on a wash-down floor.',
     caseStudySlug: 'bambino',
-    caseStudyLabel: 'Bambino Agro · S5 to S7 conversion · concept to commissioning',
+    caseStudyLabel: 'A leading packaged food manufacturer · S5 to S7 · concept to commissioning',
   },
   {
     id: 'transportation',
@@ -58,7 +58,7 @@ export const industries: IndustryEntry[] = [
     blurb:
       'NP SCADA subsystems, tunnel and station automation, and integration with public-infrastructure delivery partners. Acceptance-tested against transit-grade specifications.',
     caseStudySlug: 'dmrc-metro-line-3',
-    caseStudyLabel: 'DMRC Line 3 · 22 stations · 31.5 km · in partnership with Siemens',
+    caseStudyLabel: 'Major Indian metro operator · 22 stations · 31.5 km · in partnership with Siemens',
   },
   {
     id: 'building-services',

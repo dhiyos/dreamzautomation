@@ -5,7 +5,7 @@ export const featuredCaseStudies: FeaturedCaseStudy[] = [
     id: 'dmrc-line-3',
     slug: 'dmrc-metro-line-3',
     sectorEyebrow: 'Transportation · Delhi NCR',
-    client: 'DMRC Metro Line 3',
+    client: 'A major Indian metro rail operator',
     subtitle: 'NP SCADA · In Partnership with Siemens',
     description:
       'Non-Power/Telecom SCADA subsystem delivered across 22 stations spanning 31.5 kilometres of the Delhi Metro Line 3 extension. Completed successfully after prescribed acceptance tests, integrating with existing Siemens SCADA infrastructure and live metro operations.',
@@ -20,10 +20,10 @@ export const featuredCaseStudies: FeaturedCaseStudy[] = [
     id: 'hero-motocorp',
     slug: 'hero-motocorp-gurgaon',
     sectorEyebrow: 'Automotive · Gurgaon',
-    client: 'Hero MotoCorp',
+    client: "One of the world's largest two-wheeler OEMs",
     subtitle: 'IT-OT Integration · Paint Shops + Assembly',
     description:
-      "Network-wide integration of 40+ Siemens PLCs across two paint shops, steel phase, engine rack, and assembly lines at Hero MotoCorp's Gurgaon plant. Fiber optic backbone with 24-port switches, OPC server bridge to MES, and unified data pipeline connecting previously-isolated production systems.",
+      'Network-wide integration of 40+ Siemens PLCs across two paint shops, steel phase, engine rack, and assembly lines at a leading two-wheeler OEM’s Gurgaon plant. Fiber optic backbone with 24-port switches, OPC server bridge to MES, and unified data pipeline connecting previously-isolated production systems.',
     metrics: [
       { value: '40+', label: 'PLCs Networked' },
       { value: '8', label: 'Production Zones' },
@@ -35,7 +35,7 @@ export const featuredCaseStudies: FeaturedCaseStudy[] = [
     id: 'motherson-mate',
     slug: 'motherson-mate-manesar',
     sectorEyebrow: 'Automotive · Manesar',
-    client: 'Motherson MATE',
+    client: 'A leading global auto-components supplier',
     subtitle: 'Track & Trace · SAP Integration',
     description:
       'End-to-end traceability system for the YSD door trim paint shop. Siemens S7-1500 master controller with 8 station-level PLCs, barcode and RFID tracking, SAP integration via SQL bridge. Live in production, tracking parts from raw material through paint application to final dispatch.',

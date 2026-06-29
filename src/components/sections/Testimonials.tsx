@@ -129,7 +129,7 @@ const Testimonials = () => {
             </>
           }
           headingId="testimonials-heading"
-          descriptor="From Mathura Refinery in 2011 to NSTI Dehradun in 2025 — the same standard, signed off by the people who run the plants."
+          descriptor="From a major Indian refinery in 2011 to NSTI Dehradun in 2025 — the same standard, signed off by the people who run the plants."
           layout="split"
           className="testimonial-head"
         />
