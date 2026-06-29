@@ -67,7 +67,7 @@ export const solutions: SolutionPillar[] = [
 export const itemCaseStudies: Record<string, ItemCaseStudy> = {
   bopp: {
     id: 'uflex-bopp',
-    client: 'Uflex Industry',
+    client: 'A leading flexible packaging manufacturer',
     sector: 'BOPP Film · Line-1 Upgradation',
     metricValue: 'S5 → S7',
     metricLabel: 'Hot-Standby PLC Migration',
@@ -77,52 +77,52 @@ export const itemCaseStudies: Record<string, ItemCaseStudy> = {
   },
   tunnel: {
     id: 'dmrc-metro-line-3',
-    client: 'DMRC Metro Line 3',
+    client: 'A major Indian metro rail operator',
     sector: 'Tunnel Automation · 31.5 km',
     metricValue: '22',
     metricLabel: 'Stations · NP SCADA Subsystem',
     description:
-      'NP SCADA subsystem delivered for the Delhi Metro Line 3 extension, covering 22 stations across 31.5 kilometres. Completed successfully after prescribed acceptance tests, in partnership with Siemens Ltd.',
+      'NP SCADA subsystem delivered for a major Indian metro line extension, covering 22 stations across 31.5 kilometres. Completed successfully after prescribed acceptance tests, in partnership with Siemens Ltd.',
     totalInCategory: 1,
   },
   petrochem: {
     id: 'iocl-mathura',
-    client: 'IOCL Mathura Refinery',
+    client: 'A major Indian oil refinery',
     sector: 'Petrochemicals · Legacy PLC Upgrade',
     metricValue: '0',
     metricLabel: 'Production Loss · S5 to S7 Upgrade',
     description:
-      'SIEMENS PLC S-5 to S-7 upgrade at IOCL Mathura Refinery, delivered on time and completed to full customer satisfaction. Critical legacy system modernisation executed without halting refinery production.',
+      'SIEMENS PLC S-5 to S-7 upgrade at a major Indian oil refinery, delivered on time and completed to full customer satisfaction. Critical legacy system modernisation executed without halting refinery production.',
     totalInCategory: 2,
   },
   'food-bev': {
     id: 'bambino',
-    client: 'Bambino Agro Industries',
+    client: 'A well-known packaged food manufacturer',
     sector: 'Food Processing · Concept to Commissioning',
     metricValue: 'S-5 → S-7',
     metricLabel: 'Full PLC System Conversion',
     description:
-      'PLC system conversion from S-5 to S-7 for the Gurgaon plant, delivered concept to commissioning. Professional competence demonstrated throughout the project lifecycle.',
+      'PLC system conversion from S-5 to S-7 for a leading packaged food manufacturer’s Gurgaon plant, delivered concept to commissioning. Professional competence demonstrated throughout the project lifecycle.',
     totalInCategory: 2,
   },
   pneumatic: {
     id: 'coperion',
-    client: 'Coperion Ideal / Reliance Industries',
+    client: 'A leading petrochemicals producer (via an OEM partner)',
     sector: 'Pneumatic Conveying · Hot-Standby SIL-3',
     metricValue: 'SIL-3',
     metricLabel: 'Safety Integrity Level · Hot-Standby',
     description:
-      'Hot-Standby PLC and SCADA system for a safety-critical pneumatic conveying application at Reliance Industries. Redundant controllers with SIL-3 certified safety functions ensuring continuous operation.',
+      'Hot-Standby PLC and SCADA system for a safety-critical pneumatic conveying application at one of India’s largest petrochemicals producers, delivered via an OEM partner. Redundant controllers with SIL-3 certified safety functions ensuring continuous operation.',
     totalInCategory: 3,
   },
   'conveyor-paint': {
     id: 'motherson-mate-manesar',
-    client: 'Motherson MATE Manesar',
+    client: 'A leading global auto-components supplier',
     sector: 'Automotive · Traceability System',
     metricValue: 'End-to-End',
     metricLabel: 'Traceability · YSD Door Trim',
     description:
-      'Traceability system for the YSD door trim paint shop at Motherson MATE Manesar. Functioning successfully in production, tracking parts from raw material through paint application to final dispatch.',
+      'Traceability system for the YSD door trim paint shop at a leading global auto-components supplier’s Manesar facility. Functioning successfully in production, tracking parts from raw material through paint application to final dispatch.',
     totalInCategory: 2,
   },
 };
