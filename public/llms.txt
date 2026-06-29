@@ -13,5 +13,5 @@
 
 ## Optional
 
-- [IOCL Mathura case study](/case-studies/iocl-mathura): S5 → S7-400H Hot-Standby migration with WinCC V7.
-- [DMRC Metro Line 3 case study](/case-studies/dmrc-metro-line-3): Metro automation project.
+- [Refinery legacy PLC upgrade case study](/case-studies/iocl-mathura): S5 → S7-400H Hot-Standby migration with WinCC V7 at a major Indian oil refinery.
+- [Metro NP SCADA case study](/case-studies/dmrc-metro-line-3): NP SCADA subsystem for a major Indian metro rail operator.
