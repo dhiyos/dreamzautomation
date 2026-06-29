@@ -17,15 +17,15 @@ export const richCaseStudies: RichCaseStudy[] = [
     slug: 'iocl-mathura',
     pillarId: 'process',
     solutionItemId: 'petrochem',
-    client: 'IOCL · Mathura Refinery',
-    sectorEyebrow: 'Petrochemicals & Gas · Mathura, UP',
+    client: 'A major Indian oil refinery',
+    sectorEyebrow: 'Petrochemicals & Gas · North India',
     title: 'Legacy S-5 Hot-Standby upgrade to S7-400H · WinCC V7',
     valueHeadline:
       'An aging refinery feed-filter system was running on parts no one could supply any more. We swapped the entire automation stack — without halting production.',
     year: '2010',
     application: 'Feed Filter Backwashing system',
     intro:
-      'Upgradation of a legacy Siemens S-5 Hot-Standby system (155H) running the feed filter backwashing application at Indian Oil Corporation Ltd., Mathura Refinery.',
+      'Upgradation of a legacy Siemens S-5 Hot-Standby system (155H) running the feed filter backwashing application at a major Indian oil refinery.',
     metrics: [
       { value: 'S5 → S7', label: 'Hot-Standby Migration' },
       { value: 'WinCC V4 → V7', label: 'SCADA Modernisation' },
@@ -33,7 +33,7 @@ export const richCaseStudies: RichCaseStudy[] = [
     ],
     challenge: {
       intro:
-        'By 2010, the feed filter backwashing system at IOCL Mathura had outlived its support window. The Simatic S5-155H Hot-Standby controller and WinCC V4 SCADA were a full generation behind current Siemens infrastructure. Replacement components had become hard to source. Vendor support know-how had thinned. The operating team was navigating a refinery on a SCADA that could no longer show them what newer systems took for granted.',
+        'By 2010, the feed filter backwashing system at this North-Indian refinery had outlived its support window. The Simatic S5-155H Hot-Standby controller and WinCC V4 SCADA were a full generation behind current Siemens infrastructure. Replacement components had become hard to source. Vendor support know-how had thinned. The operating team was navigating a refinery on a SCADA that could no longer show them what newer systems took for granted.',
       painPoints: [
         'Hardware obsolescence — replacement spares for the S5-155H stack scarce and expensive',
         'SCADA visibility limits — WinCC V4 missing features the operations team had grown to need',
@@ -71,20 +71,20 @@ export const richCaseStudies: RichCaseStudy[] = [
     },
     heroImage: {
       src: `${IMG_BASE}/iocl-mathura-scada.png`,
-      alt: 'IOCL Mathura Refinery — WinCC V7 SCADA screen for the feed filter backwashing system',
+      alt: 'Refinery feed filter backwashing — WinCC V7 SCADA supervisory screen',
       caption: 'WinCC V7 · Feed filter backwashing supervisory screen',
     },
     galleryImages: [
       {
         src: `${IMG_BASE}/iocl-mathura-scada-2.png`,
-        alt: 'IOCL Mathura — secondary SCADA screen',
+        alt: 'Refinery — secondary SCADA screen',
         caption: 'Operator station overview',
       },
     ],
     projectFacts: [
       { label: 'Year Commissioned', value: '2010' },
       { label: 'Application', value: 'Feed Filter Backwashing' },
-      { label: 'Site', value: 'IOCL Mathura Refinery, UP' },
+      { label: 'Site', value: 'Major North-Indian refinery' },
     ],
     architecture: {
       caption: 'Hot-Standby S7-400H pair driving WinCC V7 — feed filter backwashing.',
@@ -112,7 +112,7 @@ export const richCaseStudies: RichCaseStudy[] = [
     slug: 'uflex-bopp',
     pillarId: 'process',
     solutionItemId: 'bopp',
-    client: 'Uflex Industry',
+    client: 'A leading flexible packaging manufacturer',
     sectorEyebrow: 'BOPP / BOPET Film Plants · Line-1 Upgradation',
     title: 'Barmag + Dornier line · S5 to S7 · drives + SCADA + panels',
     valueHeadline:
@@ -169,15 +169,15 @@ export const richCaseStudies: RichCaseStudy[] = [
     },
     heroImage: {
       src: `${IMG_BASE}/uflex-bopp-scada.png`,
-      alt: 'Uflex BOPP Line-1 — upgraded SCADA screen',
+      alt: 'BOPP Line-1 — upgraded SCADA screen',
       caption: 'Post-upgrade SCADA · BOPP line supervisory view',
     },
     galleryImages: [
-      { src: `${IMG_BASE}/uflex-bopp-scada-2.png`, alt: 'Uflex BOPP — additional SCADA screen' },
-      { src: `${IMG_BASE}/uflex-bopp-scada-3.png`, alt: 'Uflex BOPP — additional SCADA screen' },
-      { src: `${IMG_BASE}/uflex-bopp-scada-4.png`, alt: 'Uflex BOPP — additional SCADA screen' },
-      { src: `${IMG_BASE}/uflex-bopp-scada-5.png`, alt: 'Uflex BOPP — additional SCADA screen' },
-      { src: `${IMG_BASE}/uflex-bopp-scada-6.png`, alt: 'Uflex BOPP — additional SCADA screen' },
+      { src: `${IMG_BASE}/uflex-bopp-scada-2.png`, alt: 'BOPP plant — additional SCADA screen' },
+      { src: `${IMG_BASE}/uflex-bopp-scada-3.png`, alt: 'BOPP plant — additional SCADA screen' },
+      { src: `${IMG_BASE}/uflex-bopp-scada-4.png`, alt: 'BOPP plant — additional SCADA screen' },
+      { src: `${IMG_BASE}/uflex-bopp-scada-5.png`, alt: 'BOPP plant — additional SCADA screen' },
+      { src: `${IMG_BASE}/uflex-bopp-scada-6.png`, alt: 'BOPP plant — additional SCADA screen' },
     ],
     projectFacts: [
       { label: 'Application', value: 'BOPP Line-1 Upgradation' },
@@ -214,14 +214,14 @@ export const richCaseStudies: RichCaseStudy[] = [
     slug: 'vacmet-bopp',
     pillarId: 'process',
     solutionItemId: 'bopp',
-    client: 'Vacmet Industry',
+    client: 'A large BOPP/BOPET film producer',
     sectorEyebrow: 'BOPP / BOPET Film Plants · Drive Modernisation',
     title: 'Sinamics S120 retrofit across 12 line sections · Profinet',
     valueHeadline:
       'A running BOPP line needed modern drives without rebuilding the panels. Sinamics S120 retrofitted into the existing infrastructure, section by section.',
     application: 'BOPP Drive Modernisation',
     intro:
-      'A running BOPP film line at Vacmet Industry retrofitted with Sinamics S120 drive systems on Profinet. Existing panels retained; AC drives and switchgear replaced section by section.',
+      'A running BOPP film line at a large BOPP/BOPET film producer retrofitted with Sinamics S120 drive systems on Profinet. Existing panels retained; AC drives and switchgear replaced section by section.',
     metrics: [
       { value: 'Sinamics S120', label: 'Drive Family' },
       { value: 'Profinet', label: 'Drive Network' },
@@ -229,7 +229,7 @@ export const richCaseStudies: RichCaseStudy[] = [
     ],
     challenge: {
       intro:
-        'Vacmet’s BOPP line was operational but ageing on the drive side. The existing panels were sound. The AC drives were not. The plant needed a drive upgrade that respected the existing panel infrastructure — and didn’t require a full mechanical rebuild.',
+        'The plant’s BOPP line was operational but ageing on the drive side. The existing panels were sound. The AC drives were not. The plant needed a drive upgrade that respected the existing panel infrastructure — and didn’t require a full mechanical rebuild.',
       painPoints: [
         'Ageing legacy AC drives — reliability and scalability becoming a risk',
         'A full panel rebuild was not on the table — capex and production continuity ruled it out',
@@ -312,14 +312,14 @@ export const richCaseStudies: RichCaseStudy[] = [
     slug: 'airport-cms',
     pillarId: 'process',
     solutionItemId: 'lift',
-    client: 'Bangalore Int. Airport · Hyderabad Int. Airport',
+    client: 'Two major Indian international airports',
     sectorEyebrow: 'Lift & Escalator Monitoring · Airports',
     title: 'Condition Monitoring System · Lifts, Escalators, Travelators',
     valueHeadline:
       'Lifts and escalators at two of India’s busiest airports — monitored continuously, with faults caught before passengers feel them.',
     application: 'Lift / Escalator / Travelator CMS',
     intro:
-      'A Condition Monitoring System (CMS) deployed across the lift, escalator, and travelator infrastructure at Bangalore International Airport and Hyderabad International Airport.',
+      'A Condition Monitoring System (CMS) deployed across the lift, escalator, and travelator infrastructure at two major Indian international airports.',
     metrics: [
       { value: '2', label: 'Airports Live' },
       { value: 'Modbus TCP/IP', label: 'BMS Integration' },
@@ -373,7 +373,7 @@ export const richCaseStudies: RichCaseStudy[] = [
       { src: `${IMG_BASE}/airport-cms-screen-5.png`, alt: 'Airport CMS — trend / history screen' },
     ],
     projectFacts: [
-      { label: 'Sites', value: 'Bangalore + Hyderabad Airports' },
+      { label: 'Sites', value: 'Two major Indian international airports' },
       { label: 'Equipment', value: 'Lifts · Escalators · Travelators' },
       { label: 'Alerting', value: 'SMS · BMS over Modbus TCP/IP' },
     ],
@@ -403,7 +403,7 @@ export const richCaseStudies: RichCaseStudy[] = [
     slug: 'dmrc-metro-line-3',
     pillarId: 'process',
     solutionItemId: 'tunnel',
-    client: 'Delhi Metro Rail Corporation · Line 3',
+    client: 'A major Indian metro rail operator',
     sectorEyebrow: 'Metro & Tunnel Automation · NP SCADA',
     title: '22 stations · 31.5 km · NP SCADA subsystem',
     valueHeadline:
@@ -411,7 +411,7 @@ export const richCaseStudies: RichCaseStudy[] = [
     application: 'NP SCADA · 22 stations · 31.5 km',
     partnerLine: 'In partnership with Siemens',
     intro:
-      'A Non-Power / Telecom SCADA subsystem for the DMRC Line 3 extension — providing monitoring, alarm annunciation, control, and reporting to support operations and maintenance, with on-line and historical data analysis.',
+      'A Non-Power / Telecom SCADA subsystem for a major Indian metro line extension — providing monitoring, alarm annunciation, control, and reporting to support operations and maintenance, with on-line and historical data analysis.',
     metrics: [
       { value: '22', label: 'Mainline Stations' },
       { value: '31.5 km', label: 'Line Length · 3 km Underground' },
@@ -447,7 +447,7 @@ export const richCaseStudies: RichCaseStudy[] = [
     ],
     heroImage: {
       src: `${IMG_BASE}/dmrc-line-3-station.jpeg`,
-      alt: 'DMRC Line 3 — station-level supervisory view',
+      alt: 'Metro line — station-level supervisory view',
       caption: 'Station-level supervisory view',
     },
     projectFacts: [
@@ -488,14 +488,14 @@ export const richCaseStudies: RichCaseStudy[] = [
     slug: 'kumarhati-solan-tunnel',
     pillarId: 'process',
     solutionItemId: 'tunnel',
-    client: 'Road Tunnel Authority · Kumarhati, Solan',
+    client: 'A Himalayan road-tunnel authority',
     sectorEyebrow: 'Metro & Tunnel Automation · Road Tunnel',
     title: 'PLC, VFD & SCADA delivery for a Himachal road tunnel',
     valueHeadline:
       'A Himachal road tunnel needed PLC, drives, and SCADA delivered as one job. Five PLCs, three VFDs, one supervisory station — supplied, programmed, and integrated on site.',
     application: 'Road Tunnel Automation',
     intro:
-      'A turnkey road-tunnel automation delivery at Kumarhati, Solan (Himachal Pradesh) — covering supply of PLC and VFD panels and the SCADA system, plus on-site installation, software development, and field-device integration.',
+      'A turnkey road-tunnel automation delivery for a Himalayan road-tunnel authority in Himachal Pradesh — covering supply of PLC and VFD panels and the SCADA system, plus on-site installation, software development, and field-device integration.',
     metrics: [
       { value: '5', label: 'PLCs Installed' },
       { value: '3', label: 'VFD Panels' },
@@ -524,11 +524,11 @@ export const richCaseStudies: RichCaseStudy[] = [
     },
     heroImage: {
       src: `${IMG_BASE}/kumarhati-tunnel.png`,
-      alt: 'Kumarhati Solan road tunnel — SCADA screen',
+      alt: 'Himalayan road tunnel — SCADA screen',
       caption: 'SCADA supervisory screen',
     },
     projectFacts: [
-      { label: 'Site', value: 'Kumarhati, Solan · Himachal Pradesh' },
+      { label: 'Site', value: 'Himalayan road tunnel · Himachal Pradesh' },
       { label: 'Scope', value: 'Material + Engineering + Site' },
       { label: 'Hardware', value: '5× PLC · 3× VFD · 1× SCADA' },
     ],
